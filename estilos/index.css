@@ -1,0 +1,170 @@
+.header{
+    background-color: #c53b34;
+    border-top-left-radius: 1vh;
+    border-top-right-radius: 1vh;
+    height: 7vh;
+    width: 99vw;
+    box-shadow: 0em 0.1em 0.5em;
+    
+}
+body {
+    background-color: #aab1ba;
+    
+}
+#logo {
+    width: 20vh;
+    height: 5vh;
+    margin-top: 0.5vh;
+    margin-left: 0.5vh;
+}
+
+nav {
+    background-color: #5e707f;
+    height: 1.5em;
+    width: 99vw;
+    box-shadow: 0em 0.1em 0.5em;
+    border-bottom-left-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+}
+
+.btnMenu {
+    border: 0vh;
+    background: none;
+    margin-left: 0.2em;
+    color: beige;
+}
+
+.btnIzquierdo {
+    border-bottom-left-radius: 0.5em;
+}
+
+.btnMenu:hover{
+    background: scroll;
+    background-color: #c53b34;
+    box-shadow: 0em 0.1em 0.2em #aab1ba;
+
+    height: 1.7em;
+}
+
+.imagen{
+    height: 29.1vw;
+    width: 33vw;
+    text-align: left;
+    border-top-right-radius: 5vw;
+    border-bottom-left-radius: 5vw;
+}
+
+.resumen{
+    background-color: black;
+    margin-top: 1.5vw;
+    margin-left: 2vw;
+    width: 60vw;
+    font-size: 0.8em;
+    text-align: justify;
+    
+}
+
+
+.contenedor{
+    display: grid;
+    grid-template-columns: repeat(3, 32vw); /*Cantidad y ancho de columnas*/
+    grid-template-rows: 1vw 1vw 3vw; /*Cantidad y ancho de filas*/
+    gap: 1vw; /*A nivel de filas y columnas*/
+    background-color: #3b3f40;
+    margin-top: 1vw;
+    height: 35em;
+    width: 99vw;
+    color: white;
+    text-align: left;
+    border-top-right-radius: 5vw;
+    border-bottom-left-radius: 5vw;
+    
+}
+
+.caja {
+    color: white;
+    text-align: center;
+    width: 5vh;
+    height: 10vh;
+}
+
+.cajaPublicidad {
+    /*background-color: red;*/
+    text-align: center;
+    width: 50vh;
+}
+
+.imgPublicidad {
+    width: 30vh;
+    height: 40vh;
+    
+    border-top-left-radius: 5vh;
+    border-bottom-right-radius: 5vh;
+}
+
+.ifLogin {
+    margin-left: 3vh;
+    width: 60vh;
+    height: 40vh;
+    border: 0vh;
+}
+
+.fa-solid {
+    color: white;
+    font-size: 3vh;
+}
+
+.tabla{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /*Cantidad y ancho de columnas*/
+    grid-template-rows: 1vh 1vh 3vh; /*Cantidad y ancho de filas*/
+    gap: 10px; /*A nivel de filas y columnas*/
+    margin-top: 1vh;
+    height: 66.3vh;
+    width: 80vw;
+    color: white;
+    text-align: left;
+    border-top-right-radius: 5vh;
+    border-bottom-left-radius: 5vh;
+    
+}
+
+.filaDerecha{
+    margin-top: 2vh;
+    margin-left: 40vw;
+
+}
+
+.footer {
+    border-top: 0.1vw solid gray;
+    margin-top: 2vw;
+    display: grid;
+    grid-template-columns: repeat(4, 5em); /*Cantidad y ancho de columnas*/
+    grid-template-rows: 0.5vw 0.5vw 0.5vw; /*Cantidad y ancho de filas*/
+    gap: 1vw 1vw; /*A nivel de filas y columnas*/
+    align-items: center;
+    color: black;
+    text-align: left;
+}
+.logoFooter {
+    margin-top: 1vw;
+    height: 2.5vw;
+    width: 10vw;
+}
+
+.filaIndex{
+    margin-left: 25vw;
+    margin-top: 10vh;   
+    font-size: 0.5em;
+}
+
+.filaImg{
+    padding-top: 2.5vw;
+    position: absolute; 
+    
+}
+
+
+.sindeco {
+    text-decoration: none;
+}  
