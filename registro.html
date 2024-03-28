@@ -5,22 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comiendo...::Registro Usuario</title>
     <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="estilos/registro.css">
     <link rel="stylesheet" href="estilos/login.css">
+    <link rel="stylesheet" href="estilos/index.css">
+    <script src="https://kit.fontawesome.com/a29be58ab7.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header>
-            <div class="tablaHeader">
-                <div class="filaH"><img src="./img/logo.png" alt="Logo Empresa" width="200" height="50"></div>
-                <div class="filaH"><h1>¡Bienvenido al registro! 🎉</h1>
-                    <p>Estamos emocionados de tenerte aquí. Prepárate para sumergirte en una comunidad llena de energía positiva y buena comida. ¡Únete y sé parte de algo especial!</p>
-                    <br>¡Bienvenido a Comemos hasta los codos! 🌟<br><br></div>
+    <header class="header">
+        <div class="tabla">
+            <div class="filaIzquierda">
+                <img id="logo" src="./img/logo.png" alt="Logo Comemos hasta los codos!">
             </div>
+            <div class="filaDerecha">
+                    <a href="login.html" target="_self" title="Ingresar" class="sindeco"><i class="tipoletraFW fa-solid fa-arrow-right-to-bracket fa-beat"></i></a>
+            </div>
+        </div>
     </header>
+    <nav>
+        <button type="button" class="btnMenu btnIzquierdo">Nosotros</button>
+        <button type="button" class="btnMenu">Franquicias</button>
+        <button type="button" class="btnMenu">Nuestro Menu</button>
+        <button type="button" class="btnMenu">Reclamos</button>
+    </nav>
     <main>
+        <div class="filaH"><h1>¡Bienvenido al registro! 🎉</h1>
+            <p>Estamos emocionados de tenerte aquí. Prepárate para sumergirte en una comunidad llena de energía positiva y buena comida. ¡Únete y sé parte de algo especial!</p>
+            <br>¡Bienvenido a Comemos hasta los codos! 🌟<br><br>
+        </div>
         <div class="tablaRegistro">
             <form action="none">
                 <fieldset>
-                    <legend>👤 Contanos como te llamas?</legend>
+                    <legend class="letrachica">👤 Contanos como te llamas?</legend>
                 <div class="fila">
                     <label for="nombre">Nombre:</label>
                     <input type="text" class="txt" name="nombre" id="nombre" placeholder="Alan" required>
@@ -31,7 +46,7 @@
                 </div>
                 </fieldset>
                 <fieldset>
-                    <legend>📧 Como te contactamos?</legend>
+                    <legend class="letrachica">📧 Como te contactamos? </legend>
                     <div class="fila">
                         <label for="mail">Correo Electronico:</label>
                         <input type="email" name="mail" id="mail" placeholder="alanturing@enigma.com" required>
@@ -46,7 +61,7 @@
                     </div>
                 </fieldset>
                 <fieldset>
-                    <legend>📦 Donde te llevamos el pedido?</legend>
+                    <legend class="letrachica">📦 Donde te llevamos el pedido?</legend>
                     <div class="fila">
                         <label for="domicilio">Dirección:</label>
                         <input type="text" name="domicilio" id="domicilio" placeholder="Catamarca 5247" required>
@@ -65,17 +80,51 @@
                     </div>
                 </fieldset>
                 <fieldset>
-                <legend>🥘 Que tipo de comida preferis ver?</legend>
+                <legend class="letrachica">🥘 Que tipo de comida preferis ver?</legend>
                     <div class="fila">
-                        <input type="checkbox" name="dieta" id="dieta" value="1" checked>Carnivoro
-                        <input type="checkbox" name="dieta1" id="dieta1" value="2" checked>Vegetariano
-                        <input type="checkbox" name="dieta2" id="dieta2" value="3" checked>Celiaco
-                        <input type="checkbox" name="dieta3" id="dieta3" value="4" checked>Vegano
+                        <input type="checkbox" name="dieta" class="cb" id="dieta" value="1" checked><i class="fa-solid fa-burger"></i> Carnivoro
+                        <input type="checkbox" name="dieta1" class="cb" id="dieta1" value="2" checked><i class="fa-solid fa-leaf"></i> Vegetariano
+                        <input type="checkbox" name="dieta2" class="cb" id="dieta2" value="3" checked><i class="fa-solid fa-wheat-awn-circle-exclamation"></i> Celiaco
+                        <input type="checkbox" name="dieta3"  class="cb" id="dieta3" value="4" checked><i class="fa-solid fa-seedling"></i> Vegano
                     </div>
                 </fieldset>
-                <button type="submit">Terminar Registro</button>
+                <fieldset>
+                    <legend class="letrachica">🔑 Brindanos tu contraseña</legend>
+                    <div class="fila">
+                        <label for="password">Contraseña:</label>
+                        <input type="password" class="txt" name="password" id="contrasena1" placeholder="Ingrese su contraseña" required>
+                    </div>
+                    <div class="fila">
+                        <label for="retype">Reingrese su contraseña:</label>
+                        <input type="password" class="txt" name="retype" id="contrasena2" placeholder="Reingrese su contraseña" required>
+                    </div>
+                <div class="boton">
+                    <button type="submit">Terminar Registro</button>
+                </div>
+            </fieldset>
             </form>
         </div>
     </main>
+    <div class="filaImg">
+        <img src="./img/logo.png" alt="logo" class="logoFooter">
+    </div>
+    <footer class="footer">
+        <div class="filaIndex">
+            <h4>Nosotros</h4>
+            <p>Historia</p>
+            <p>Institucional</p>
+            <p>Franquicias</p>
+        </div>
+        <div class="filaIndex">
+            <h4>RRHH</h4>
+            <p>Trabaja con Nosotros</p>
+            <p>Politica Organizacional</p>
+        </div>
+        <div class="filaIndex">
+            <h4>Contacto</h4>
+            <p>291-44521477</p>
+            <p>comemos@hastaloscodos.com</p>
+        </div>
+    </footer>
 </body>
 </html>

@@ -89,7 +89,6 @@ nav {
 }
 
 .cajaPublicidad {
-    /*background-color: red;*/
     text-align: center;
     width: 50vh;
 }
@@ -109,7 +108,7 @@ nav {
     border: 0vh;
 }
 
-.fa-solid {
+.tipoletraFW {
     color: white;
     font-size: 3vh;
 }
@@ -155,7 +154,7 @@ nav {
 .filaIndex{
     margin-left: 25vw;
     margin-top: 10vh;   
-    font-size: 0.5em;
+    font-size: 0.6em;
 }
 
 .filaImg{

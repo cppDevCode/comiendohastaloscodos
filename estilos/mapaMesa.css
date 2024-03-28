@@ -1,43 +1,43 @@
 .botoneraPiso {
     display:block;
-    width: 50%;
-    padding-left: 15px;
+    width: 87vw;
+    padding-left: 10vw;
     text-align: center;
-    margin-left: 15px;
+    margin-left: 0.8vw;
     font-style: italic;
     background-color: lightgray;
     box-shadow: 0em 0em 0.2em black;
 }
 
 .mapa {
-    
     text-align: center;
-    padding-left: 15px;
-    margin-left: 15px;
-    width: 50%;
+    padding-left: 10vw;
+    margin-left: 0.8vw;
+    width: 87vw;
     box-shadow: 0em 0em 0.2em black;
-    background-color: bisque;   
+    background-color: #e3ba9e;   
+    margin-top: 5vh;
 }
 
 .mesalibre {
     height: 10em;
     width: 10em;
-    margin-top: 4em;
+    margin-top: 2vw;
     margin-left: auto;
-    margin-right: 5em;
-    margin-bottom: 5%;
-    background-color: #04AA6D; 
-    border: 1px solid black;
+    margin-right: 2.5vw;
+    margin-bottom: 2.5vw;
+    background-color: green; 
+    border: 0.1vw solid black;
     position: inherit;
     color: white; 
-    padding: 10px 24px; 
+    padding: 3.4vw 1.4vw;
     display: inline-flex;
     align-items: center;
     font-size: small;
     font-size-adjust: inherit;
-
+    text-align: center;
     cursor: pointer; 
-    top: -50px;
+    top: -5vw;
 }
 
 .mesalibre:hover{
@@ -47,22 +47,22 @@
 .mesallena {
     height: 10em;
     width: 10em;
-    margin-top: 4em;
+    margin-top: 2vw;
     margin-left: auto;
-    margin-right: 5em;
-    margin-bottom: 5%;
+    margin-right: 2.5vw;
+    margin-bottom: 2.5vw;
     background-color: red; 
-    border: 1px solid black;
+    border: 0.1vw solid black;
     position: inherit;
     color: white; 
-    padding: 10px 24px; 
+    padding: 3.4vw 1.4vw; 
     display: inline-flex;
     align-items: center;
     font-size: small;
     font-size-adjust: inherit;
 
     cursor: pointer; 
-    top: -50px;
+    top: -5vw;
 }
 
 .mesallena:hover{
@@ -72,15 +72,15 @@
 .mesareservada {
     height: 10em;
     width: 10em;
-    margin-top: 4em;
+    margin-top: 2vw;
     margin-left: auto;
-    margin-right: 5em;
-    margin-bottom: 5%;
+    margin-right: 2.5vw;
+    margin-bottom: 2.5vw;
     background-color:gray; 
-    border: 1px solid black;
+    border: 0.1vw solid black;
     position: inherit;
     color: white; 
-    padding: 10px 24px; 
+    padding: 3.4vw 1.4vw; 
     display: inline-flex;
     align-items: center;
     font-size: small;
@@ -108,10 +108,16 @@
 
 .exterior {
     background-color: burlywood;
+    width: 10vh;
+    border-top-left-radius: 5vw;
+    border-bottom-right-radius: 5vw;
 }
 
 .interior {
     background-color: green;
+    width: 10vh;
+    border-top-left-radius: 5vw;
+    border-bottom-right-radius: 5vw;
 }
 
 .interior:hover {
@@ -125,6 +131,7 @@
 }
 
 .rectangular {
-    width: 40em;
-    height: 7em;
+    width: 50vw;
+    height: 7vh;
+    padding: 5vw 12vw;
 }
