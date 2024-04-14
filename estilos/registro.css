@@ -17,6 +17,12 @@ input {
     background-color:#aab1ba;
 }
 
+input:focus {
+    outline: none;
+    border-bottom-color: #e3ba9e;
+    transition: all 0.3s ease-in-out;
+}
+
 button[type="submit"] {
     margin-top: 3vw;
     height: 5vh;
@@ -39,7 +45,6 @@ button[type="submit"]:hover {
 }
 
 .cb {
-    appearance: none;
     vertical-align: middle;
     cursor: pointer;
     background-color: none;
@@ -79,4 +84,24 @@ button[type="submit"]:hover {
     height: 0.5vh;
     width: 1vw;
     color: rgb(4, 71, 4);
+}
+
+input[name="domicilio"]{
+    max-width: 30vw;
+}
+
+input[name="piso"]{
+    max-width: 3vw;
+}
+
+input[name="depto"]{
+    max-width: 3vw;
+}
+
+input[name="provincia"]{
+    max-width: 15vw;
+}
+
+input[name="pais"]{
+    max-width: 15vw;
 }

@@ -135,3 +135,10 @@
     height: 7vh;
     padding: 5vw 12vw;
 }
+
+div p {
+    position: sticky;
+    background-color: #04AA6D;
+    display: none;
+   
+}

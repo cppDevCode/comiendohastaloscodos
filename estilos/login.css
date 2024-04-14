@@ -6,6 +6,7 @@
     border-bottom-left-radius: 5vw;
     background-color: #3b3f40;
     border: none;
+    box-shadow: 0em 0.1em 0.5em;
 }
 
 
@@ -56,6 +57,7 @@
     display: grid;
     justify-content: center;   
     margin-top: 8vw;
+    
 }
 
 .columna {
