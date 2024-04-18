@@ -63,3 +63,10 @@
   font-weight: 800;
   font-style: normal;
 }
+
+.dancing-script-full {
+  font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}

@@ -3,62 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comiendo Hasta los codos!</title>
-    <link rel="stylesheet" href="./estilos/index.css">
     <script src="https://kit.fontawesome.com/a29be58ab7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="estilos/index.css">
+    <link rel="stylesheet" href="estilos/fuentes.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
 
+
+    <title>Comiendo Hasta los codos!</title>
 </head>
+
 <body>
-    <header class="header">
-        <div class="tabla">
+    <div class="container">
+        <header class="header">
             <div class="filaIzquierda">
                 <img id="logo" src="./img/logo.png" alt="Logo Comemos hasta los codos!">
             </div>
             <div class="filaDerecha">
-                    <a href="login.html" target="_self" title="Ingresar" class="sindeco"><i class="tipoletraFW fa-solid fa-arrow-right-to-bracket fa-beat"></i></a>
+                <a href="login.html" target="_self" title="Ingresar" class="sindeco ubuntu-regular"><i class="fa-solid fa-circle-user"></i><span id="login">Ingresar</span></a>
             </div>
-        </div>
-    </header>
-    <nav>
-        <button type="button" class="btnMenu btnIzquierdo">Nosotros</button>
-        <button type="button" class="btnMenu">Franquicias</button>
-        <button type="button" class="btnMenu">Nuestro Menu</button>
-        <button type="button" class="btnMenu">Reclamos</button>
-    </nav>
-    <main>
-        <div class="contenedor">
-            <div class="caja">
-                    <img class="imagen" src="./img/restoIMG.jpeg" alt="resto">
-            </div>
-                <div class="resumen"> !Bienvenidos a "Comiendo hasta los codos"!<br><br>
-                    ¡Prepárense para una experiencia gastronómica que los dejará sin palabras y con los codos en la mesa! Aquí en nuestro santuario culinario, no solo les ofrecemos comida excepcional, ¡sino que los invitamos a sumergirse en un festín de sabores que les hará olvidar todas las reglas de etiqueta!<br>
-                En "Comiendo hasta los codos", no juzgamos si chupan los dedos o se relamen los labios después de cada bocado. De hecho, ¡lo alentamos! Porque creemos que la verdadera señal de una comida deliciosa es cuando terminan con salsa hasta en los codos.<br>
-                Así que si están listos para desatar sus apetitos y entregarse al placer culinario sin restricciones, ¡han llegado al lugar correcto! Nuestro equipo está aquí para asegurarse de que su experiencia sea no solo deliciosa, ¡sino también divertida y memorable!<br>
-                ¡Bienvenidos a "Comiendo hasta los codos"! Donde cada comida es una fiesta y donde nunca hay vergüenza en disfrutar hasta la última miga. <br><br>¡Que empiece el festín!
+        </header>
+       <nav class="menu">
+            <button type="button" class="btnMenu btnIzquierdo">Nosotros</button>
+            <button type="button" class="btnMenu">Franquicias</button>
+            <button type="button" class="btnMenu">Nuestro Menu</button>
+            <button type="button" class="btnMenu">Reclamos</button>
+        </nav>
+        <main class="main">
+            <div class="overlay">
+                <div id="historia">
+                     <h1 class="h1 dancing-script-full">Comiendo Hasta los codos!</h1>
+                     <p class="textoParrafo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, excepturi enim deleniti unde quo repellat veniam beatae vero ducimus porro iusto qui tenetur. Est atque, quis natus itaque amet eius.
+                     Rerum architecto autem repudiandae laudantium magni nostrum nemo, vel quibusdam molestiae id similique sapiente, voluptatum veritatis praesentium magnam atque esse in corporis eos libero cum dolorem? Excepturi autem eveniet repudiandae.
+                     Incidunt distinctio quis quod earum autem maxime eos ea quos at ullam rem itaque dignissimos perspiciatis esse blanditiis, qui sunt! Sint non ducimus nobis ipsum eveniet temporibus quis officiis distinctio.
+                     Quae, laudantium. Totam adipisci eveniet ab reiciendis earum esse saepe rem officia iste, consequuntur deleniti maiores officiis quia id quisquam temporibus dicta iure nulla atque! Doloribus expedita voluptate exercitationem est.
+                     Sequi praesentium earum unde, cumque delectus possimus, expedita modi reprehenderit magni doloremque omnis saepe? Dignissimos, eum eligendi error rem voluptas ex, ad dolor dolorum vitae quia cum vero nemo magnam.</p>
                 </div>
-            <!-- <iframe title="login" src="./login.html" class="ifLogin"></iframe> -->
+            </div>
+             <div class="cocinero">
+                <img src="img/cocinero.png" id="imgCheff" alt="NuestroCheff">
+            </div>
+            <img class="imagenMPpal" src="img/fondo.png" alt="Demoleitor!">
+        </main>
+        <div class="publicidad">
+            <div class="overlay">
+                <div class="cuadrado"  id="cuadrado1">
+                    <h1 class="tittlePpal pacifico-regular">Demoleitor 2.0v</h1>
+                    <h1 class="tittlePpal dosis-800">$ 1.99</h1>
+                </div>
+                <div class="alineacion">
+                    <div class="triangulo-topleft" id="triangulo1-topleft"></div>
+                    <div class="triangulo-topright" id="triangulo1-topright"></div>
+                </div>
+            </div>
+            <img class="imagenPpal" src="img/fast-food.jpg" alt="Demoleitor!">
+            <div class="overlay">
+                <div class="cuadrado" id="cuadrado2">
+                    <h1 class="tittlePpal pacifico-regular">FishRap</h1>
+                    <h1 class="tittlePpal dosis-800">$ 5.99</h1>
+                </div>
+                <div class="alineacion">
+                    <div class="triangulo-topleft" id="triangulo2-topleft"></div>
+                    <div class="triangulo-topright" id="triangulo2-topright"></div>
+                </div>
+            </div>
+            <img class="imagenPpal" src="img/example2.jpeg" alt="Demoleitor!">
+            <div class="overlay">
+                <div class="cuadrado" id="cuadrado3">
+                    <h1 class="tittlePpal pacifico-regular">FishRap</h1>
+                    <h1 class="tittlePpal dosis-800">$ 4.99</h1>
+                </div>
+                <div class="alineacion">
+                    <div class="triangulo-topleft" id="triangulo3-topleft" ></div>
+                    <div class="triangulo-topright" id="triangulo3-topright"></div>
+                </div>
+            </div>
+            <img class="imagenPpal" src="img/fast-food.jpg" alt="Demoleitor!">
         </div>
-    </main>
-    <div class="filaImg">
-        <img src="./img/logo.png" alt="logo" class="logoFooter">
+        <footer class="footer ubuntu-regular">
+            <div class="containerFooter">
+                <img src="./img/logo.png" alt="logo" class="logoFooter">
+                <div class="filaIndex textoFooter">
+                    <h4><i class="fa-solid fa-users"></i> Nosotros</h4>
+                    <p class="footerMenu">Historia</p>
+                    <p class="footerMenu">Institucional</p>
+                    <p class="footerMenu">Franquicias</p>
+                </div>
+                <div class="filaIndex textoFooter">
+                    <h4><i class="fa-solid fa-briefcase"></i> RRHH</h4>
+                    <p class="footerMenu">Trabaja con Nosotros</p>
+                    <p class="footerMenu">Politica Organizacional</p>
+                </div>
+                <div class="filaIndex textoFooter">
+                    <h4><i class="fa-solid fa-message"></i> Contacto</h4>
+                    <p class="footerMenu">📱 291-44521477</p>
+                    <p class="footerMenu">📧 comemos@hastaloscodos.com</p>
+                </div>
+            </div>
+        </footer>
     </div>
-    <footer class="footer">
-        <div class="filaIndex">
-            <h4>Nosotros</h4>
-            <p>Historia</p>
-            <p>Institucional</p>
-            <p>Franquicias</p>
-        </div>
-        <div class="filaIndex">
-            <h4>RRHH</h4>
-            <p>Trabaja con Nosotros</p>
-            <p>Politica Organizacional</p>
-        </div>
-        <div class="filaIndex">
-            <h4>Contacto</h4>
-            <p>291-44521477</p>
-            <p>comemos@hastaloscodos.com</p>
-        </div>
-    </footer>
+    <a class="whatsapp" href="#"><img id="wappIMG" src="img/WhatsApp_icon.png" alt="Whatsapp"></a>
 </body>
 </html>
