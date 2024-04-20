@@ -150,3 +150,114 @@ body {
     width: 25vw;
     padding-left: 5vw;
 }
+
+/* VENTANA MODAL */
+.modal {
+    display: none; 
+    position: absolute; 
+    z-index: 1; 
+    left: 0%;
+    top: 0%;
+    width: 100vw; 
+    height: 100vh; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.9); 
+  }
+
+  .contenedorModal {
+    display: grid;
+    margin-left: 25%;
+    margin-top: 15%;
+    width: 50vw;
+    height: 50vh;
+    overflow: scroll;
+    background-color: white;
+    grid-template-columns: 1fr 0.25fr 1fr;
+    grid-template-rows: 0.25fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: "x x x"
+                         "logo logo logo"
+                         "texto texto texto"
+                         "input input ingresar"
+                         "input2 input2 ingresar"
+                         "invitado invitado invitado";
+    border-radius: 0.5vh;
+    box-shadow: 0vh 0vw 1vh white;
+    column-gap: 0;
+    row-gap: 0;
+  }
+
+  .x {
+    grid-area: x;
+    justify-self: end;
+    margin-right: 0.5vw;
+    margin-top: 0.5vh;
+    font-size: 2vh;
+  }
+
+  .x:hover {
+    cursor: pointer;
+    color: darkgoldenrod;
+  }
+
+  .logo1 {
+    grid-area: logo;
+    justify-self: center;
+  }
+
+  #logoIMG {
+    height: 20vh;
+  }
+
+  .textoLogin {
+    grid-area: texto;
+    text-align: center;
+  }
+
+  .input {
+    grid-area: input;
+    justify-self: right;
+  }
+
+
+  .input2 {
+    grid-area: input2;
+    justify-self: right;
+  }
+
+  .loginOk {
+    grid-area: ingresar;
+    justify-self: left;
+    align-self: center;
+    
+  }
+
+  .botonLoginOk {
+    border: 0;
+    background-color: transparent;
+    font-size: 2.5vw;
+    margin-left: 2vw;
+  }
+
+  .botonLoginOk:hover {
+    cursor: pointer;
+  }
+
+  .invitado {
+    grid-area: invitado;
+    justify-self: center;
+  }
+
+
+  input {
+    border-bottom-color: #c53b34;
+    border-bottom-width: 0.3vh;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+  }
+
+  input:focus {
+    outline: none;
+    border-bottom-color: darkgoldenrod;
+    border-bottom-width: 0.3vh;
+  }
