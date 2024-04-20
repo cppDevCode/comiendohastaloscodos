@@ -19,6 +19,9 @@ body {
 
 .header {
     grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    
     background-color: #c53b34;
     border-top-left-radius: 1vh;
     border-top-right-radius: 1vh;
@@ -28,6 +31,7 @@ body {
 }
 
 .filaDerecha {
+    margin-top: 3vh;
     text-align: end;
     margin-right: 2vw;
 }
@@ -54,10 +58,10 @@ body {
 }
 
 #logo {
-    width: 20 vw;
-    height: 5vh;
+    width: 8vh;
+    height: 8vh;
     margin-left: 0.5vw;
-    margin-top: 2vh;
+    margin-top: 1vh;
 }
 
 .menu {
@@ -256,8 +260,9 @@ body {
 
 .logoFooter {
     margin-top: 1vw;
-    height: 2.5vw;
-    width: 10vw;
+    margin-left: 2vw;
+    height: 12vh;
+    width: 12vh;
 }
 
 .textoFooter {

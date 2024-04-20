@@ -1,0 +1,152 @@
+body {
+    background-color: darkgoldenrod;
+}
+.contenedor{
+    display: grid;
+    margin-top: 11.5vh;
+    width: 100vw;
+    height:172vh;
+    grid-template-columns: 1fr 0.5fr;
+    grid-template-rows: 2fr 1fr;
+    grid-template-areas: "publicidad imagen"
+                         "lugar cocinera";
+    justify-content: space-between;
+    gap: 0;
+    
+}
+
+.headerContenedor {
+    padding: 0.2vw;
+    box-shadow: 0vw 0vh 0.5vh black;
+    background-color: white;
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    /*Empezamos a config GRID*/
+    display: grid;
+    grid-column: 1fr 1fr;
+    grid-template-areas: "logoPPal menu";
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+}
+
+.logo {
+    grid-area: logoPPal;
+}
+
+#logoPPal {
+    width: 10vh;
+    height: 10vh;
+}
+
+.menu {
+    grid-area: menu;
+    margin-right: 1vw;
+}
+
+.botonMenu {
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.botonMenu:hover {
+    text-decoration: underline;
+    text-shadow: 0em 0em 0.1em #c53b34;
+}
+
+#ingresar {
+    font-size: 2vh;
+    background-color: #c53b34;
+    padding: 1vh;
+    color: white;
+}
+
+.fa-solid {
+    color: cornflowerblue;
+}
+
+#ingresar:hover {
+    box-shadow: 0vw 0vh 0.5vh black;
+    background-color: chocolate;
+    transition: all 0.3s linear;
+    text-decoration: none;
+}
+
+.titulo {
+    grid-area: publicidad;
+    text-align: left;
+    margin-top: 8vh;
+}
+
+#nombreProducto {
+    font-size: 2.5rem;
+    color: yellow;
+}
+
+#descripcionProducto {
+    font-size: 3rem;
+    color:  #c53b34;
+}
+
+#btnPedir {
+    border: 0;
+    height: 8vh;
+    width: 30vw;
+    font-size: 1.5rem;
+    background-color: #c53b34;
+    padding: 1vh;
+    color: white;
+}
+
+#btnPedir:hover {
+    cursor: pointer;
+    box-shadow: 0vw 0vh 1vh black;
+    background-color: chocolate;
+    transition: all 0.3s linear;
+}
+
+.producto {
+    grid-area: imagen;
+    align-self: self-end;
+}
+
+.lugar {
+    grid-area: lugar;
+    background-color: #c53b34;
+    margin-left: -1vw;
+    box-shadow: 0.5vw 0vh 1vw black;
+}
+
+.cocineraFind {
+    grid-area: cocinera;
+    translate: -9.1vh 7.3vh;
+}
+.mapa {
+    margin-left: 1vw;
+    width: 65vw;
+    height: 70vh;
+}
+
+
+/*CONFIGURACION PRODUCTO*/
+
+.footer {
+    grid-area: footer;
+    background-color: white;
+    box-shadow: 0vw 0vh 0.5vh black;
+    width: 100vw;
+    height: 10vh;
+    margin-left: -0.5vw;
+    margin-top: -1.5vh;
+    text-align: center;;
+}
+
+.tituloLugar {
+    color: yellow;
+    background-color: darkgoldenrod;
+    width: 25vw;
+    padding-left: 5vw;
+}
