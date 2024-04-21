@@ -212,7 +212,7 @@ body {
                          "input2 input2 ingresar"
                          "invitado invitado invitado";
     border-radius: 0.5vh;
-    box-shadow: 0vh 0vw 1vh white;
+    box-shadow: 0vh 0vw 1vh #bfbfbf;
     column-gap: 0;
     row-gap: 0;
     margin-left: 25%;
@@ -331,7 +331,7 @@ body {
 textarea {
     background-color: #bfbfbf;
     border: 0;
-    width: 20vw;
+    width: 15vw;
     outline: none;
 }
 
