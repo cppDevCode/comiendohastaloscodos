@@ -18,3 +18,15 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+
+var modalContactar = document.getElementById("modalContactar");
+var btnContactar = document.getElementById("contactar");
+var btnCerrar = document.getElementById("btnCerrar");
+
+btnContactar.onclick = function() {
+    modalContactar.style.display = "block";
+}
+
+btnCerrar.onclick = function() {
+    modalContactar.style.display = "none";
+}

@@ -3,109 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comiendo hasta los codos!</title>
+    <link rel="stylesheet" href="./estilos/index.css">
+    <link rel="stylesheet" href="./estilos/fuentes.css">
     <script src="https://kit.fontawesome.com/a29be58ab7.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="estilos/index.css">
-    <link rel="stylesheet" href="estilos/fuentes.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
-
-
-    <title>Comiendo Hasta los codos!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
 </head>
-
 <body>
-    <div class="container">
-        <header class="header">
-            <div class="filaIzquierda">
-                <img id="logo" src="./img/logo2.png" alt="Logo Comemos hasta los codos!">
-            </div>
-            <div class="filaDerecha">
-                <a href="login.html" target="_self" title="Ingresar" class="sindeco ubuntu-regular"><i class="fa-solid fa-circle-user"></i><span id="login">Ingresar</span></a>
-            </div>
-        </header>
-       <nav class="menu">
-            <button type="button" class="btnMenu btnIzquierdo">Nosotros</button>
-            <button type="button" class="btnMenu">Franquicias</button>
-            <button type="button" class="btnMenu">Nuestro Menu</button>
-            <button type="button" class="btnMenu">Reclamos</button>
-        </nav>
-        <main class="main">
-            <div class="overlay">
-                <div id="historia">
-                     <h1 class="h1 dancing-script-full">Comiendo Hasta los codos!</h1>
-                     <p class="textoParrafo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, excepturi enim deleniti unde quo repellat veniam beatae vero ducimus porro iusto qui tenetur. Est atque, quis natus itaque amet eius.
-                     Rerum architecto autem repudiandae laudantium magni nostrum nemo, vel quibusdam molestiae id similique sapiente, voluptatum veritatis praesentium magnam atque esse in corporis eos libero cum dolorem? Excepturi autem eveniet repudiandae.
-                     Incidunt distinctio quis quod earum autem maxime eos ea quos at ullam rem itaque dignissimos perspiciatis esse blanditiis, qui sunt! Sint non ducimus nobis ipsum eveniet temporibus quis officiis distinctio.
-                     Quae, laudantium. Totam adipisci eveniet ab reiciendis earum esse saepe rem officia iste, consequuntur deleniti maiores officiis quia id quisquam temporibus dicta iure nulla atque! Doloribus expedita voluptate exercitationem est.
-                     Sequi praesentium earum unde, cumque delectus possimus, expedita modi reprehenderit magni doloremque omnis saepe? Dignissimos, eum eligendi error rem voluptas ex, ad dolor dolorum vitae quia cum vero nemo magnam.</p>
-                </div>
-            </div>
-             <div class="cocinero">
-                <img src="img/cocinero.png" id="imgCheff" alt="NuestroCheff">
-            </div>
-            <img class="imagenMPpal" src="img/fondo.png" alt="Demoleitor!">
-        </main>
-        <div class="publicidad">
-            <div class="overlay">
-                <div class="cuadrado"  id="cuadrado1">
-                    <h1 class="tittlePpal pacifico-regular">Demoleitor 2.0v</h1>
-                    <h1 class="tittlePpal dosis-800">$ 1.99</h1>
-                </div>
-                <div class="alineacion">
-                    <div class="triangulo-topleft" id="triangulo1-topleft"></div>
-                    <div class="triangulo-topright" id="triangulo1-topright"></div>
-                </div>
-            </div>
-            <img class="imagenPpal" src="img/fast-food.jpg" alt="Demoleitor!">
-            <div class="overlay">
-                <div class="cuadrado" id="cuadrado2">
-                    <h1 class="tittlePpal pacifico-regular">FishRap</h1>
-                    <h1 class="tittlePpal dosis-800">$ 5.99</h1>
-                </div>
-                <div class="alineacion">
-                    <div class="triangulo-topleft" id="triangulo2-topleft"></div>
-                    <div class="triangulo-topright" id="triangulo2-topright"></div>
-                </div>
-            </div>
-            <img class="imagenPpal" src="img/example2.jpeg" alt="Demoleitor!">
-            <div class="overlay">
-                <div class="cuadrado" id="cuadrado3">
-                    <h1 class="tittlePpal pacifico-regular">FishRap</h1>
-                    <h1 class="tittlePpal dosis-800">$ 4.99</h1>
-                </div>
-                <div class="alineacion">
-                    <div class="triangulo-topleft" id="triangulo3-topleft" ></div>
-                    <div class="triangulo-topright" id="triangulo3-topright"></div>
-                </div>
-            </div>
-            <img class="imagenPpal" src="img/fast-food.jpg" alt="Demoleitor!">
+    <header class="headerContenedor">
+        <div class="logo">
+            <img src="./img/logo2.png" alt="Logo Comiendo Hasta los codos" id="logoPPal">
         </div>
-        <footer class="footer ubuntu-regular">
-            <div class="containerFooter">
-                <img src="./img/logo2.png" alt="logo" class="logoFooter">
-                <div class="filaIndex textoFooter">
-                    <h4><i class="fa-solid fa-users"></i> Nosotros</h4>
-                    <p class="footerMenu">Historia</p>
-                    <p class="footerMenu">Institucional</p>
-                    <p class="footerMenu">Franquicias</p>
-                </div>
-                <div class="filaIndex textoFooter">
-                    <h4><i class="fa-solid fa-briefcase"></i> RRHH</h4>
-                    <p class="footerMenu">Trabaja con Nosotros</p>
-                    <p class="footerMenu">Politica Organizacional</p>
-                </div>
-                <div class="filaIndex textoFooter">
-                    <h4><i class="fa-solid fa-message"></i> Contacto</h4>
-                    <p class="footerMenu">📱 291-44521477</p>
-                    <p class="footerMenu">📧 comemos@hastaloscodos.com</p>
+        <nav class="menu">
+            <button type="button" class="botonMenu">Home</button>
+            <button type="button" class="botonMenu">Menu</button>
+            <button type="button" class="botonMenu">Nosotros</button>
+            <button type="button" class="botonMenu">Franquicias</button>
+        </nav>
+        <div class="ingresar">
+            <button type="button" class="botonMenu" id="ingresar"><i class="fa-solid fa-circle-user"></i> Ingresar</button>
+             <!-- VENTANA MODAL-->
+             <div id="modal1" class="modal">
+                <div class="modal-content">
+                    <div class="contenedorModal">
+                        <div class="x">
+                            <span class="cerrar"><i class="fa-regular fa-circle-xmark"></i></span>
+                        </div>
+                        <div class="logo1">
+                            <img id="logoIMG" src="./img/logo2.png" alt="Logo">
+                        </div>
+                        <div class="textoLogin">
+                            <p>¡Bienvenido/a al lugar donde los sueños tienen sabor y el hambre es nuestra musa inspiradora! En este portal, estamos aquí para satisfacer tus antojos más salvajes y hacer que tu estómago grite de alegría.</p>
+                        </div>
+                        <div class="input">
+                            <label for="usuario">👤</label>
+                            <input type="text" name="usuario" placeholder="AlanTuring99" id="usuario">
+                        </div>
+                        <div class="input2">
+                            <label for="contrasena">🔒</label>
+                            <input type="password" name="contrasena" id="contrasena" placeholder="Ingrese su contraseña">
+                        </div>
+                        <div class="loginOk">
+                            <button type="button" class="botonLoginOk"><i class="fa-solid fa-right-to-bracket fa-beat"></i></button>
+                        </div>
+                        <div class="invitado">
+                            <a href="none" class="link">Ingresar como invitado</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </footer>
-    </div>
+            <!-- FIN DE VENTANA MODAL-->
+        </div>
+    </header>
+    <main class="contenedor">
+     
+    </main>
+    <footer class="footer">
+        <div class="contacto">
+            <button type="button" class="btnGen" id="contactar"><i class="fa-solid fa-file-signature"></i> Contactar</button>
+            <!-- Inicio de Modal Contactos-->
+            <div id="modalContactar" class="modal">
+                <div class="modal-content">
+                    <form action="/formulario"  method="post" class="contenedorModal formContenedor">
+                        <div class="x">
+                            <span id="btnCerrar"><i class="fa-regular fa-circle-xmark"></i></span>
+                        </div>
+                        <fieldset class="formulario">
+                            <legend class="titulo bebas-neue-regular">Contactenos</legend>
+                            <div class="nombreFormulario">
+                                <label id="Form_nombre" for="nombre" class="campos kanit-medium">Nombre </label>
+                                <input id="nombre" type="text" placeholder="Ingrese su nombre" class="input" required>
+                            </div>
+                            <div class="nombreFormulario">
+                                <label for="Apellido" class="campos kanit-medium">Apellido</label>
+                                <input id="Apellido" type="text" placeholder="Ingrese Apellido" class="input">
+                            </div>
+                            <div class="nombreFormulario">
+                                <label for="email" class="campos kanit-medium">Email</label>
+                                <input id="email" type="email" placeholder="Ingrese Email" class="input" required>
+                            </div>
+                            <div class="nombreFormulario">
+                                <label for="comentario" class="campos kanit-medium">Tipo:</label >
+                                <select name="option" id="option" class="input btnGen btnChico">
+                                    <option value="reseña">Reseña</option>
+                                    <option value="quejas">Quejas</option>
+                                    <option value="otros">Otros</option>
+                                </select>
+                            </div>
+                            <div class="nombreFormulario">
+                                <textarea placeholder="Ingrese comentario" name="Comentario" id="comentario"  cols="30" rows="10" class="input"></textarea >
+                                <label for="archivo" class="archivo kanit-medium"></label>
+                                <input type="file" id="archivo">
+                            </div>
+                            <div class="nombreFormulario">
+                                <button type="submit" class="btnGen btnChico">Enviar</button >
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="copyRight">
+            <p id="copyRight">(C) 2024 - Comiendo hasta los codos</p>
+        </div>
+    </footer>
     <a class="whatsapp" href="#"><img id="wappIMG" src="img/WhatsApp_icon.png" alt="Whatsapp"></a>
+    <script src="./js/modal.js">  </script>
 </body>
 </html>

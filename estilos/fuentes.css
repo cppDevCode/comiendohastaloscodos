@@ -1,72 +1,113 @@
-.ubuntu-light {
-    font-family: "Ubuntu", sans-serif;
-    font-weight: 300;
-    font-style: normal;
-  }
-  
-  .ubuntu-regular {
-    font-family: "Ubuntu", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-  
-  .ubuntu-medium {
-    font-family: "Ubuntu", sans-serif;
-    font-weight: 500;
-    font-style: normal;
-  }
-  
-  .ubuntu-bold {
-    font-family: "Ubuntu", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-  }
-  
-  .ubuntu-light-italic {
-    font-family: "Ubuntu", sans-serif;
-    font-weight: 300;
-    font-style: italic;
-  }
-  
-  .ubuntu-regular-italic {
-    font-family: "Ubuntu", sans-serif;
-    font-weight: 400;
-    font-style: italic;
-  }
-  
-  .ubuntu-medium-italic {
-    font-family: "Ubuntu", sans-serif;
-    font-weight: 500;
-    font-style: italic;
-  }
-  
-  .ubuntu-bold-italic {
-    font-family: "Ubuntu", sans-serif;
-    font-weight: 700;
-    font-style: italic;
-  }
-  
-  /*PACIFICO REGULAR*/
+.kanit-thin {
+  font-family: "Kanit", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
 
-  .pacifico-regular {
-    font-family: "Pacifico", cursive;
-    font-weight: 400;
-    font-style: normal;
-  }
-  
-/* DOSIS 800 */
-  
+.kanit-thin-italic {
+  font-family: "Kanit", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
 
-.dosis-800 {
-  font-family: "Dosis", sans-serif;
-  font-optical-sizing: auto;
+.kanit-extralight {
+  font-family: "Kanit", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.kanit-extralight-italic {
+  font-family: "Kanit", sans-serif;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.kanit-light {
+  font-family: "Kanit", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.kanit-light-italic {
+  font-family: "Kanit", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.kanit-regular {
+  font-family: "Kanit", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.kanit-regular-italic {
+  font-family: "Kanit", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.kanit-medium {
+  font-family: "Kanit", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.kanit-medium-italic {
+  font-family: "Kanit", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.kanit-semibold {
+  font-family: "Kanit", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.kanit-semibold-italic {
+  font-family: "Kanit", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.kanit-bold {
+  font-family: "Kanit", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.kanit-bold-italic {
+  font-family: "Kanit", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.kanit-extrabold {
+  font-family: "Kanit", sans-serif;
   font-weight: 800;
   font-style: normal;
 }
 
-.dancing-script-full {
-  font-family: "Dancing Script", cursive;
-  font-optical-sizing: auto;
-  font-weight: 700;
+.kanit-extrabold-italic {
+  font-family: "Kanit", sans-serif;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.kanit-black {
+  font-family: "Kanit", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.kanit-black-italic {
+  font-family: "Kanit", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
+.bebas-neue-regular {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
   font-style: normal;
 }
