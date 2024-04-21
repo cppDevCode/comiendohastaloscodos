@@ -1,19 +1,6 @@
 body {
     background-color: #404040;
 }
-.contenedor{
-    display: grid;
-    width: 100vw;
-    height:174vh;
-    grid-template-columns: 1fr 0.5fr;
-    grid-template-rows: 2fr 1fr;
-    grid-template-areas: "headerContenedor headerContenedor"
-                         "publicidad imagen"
-                         "lugar cocinera";
-    justify-content: space-between;
-    gap: 0;
-    
-}
 
 .headerContenedor {
     padding: 0.2vw;
@@ -338,4 +325,96 @@ textarea {
 textarea:focus {
     outline: solid;
     outline-color: black;
+}
+
+/* IMAGENES RESTO PPAL */
+
+
+/* GRID DE IMAGENES PERSONALES */
+.contenedor{
+  display: grid;
+  margin-top: 30vh;
+  /*width: 100vw;*/
+  /*height:100vh;*/
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 0.1fr 0.1fr 1fr;
+  grid-template-areas: "imagenP"
+                       "textoP"
+                       "tiposComida"
+                       "carrousel";
+  
+  
+}
+
+
+.contenedorImagenPPal {
+  grid-area: imagenP;
+  display: grid;
+  grid-template-columns: 0.1fr;
+  grid-template-rows: 0.5fr 1fr;
+  grid-template-areas: "imagen"
+                       "imagen2";
+  column-gap: 0.1vw;
+  row-gap: 1vh;
+  justify-content: center;
+  
+}
+
+
+.imagenCuadro {
+  border-style: solid;
+  border-color: white;
+  box-shadow: 0.1vh 0vw 1vh black;
+  border-width: 1vh;
+}
+
+#imagenResto1 {
+height: 25vh;
+width: 25vw;
+}
+
+#imagenResto2 {
+height: 25vh;
+width: 25vw;
+}
+
+#imagenResto3 {
+grid-area: imagen2;
+justify-self: center;
+height: 50vh;
+width: 51.5vw;
+}
+
+.flexPpal {
+  grid-area: imagen;
+  display: flex;
+  gap: 0.5vw;
+}
+
+.textoPPal {
+  grid-area: textoP;
+  margin-left: 0.5vw;
+  margin-right: 1vw;
+  text-align: justify;
+}
+
+#tituloHistoria {
+  color: white;
+  font-size: 4vw;
+}
+
+.comidaLogo {
+  height: 4vh;
+  align-items: ;
+}
+
+.flexTipoComidas {
+  grid-area: tiposComida;
+  margin-top: -3%;
+  margin-left: 1vh;
+}
+
+.carrousel {
+  grid-area: carrousel;
+  justify-self: center;
 }

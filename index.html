@@ -10,15 +10,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Updock&display=swap" rel="stylesheet">
+
 </head>
 <body>
-    <header class="headerContenedor">
+    <header class="headerContenedor fondoHeader">
         <div class="logo">
             <img src="./img/logo2.png" alt="Logo Comiendo Hasta los codos" id="logoPPal">
         </div>
         <nav class="menu">
-            <button type="button" class="botonMenu">Home</button>
-            <button type="button" class="botonMenu">Menu</button>
+            <button type="button" class="botonMenu" id="btnHome">Home</button>
+            <button type="button" class="botonMenu" id="btnMenu">Menu</button>
             <button type="button" class="botonMenu">Nosotros</button>
             <button type="button" class="botonMenu">Franquicias</button>
         </nav>
@@ -57,8 +60,31 @@
             <!-- FIN DE VENTANA MODAL-->
         </div>
     </header>
-    <main class="contenedor">
-     
+    <main class="contenedor" >
+        <div class="contenedorImagenPPal">
+            <div class="flexPpal">
+                <div class="imagenResto" id="inicioHeader">
+                    <img  class="imagenCuadro" id="imagenResto1" src="./img/img.jpg" alt="Resto 1">
+                </div>
+                <div class="imagenResto">
+                    <img src="./img/resto2.jpg" id="imagenResto2" class="imagenCuadro" alt="">
+                </div>
+            </div>
+            <div class="imagenResto">
+                <img src="./img/resto3.jpg" class="imagenCuadro" id="imagenResto3" alt="">
+            </div>
+        </div>
+        <div class="textoPPal" id="menuResto">
+            <h1 class="updock-regular" id="tituloHistoria">Comiendo hasta los codos!</h1>
+        </div>
+        <div class="flexTipoComidas">
+            <img src="./img/CarnivoreLogo.png" class="comidaLogo" alt="Logo Carnivoros">
+            <img src="./img/veganLogo.png" class="comidaLogo" alt="Logo Veganos">
+            <img src="./img/SinTaccLogo.png" class="comidaLogo" alt="Logo Sin Tacc">
+        </div>
+        <div class="carrousel">
+            <img src="./img/sampleCarrousel.png" alt="">
+        </div>
     </main>
     <footer class="footer">
         <div class="contacto">
@@ -111,5 +137,6 @@
     </footer>
     <a class="whatsapp" href="#"><img id="wappIMG" src="img/WhatsApp_icon.png" alt="Whatsapp"></a>
     <script src="./js/modal.js">  </script>
+    <script src="./js/menu.js"></script>
 </body>
 </html>
