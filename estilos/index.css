@@ -123,7 +123,7 @@ body {
 }
 
 
-/*CONFIGURACION PRODUCTO*/
+/*CONFIGURACION pie de pagina*/
 
 .footer {
     grid-area: footer;
@@ -337,11 +337,14 @@ textarea:focus {
   /*width: 100vw;*/
   /*height:100vh;*/
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 0.1fr 0.1fr 1fr;
+  grid-template-rows: 1fr 0.1fr 0.1fr 1fr 0.1fr 0.5fr 0.2fr;
   grid-template-areas: "imagenP"
                        "textoP"
                        "tiposComida"
-                       "carrousel";
+                       "carrousel"
+                       "dondeEncontrarnos"
+                       "mapa"
+                       "franquicias";
   
   
 }
@@ -381,7 +384,7 @@ width: 25vw;
 #imagenResto3 {
 grid-area: imagen2;
 justify-self: center;
-height: 50vh;
+height: 30vh;
 width: 51.5vw;
 }
 
@@ -405,7 +408,6 @@ width: 51.5vw;
 
 .comidaLogo {
   height: 4vh;
-  align-items: ;
 }
 
 .flexTipoComidas {
@@ -417,4 +419,51 @@ width: 51.5vw;
 .carrousel {
   grid-area: carrousel;
   justify-self: center;
+}
+
+#carrouselImg {
+  height: 60vh;
+  width: 80vw;
+}
+
+.ubicacionFranquicias {
+  grid-area: franquicias;
+  justify-self: center;
+}
+
+.mapa {
+  grid-area: mapa;
+  justify-self: center;
+}
+
+.btnFranquicia {
+  height: 4vh;
+  width: 20vh;
+}
+
+#imapa {
+  border-radius: 1vh;
+  border-color: white;
+  border-width: 1vh;
+  border-style: solid;
+  box-shadow: 0vh 0vw 1vh black;
+}
+
+.dondeEncontrarnos {
+  grid-area: dondeEncontrarnos;
+  margin-left: 0.5vw;
+  margin-right: 1vw;
+  text-align: justify;
+}
+
+
+.tituloLindo {
+  margin-top: 5vh;
+  color: white;
+  font-size: 4vw;
+}
+
+#imapa {
+  height: 40vh;
+  width: 30vw;
 }

@@ -23,7 +23,7 @@
             <button type="button" class="botonMenu" id="btnHome">Home</button>
             <button type="button" class="botonMenu" id="btnMenu">Menu</button>
             <button type="button" class="botonMenu">Nosotros</button>
-            <button type="button" class="botonMenu">Franquicias</button>
+            <button type="button" class="botonMenu" id="btnFranquicia">Franquicias</button>
         </nav>
         <div class="ingresar">
             <button type="button" class="botonMenu" id="ingresar"><i class="fa-solid fa-circle-user"></i> Ingresar</button>
@@ -49,7 +49,7 @@
                             <input type="password" name="contrasena" id="contrasena" placeholder="Ingrese su contraseña">
                         </div>
                         <div class="loginOk">
-                            <button type="button" class="botonLoginOk"><i class="fa-solid fa-right-to-bracket fa-beat"></i></button>
+                            <button type="button" class="botonLoginOk" id="btnLogin"><i class="fa-solid fa-right-to-bracket fa-beat"></i></button>
                         </div>
                         <div class="invitado">
                             <a href="none" class="link">Ingresar como invitado</a>
@@ -83,7 +83,18 @@
             <img src="./img/SinTaccLogo.png" class="comidaLogo" alt="Logo Sin Tacc">
         </div>
         <div class="carrousel">
-            <img src="./img/sampleCarrousel.png" alt="">
+            <img id="carrouselImg" src="./img/sampleCarrousel.png" alt="">
+        </div>
+        <div class="DondeEncontrarnos">
+            <h1 class="updock-regular tituloLindo">Donde Encontrarnos?</h1>
+        </div>
+        <div class="mapa" id="dondeEncontrarnos">
+            <iframe id="imapa" src="about:blank"></iframe>
+        </div>
+        <div class="ubicacionFranquicias">
+            <button type="button" class="btnFranquicia btnGen" id="btnBahia"><i class="fa-solid fa-map-location-dot"></i> Bahía Blanca</button>
+            <button type="button" class="btnFranquicia btnGen" id="btnCaba"><i class="fa-solid fa-map-location-dot"></i> Caba</button>
+            <button type="button" class="btnFranquicia btnGen" id="btnHudson"><i class="fa-solid fa-map-location-dot"></i> Hudson</button>
         </div>
     </main>
     <footer class="footer">
@@ -135,8 +146,9 @@
             <p id="copyRight">(C) 2024 - Comiendo hasta los codos</p>
         </div>
     </footer>
-    <a class="whatsapp" href="#"><img id="wappIMG" src="img/WhatsApp_icon.png" alt="Whatsapp"></a>
+    <a class="whatsapp" href="https://wa.me/5492915442654?text=Hola!%20Necesito%20Reservar%20" target="_blank"><img id="wappIMG" src="img/WhatsApp_icon.png" alt="Whatsapp"></a>
     <script src="./js/modal.js">  </script>
     <script src="./js/menu.js"></script>
+    <script src="./js/index.js"></script>
 </body>
 </html>
