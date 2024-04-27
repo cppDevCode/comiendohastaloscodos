@@ -2,6 +2,7 @@ let btnMenu = document.getElementById('btnMenu');
 let btnHome = document.getElementById('btnHome');
 let btnFranquicias = document.getElementById('btnFranquicia');
 let btnLogin = document.getElementById('btnLogin');
+let linkInvitado = document.getElementById('ingresarInvitado');
 
 btnMenu.onclick = function(){
     location.href='#menuResto';
@@ -17,6 +18,11 @@ btnFranquicias.onclick = function(){
 
 btnLogin.onclick = function() {
     document.getElementById('ingresar').innerText = "⛵ " + document.getElementById('usuario').value;
+    modal.style.display = "none";
+}
+
+linkInvitado.onclick = function() {
+    document.getElementById('ingresar').innerText = "⛵ Invitado";
     modal.style.display = "none";
 }
 

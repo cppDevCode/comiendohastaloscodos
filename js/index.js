@@ -5,15 +5,25 @@ let caba = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d105073.4534022
 let btnBahia = document.getElementById('btnBahia');
 let btnCaba = document.getElementById('btnCaba');
 let btnHudson = document.getElementById('btnHudson');
+let btnAnterior = btnBahia;
 
 btnBahia.onclick = function(){
     document.getElementById('imapa').src = bahiaBlanca;
+    btnBahia.className = "btnFranquicia btnApretado";
+    btnAnterior.className = "btnFranquicia btnGen";
+    btnAnterior = btnBahia;
 }
 
 btnCaba.onclick = function(){
     document.getElementById('imapa').src = caba;
+    btnCaba.className = "btnFranquicia btnApretado";
+    btnAnterior.className = "btnFranquicia btnGen";
+    btnAnterior = btnCaba;
 }
 
 btnHudson.onclick = function(){
     document.getElementById('imapa').src = hudson;
+    btnHudson.className = "btnFranquicia btnApretado";
+    btnAnterior.className = "btnFranquicia btnGen";
+    btnAnterior = btnHudson;
 }
