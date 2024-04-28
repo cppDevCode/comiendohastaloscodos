@@ -27,6 +27,174 @@ body {
     align-self: baseline;
 }
 
+.carritoDiv {
+  display: flex;
+}
+
+#btnCarrito {
+  width: 2vw;
+  /*display: none;*/
+}
+
+
+/* COMIENZO DE CSS MENU CARRITO*/
+.modalCarritoS {
+  display: grid;
+  grid-template-columns: 1fr 0.5fr 1fr;
+  grid-template-rows: 0.10fr 1fr 0.15fr 0.15fr 0.25fr 1fr 1fr;
+  grid-template-areas: "cantidadArticulos cantidadArticulos cantidadArticulos"
+                       "productos productos productos"
+                       "subtotal subtotal subtotal"
+                       "valor valor valor"
+                       "btnFinalizar btnFinalizar btnFinalizar"
+                       "continuarComprando continuarComprando editarCarrito";
+  justify-items: left;
+  align-items: center;
+  background-color: #7f7f7f;
+  width: 20vw;
+  height: 35vh;
+  margin-left: 75vw;
+  margin-top: 3vh;
+  border-radius: 1vh;
+  box-shadow: 0vw 0vh 0.4vh #404040;
+}
+
+#cantidadArticulos {
+  grid-area: cantidadArticulos;
+  font-size: 0.8em;
+  margin-left: 1vw;
+  height: 2vh;
+  /*padding: 1vh;*/
+}
+
+.listaProductos {
+  grid-area: productos;
+}
+
+.tituloFooterCarrito {
+  grid-area: subtotal;
+  margin-left: 1vw;
+  height: 3vh;
+}
+
+.valorTotalCarrito {
+  grid-area: valor;
+  justify-self: right;
+  margin-right: 2vw;
+
+}
+
+.btnFinalizarCarritoDiv {
+  grid-area: btnFinalizar;
+  justify-self: right;
+  margin-right: 1vw;
+}
+
+.btnSeguirComprando {
+  grid-area: continuarComprando;
+  font-size: 0.7em;
+  margin-left: 1vw;
+}
+
+.btnEditarCarrito {
+  grid-area: editarCarrito;
+  font-size: 0.7em;
+}
+
+#listaProductosAComprar {
+  padding-left: 0;
+}
+#liCarrito {
+  list-style-type: none;
+  background-color: white;
+  border-color: #bfbfbf;
+  border-style: solid;
+  border-width: 0.1vh;
+  border-radius: 1vh;
+
+}
+
+.tarjetaProducto {
+  display: grid;
+  grid-template-columns: 0.4fr 0.95fr 0.15fr;
+  grid-template-rows: 0.5fr 0.2fr 0.5fr;
+  grid-template-areas: "imagen nombre x"
+                        "imagen precio precio"
+                        "imagen cantidad cantidad";
+  height: 10vh;
+  width: 19.8vw;
+}
+
+.tarjetaProducto:hover {
+  background-color: lightgray;
+  cursor: pointer;
+  border-radius: 1vh;
+}
+
+.imagenPlatoCarrito {
+  grid-area: imagen;
+  align-self: baseline;
+  border-top-left-radius: 1vh;
+  border-bottom-left-radius: 1vh;
+}
+
+.nombrePlatoCarrito {
+  grid-area: nombre;
+  font-size: 0.7em;
+  height: 1vh;
+  margin-left: 0.2vw;
+}
+
+.eliminarPlatoCarrito {
+  grid-area: x;
+  margin-right: 0.2vw;
+  margin-top: 0.1vh;
+  justify-self: end;
+}
+
+.eliminarPlatoCarrito:hover{
+  color: #bfbfbf;
+}
+
+.valorPlatoCarrito {
+  grid-area: precio;
+  font-size: 0.9em;
+  justify-self: end;
+  margin-right: 1vw;
+}
+
+.cantidadPlatoCarrito {
+  grid-area: cantidad;
+  font-size: 0.6em;
+  margin-left: 0.2vw;
+}
+.animar.popup {
+  animation-name: animar-popup;
+}
+@keyframes animar-popup {
+  0% {
+    opacity: 0;
+    transform: scale(0.5, 0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+}
+
+
+.imagenPlatoCarrito {
+  width: 5vw;
+  height: 5vw;
+}
+
+/* FIN DE CSS MENU CARRITO */
+
+#ingresar {
+  padding: 0;
+  width: 6vw;
+}
+
 .link:hover {
   cursor: pointer;
 }
@@ -65,7 +233,7 @@ body {
     
 }
 
-#ingresar {
+.btnTopMenu {
     font-size: 2vh;
     background-color: transparent;
     width: 23.3vh;
@@ -76,7 +244,7 @@ body {
     color: #bfbfbf;
 }
 
-#ingresar:hover {
+.btnTopMenu:hover {
     text-shadow: 0vw 0vh 0.2vh black;
     color: white;
     transition: all 0.3s linear;
@@ -198,6 +366,12 @@ body {
     overflow: auto; 
     background-color: rgba(0,0,0,0.9); 
     
+  }
+
+  #modalCarrito {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0);
   }
 
   
@@ -621,6 +795,6 @@ width: 51.5vw;
 }
 
 #imapa {
-  height: 40vh;
-  width: 30vw;
+  height: 50vh;
+  width: 40vw;
 }

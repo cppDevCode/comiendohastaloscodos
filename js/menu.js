@@ -4,6 +4,7 @@ let btnFranquicias = document.getElementById('btnFranquicia');
 let btnLogin = document.getElementById('btnLogin');
 let linkInvitado = document.getElementById('ingresarInvitado');
 
+
 btnMenu.onclick = function(){
     location.href='#menuResto';
 }
