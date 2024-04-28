@@ -235,8 +235,14 @@ body {
     column-gap: 0;
     row-gap: 0;
     align-self: center;
-    /*margin-left: 25%;
-    margin-top: 10%;*/
+  }
+
+  .modalDerechaRedondeada {
+    border-top-right-radius: 0.5vh;
+    border-bottom-right-radius: 0.5vh;
+    margin-left: 25%;
+    margin-top: 10%;
+    box-shadow: 0vh 0vw 1vh #bfbfbf;
   }
 
   .x {
@@ -245,6 +251,11 @@ body {
     margin-left: 0.5vw;
     margin-top: 0.5vh;
     font-size: 2vh;
+  }
+  
+  .xDerecha {
+    justify-self: end;
+    margin-right: 0.5vw;
   }
 
   .x:hover {
@@ -354,6 +365,45 @@ body {
   background-color: white;
 }
 
+.animar {
+  animation-duration: 0.5s;
+  animation-delay: 0.2s;
+  animation-name: animate-fade;
+  animation-timing-function: cubic-bezier(.26,.53,.74,1.48);
+  animation-fill-mode: backwards;
+}
+
+.animar.volar {
+  animation-name: animar-volar;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  }
+  @keyframes animar-volar {
+  0% {
+  opacity: 0;
+  transform: rotateX(-120deg) scale(0.9,0.9);
+  }
+  100% {
+      opacity: 1;
+      transform: rotateX(0deg) scale(1,1);
+  }
+  }
+
+  .animar.blur {
+    animation-name: animar-blur;
+    animation-timing-function: ease;
+  }
+  @keyframes animar-blur {
+    0% {
+      opacity: 0;
+      filter: blur(15px);
+    }
+    100% {
+      opacity: 1;
+      filter: blur(0px);
+    }
+  }
+
 .h2Registro {
   font-size: 1.2em;
   text-align: center;
@@ -387,7 +437,7 @@ body {
   margin-bottom: 0.5vh;
 }
 
-legend {
+#formularioRegistro legend {
   background-color: #404040;
   color: white;
   border-top-left-radius: 5vw;
