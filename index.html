@@ -30,29 +30,118 @@
              <!-- VENTANA MODAL-->
              <div id="modal1" class="modal">
                 <div class="modal-content">
-                    <div class="contenedorModal">
-                        <div class="x">
-                            <span class="cerrar"><i class="fa-regular fa-circle-xmark"></i></span>
+                    <div id="registrar">
+                        <div class="contenedorModal" id="contenedorLogin">
+                            <div class="x">
+                                <span class="cerrar"><i class="fa-regular fa-circle-xmark"></i></span>
+                            </div>
+                            <div class="logo1">
+                                <img id="logoIMG" src="./img/logo2.png" alt="Logo">
+                            </div>
+                            <div class="textoLogin">
+                                <p>¡Bienvenido/a al lugar donde los sueños tienen sabor y el hambre es nuestra musa inspiradora! En este portal, estamos aquí para satisfacer tus antojos más salvajes y hacer que tu estómago grite de alegría.</p>
+                            </div>
+                            <div class="input">
+                                <label for="usuario">👤</label>
+                                <input type="text" name="usuario" placeholder="AlanTuring99" id="usuario">
+                            </div>
+                            <div class="input2">
+                                <label for="contrasena">🔒</label>
+                                <input type="password" name="contrasena" id="contrasena" placeholder="Ingrese su contraseña">
+                            </div>
+                            <div class="loginOk">
+                                <button type="button" class="botonLoginOk" id="btnLogin"><i class="fa-solid fa-right-to-bracket fa-beat"></i></button>
+                            </div>
+                            <div class="invitado">
+                                <a class="link" id="ingresarInvitado">Ingresar como invitado</a>
+                            </div>
                         </div>
-                        <div class="logo1">
-                            <img id="logoIMG" src="./img/logo2.png" alt="Logo">
-                        </div>
-                        <div class="textoLogin">
-                            <p>¡Bienvenido/a al lugar donde los sueños tienen sabor y el hambre es nuestra musa inspiradora! En este portal, estamos aquí para satisfacer tus antojos más salvajes y hacer que tu estómago grite de alegría.</p>
-                        </div>
-                        <div class="input">
-                            <label for="usuario">👤</label>
-                            <input type="text" name="usuario" placeholder="AlanTuring99" id="usuario">
-                        </div>
-                        <div class="input2">
-                            <label for="contrasena">🔒</label>
-                            <input type="password" name="contrasena" id="contrasena" placeholder="Ingrese su contraseña">
-                        </div>
-                        <div class="loginOk">
-                            <button type="button" class="botonLoginOk" id="btnLogin"><i class="fa-solid fa-right-to-bracket fa-beat"></i></button>
-                        </div>
-                        <div class="invitado">
-                            <a class="link" id="ingresarInvitado">Ingresar como invitado</a>
+                        <div class="registro">
+                            <div class="tituloRegistro">
+                                <div class="x1" id="xRegistrar">
+                                    <span class="cerrar" id="xCerrar"><i class="fa-regular fa-circle-xmark"></i></span>
+                                </div>
+                                <h2 class="h2Registro">¿Necesitas una cuenta?</h2>
+                            </div>
+                            <div id="textoBienvenidaRegistro">
+                                <p class="textoBienvenidaRegistro">Registrate para descubrir sabores increibles! 🎉</p>
+                                <div class="botonRegistrar">
+                                    <button type="button" class="btnGen btnChico" id="btnRegistrar">Me quiero Registrar!</button>
+                                </div>
+                            </div>
+                            <div id="formularioRegistro">
+                                <p class="textoRegistro">Estamos emocionados de tenerte aquí. Prepárate para sumergirte en una comunidad llena de energía positiva y buena comida. ¡Únete y sé parte de algo especial!</p>
+                                <form action="none">
+                                    <fieldset>
+                                        <legend>👤 Contanos como te llamas?</legend>
+                                    <div class="fila">
+                                        <label for="nombre">Nombre:</label>
+                                        <input type="text" class="txt" name="nombre" id="nombre" placeholder="Alan" required>
+                                    </div>
+                                    <div class="fila">
+                                        <label for="apellido">Apellido:</label>
+                                        <input type="text" name="apellido" id="apellido" placeholder="Turing" required>
+                                    </div>
+                                    </fieldset>
+                                    <fieldset>
+                                        <legend>📧 Como te contactamos?</legend>
+                                        <div class="fila">
+                                            <label for="mail">Correo Electronico:</label>
+                                            <input type="email" name="mail" id="mail" placeholder="alanturing@enigma.com" required>
+                                        </div>
+                                        <div class="fila">
+                                            <label for="mail2">Reingrese correo electronico:</label>
+                                            <input type="email" name="mail2" id="mail2" placeholder="alanturing@enigma.com" required>
+                                        </div>
+                                        <div class="fila">
+                                            <label for="telefono">Telefono:</label>
+                                            <input type="tel" name="telefono" id="telefono" placeholder="2914879847" required>
+                                        </div>
+                                    </fieldset>
+                                    <fieldset>
+                                        <legend>📦 Donde te llevamos el pedido?</legend>
+                                        <div class="fila">
+                                            <label for="domicilio">Dirección:</label>
+                                            <input type="text" name="domicilio" id="domicilio" placeholder="Catamarca 5247" required>
+                                            <label for="piso">piso:</label>
+                                            <input type="number" name="piso" id="piso" placeholder="1" required>
+                                            <label for="depto">Departamento:</label>
+                                            <input type="text" name="depto" id="depto" placeholder="A" required>
+                                        </div>
+                                        <div class="fila">
+                                            <label for="provincia">Provincia:</label>
+                                            <input type="text" name="provincia" id="provincia" placeholder="Cordoba" required>
+                                        </div>
+                                        <div class="fila">
+                                            <label for="pais">Pais:</label>
+                                            <input type="text" name="pais" id="pais" placeholder="Argentina" required>
+                                        </div>
+                                    </fieldset>
+                                    <fieldset>
+                                    <legend>🥘 Que tipo de comida preferis ver?</legend>
+                                        <div class="fila">
+                                            <input type="checkbox" name="dieta" id="dieta" value="1" checked>Carnivoro
+                                            <input type="checkbox" name="dieta1" id="dieta1" value="2" checked>Vegetariano
+                                            <input type="checkbox" name="dieta2" id="dieta2" value="3" checked>Celiaco
+                                            <input type="checkbox" name="dieta3" id="dieta3" value="4" checked>Vegano
+                                        </div>
+                                    </fieldset>
+                                    <fieldset>
+                                        <legend>🔐 Seguridad</legend>
+                                        <div class="fila">
+                                            <label for="contrasena">Contraseña:</label>
+                                            <input type="password" name="contrasena" id="contrasena" required>
+                                        </div>
+                                        <div class="fila">
+                                            <label for="Rcontrasena">Reingrese contraseña:</label>
+                                            <input type="password" name="Rcontrasena" id="Rcontrasena" required>
+                                        </div>
+                                    </fieldset>
+                                    <div id="botonTerminarRegistro">
+                                        <button type="submit" class="btnGen btnChico" id="btnTerminarRegistro">Terminar Registro</button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>

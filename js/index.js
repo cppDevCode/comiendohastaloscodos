@@ -5,6 +5,7 @@ let caba = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d105073.4534022
 let btnBahia = document.getElementById('btnBahia');
 let btnCaba = document.getElementById('btnCaba');
 let btnHudson = document.getElementById('btnHudson');
+let btnRegistrar = document.getElementById('btnRegistrar');
 let btnAnterior = btnBahia;
 
 btnBahia.onclick = function(){
@@ -26,4 +27,13 @@ btnHudson.onclick = function(){
     btnHudson.className = "btnFranquicia btnApretado";
     btnAnterior.className = "btnFranquicia btnGen";
     btnAnterior = btnHudson;
+}
+
+btnRegistrar.onclick = function() {
+    document.getElementById("registrar").style.height = "60vh";
+    document.getElementById('contenedorLogin').style.display='none';
+    document.getElementById('textoBienvenidaRegistro').style.display = 'none';
+    document.getElementById('formularioRegistro').style.display = 'block';
+    document.getElementById('formularioRegistro').style.display = 'block';
+    document.getElementById('xRegistrar').style.display='block';
 }

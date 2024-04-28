@@ -84,6 +84,7 @@ body {
     border: none;
 }
 
+
 .titulo {
     grid-area: publicidad;
     text-align: left;
@@ -185,6 +186,7 @@ body {
 }
 
 /* VENTANA MODAL */
+
 .modal {
     display: none; 
     position: fixed; 
@@ -198,9 +200,25 @@ body {
     
   }
 
+  
+  #registrar {
+    display: flex;
+    grid-template-columns: 1fr 0.5fr;
+    grid-template-areas: "registrar login";
+    background-color: #404040;
+    width: 45vw;
+    height: 50vh;
+    margin-left: 25%;
+    margin-top: 10%;
+    border-radius: 0.5vh;
+
+    box-shadow: 0vh 0vw 1vh #bfbfbf;
+  }
+
   .contenedorModal {
+    grid-area: login;
     display: grid;   
-    width: 50vw;
+    width: 25vw;
     height: 50vh;
     overflow: scroll;
     background-color: white;
@@ -212,18 +230,19 @@ body {
                          "input input ingresar"
                          "input2 input2 ingresar"
                          "invitado invitado invitado";
-    border-radius: 0.5vh;
-    box-shadow: 0vh 0vw 1vh #bfbfbf;
+    border-top-left-radius: 0.5vh;
+    border-bottom-left-radius: 0.5vh;
     column-gap: 0;
     row-gap: 0;
-    margin-left: 25%;
-    margin-top: 10%;
+    align-self: center;
+    /*margin-left: 25%;
+    margin-top: 10%;*/
   }
 
   .x {
     grid-area: x;
-    justify-self: end;
-    margin-right: 0.5vw;
+    justify-self: start;
+    margin-left: 0.5vw;
     margin-top: 0.5vh;
     font-size: 2vh;
   }
@@ -231,6 +250,20 @@ body {
   .x:hover {
     cursor: pointer;
     color: #404040;
+  }
+
+  .x1 {
+    display: none;
+    color: white;
+    position: absolute;
+    margin-left: 0.5vw;
+    margin-top: 0.5vh;
+    font-size: 2vh;
+  }
+
+  .x1:hover {
+    cursor: pointer;
+    color: black;
   }
 
   .logo1 {
@@ -303,9 +336,69 @@ body {
     color: #7f7f7f;
   }
 
+
+
 .formulario {
     border: none;
 }
+/* FORMULARIO REGISTRO*/
+
+.registro {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+
+#formularioRegistro {
+  display: none;
+  background-color: white;
+}
+
+.h2Registro {
+  font-size: 1.2em;
+  text-align: center;
+  color: white;
+}
+
+.textoBienvenidaRegistro {
+  margin-left: 10%;
+  width: 100%;
+  font-size: 0.8em;
+  text-align: center;
+  color: #bfbfbf;
+}
+
+.textoRegistro {
+  width: 100%;
+  font-size: 0.8em;
+  text-align: center;
+  color: black; 
+}
+
+.botonRegistrar {
+  display: flex;
+  justify-content: center;
+  margin-top: 5vh;
+}
+
+#botonTerminarRegistro {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.5vh;
+}
+
+legend {
+  background-color: #404040;
+  color: white;
+  border-top-left-radius: 5vw;
+  border-bottom-right-radius: 5vw;
+}
+
+fieldset {
+  border-style: none;
+}
+
+/* FIN FORMULARIO REGISTRO*/
 
 .titulo {
     font-size: 3vh;
