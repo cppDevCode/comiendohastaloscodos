@@ -6,12 +6,14 @@
     <title>Comiendo hasta los codos!</title>
     <link rel="stylesheet" href="./estilos/index.css">
     <link rel="stylesheet" href="./estilos/fuentes.css">
+    <link rel="stylesheet" href="./estilos/reserva.css">
     <script src="https://kit.fontawesome.com/a29be58ab7.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Updock&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
 
 </head>
 <body>
@@ -199,42 +201,60 @@
             <!-- FIN DE VENTANA MODAL-->
         </div>
     </header>
-    <main class="contenedor" >
-        <div class="contenedorImagenPPal">
-            <div class="flexPpal">
-                <div class="imagenResto" id="inicioHeader">
-                    <img  class="imagenCuadro" id="imagenResto1" src="./img/img.jpg" alt="Resto 1">
+    <main class="contenedorReserva" >
+        <div class="reserva">
+            <div class="tituloReserva">
+                <h4 class="abel-regular tituloReserva1">Su Reserva: </h4>
+            </div>
+            <div class="estado">
+                <button type="button" class="btnEstadoReserva" id="btnComensales"><i class="fa-solid fa-people-group"></i> Comensales: </button>
+            </div>
+            <div class="estado">
+                <button type="button" class="btnEstadoReserva" id="btnFecha"><i class="fa-regular fa-calendar-days"></i> Fecha: </button>
+            </div>
+            <div class="estado">
+                <button type="button" class="btnEstadoReserva" id="btnAlmuerzo"><i class="fa-solid fa-utensils"></i> </button>
+            </div>
+        </div>
+        <div class="sliders">
+            <div class="comensales" id="comensales">
+                <div class="titulo">
+                    <h4 class="abel-regular tituloComensal">Seleccione la cantidad de personas:</h4>
                 </div>
-                <div class="imagenResto">
-                    <img src="./img/resto2.jpg" id="imagenResto2" class="imagenCuadro" alt="">
+                <div class="radiobuttom">
+                   <button type="button" class="btnRedondo btnChicoFondo" id="btnUno">1</button>
+                   <button type="button" class="btnRedondo btnChicoFondo" id="btnDos">2</button>
+                   <button type="button" class="btnRedondo btnChicoFondo" id="btnTres">3</button>
+                   <button type="button" class="btnRedondo btnChicoFondo" id="btnCuatro">4</button>
+                </div>
+                <div class="masDe4">
+                    <button type="button" class="btnRedondo btnMenos" id="menosPersonas" disabled>-</button>
+                    <button type="button" class="btnRedondo btnInactivo" id="muestroNumero">5</button>
+                    <button type="button" class="btnRedondo" id="masPersonas">+</button>
                 </div>
             </div>
-            <div class="imagenResto">
-                <img src="./img/resto3.jpg" class="imagenCuadro" id="imagenResto3" alt="">
+            <div class="fechaReserva animar volar" id="fechaReserva">
+                <div class="titulo">
+                    <h4 class="titulo abel-regular">Seleccione una fecha:</h4>
+                </div>
+                <div class="btnfecha">
+                    <input type="date" class="abel-regular" name="fecha" id="fecha">
+                </div>
+                <div class="btnSeleccionar">
+                    <button type="button" class="btnGen" id="btnSeleccionFecha">Seleccionar</button>
+                </div>
             </div>
-        </div>
-        <div class="textoPPal" id="menuResto">
-            <h1 class="updock-regular" id="tituloHistoria">Comiendo hasta los codos!</h1>
-        </div>
-        <div class="flexTipoComidas">
-            <img src="./img/CarnivoreLogo.png" class="comidaLogo" alt="Logo Carnivoros">
-            <img src="./img/veganLogo.png" class="comidaLogo" alt="Logo Veganos">
-            <img src="./img/SinTaccLogo.png" class="comidaLogo" alt="Logo Sin Tacc">
-        </div>
-        <div class="carrousel">
-            <img id="carrouselImg" src="./img/sampleCarrousel.png" alt="">
-        </div>
-        <div class="DondeEncontrarnos">
-            <h1 class="updock-regular tituloLindo">Donde Encontrarnos?</h1>
-        </div>
-        <div class="mapa" id="dondeEncontrarnos">
-            <iframe id="imapa" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d6789.451349404773!2d-62.257093317938754!3d-38.718334628764985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sar!4v1714084357581!5m2!1ses!2sar"></iframe>
-        </div>
-        <div class="ubicacionFranquicias">
-            <button type="button" class="btnFranquicia btnApretado" id="btnBahia"><i class="fa-solid fa-map-location-dot"></i> Bahía Blanca</button>
-            <button type="button" class="btnFranquicia btnGen" id="btnCaba"><i class="fa-solid fa-map-location-dot"></i> Caba</button>
-            <button type="button" class="btnFranquicia btnGen" id="btnHudson"><i class="fa-solid fa-map-location-dot"></i> Hudson</button>
-            <button type="button" class="btnFranquicia btnGen" id="btnMDQ"><i class="fa-solid fa-map-location-dot"></i> Mar del Plata</button>
+            <div class="horario animar volar" id="horario">
+                <div class="titulo">
+                    <h4 class="titulo abel-regular">Seleccione en que horario:</h4>
+                </div>
+                <div class="almuerzo">
+                    <button type="button" class="btnGen" id="btnAlmuerzoE">Almuerzo</button>
+                </div>
+                <div class="cena">
+                    <button type="button" class="btnGen" id="btnCena">Cena</button>
+                </div>
+            </div>
         </div>
     </main>
     <footer class="footer">
@@ -288,7 +308,7 @@
     </footer>
     <a class="whatsapp" href="https://wa.me/5492915442654?text=Hola!%20Necesito%20Reservar%20" target="_blank"><img id="wappIMG" src="img/WhatsApp_icon.png" alt="Whatsapp"></a>
     <script src="./js/modal.js">  </script>
+    <script src="./js/reserva.js"></script>
     <script src="./js/menu.js"></script>
-    <script src="./js/index.js"></script>
 </body>
 </html>

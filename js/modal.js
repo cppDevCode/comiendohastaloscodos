@@ -5,7 +5,9 @@ let span = document.getElementsByClassName("cerrar")[0];
 let btnCerrarRegistrar = document.getElementById('xCerrar');
 let iUsuario = document.getElementById("usuario");
 let btnCarrito = document.getElementById('btnCarrito');
-let posicionMouse;
+let btnRegistrar = document.getElementById('btnRegistrar');
+
+
 
 btn.onclick = function() {
     modal.style.display = "block";
@@ -29,13 +31,14 @@ btnCerrarRegistrar.onclick = function() {
     document.getElementById("registrar").style.height = "50vh";
     document.getElementById('xRegistrar').style.display='none';
 }
-        
+
+
 window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
         document.getElementById('contenedorLogin').style.display='grid';
         document.getElementById('textoBienvenidaRegistro').style.display = 'block';
-        document.getElementById('formularioRegistro').style.display = 'none';
+        /*document.getElementById('formularioRegistro').style.display = 'none';*/
         document.getElementById("registrar").style.height = "50vh";
         document.getElementById('xRegistrar').style.display='none';
     } else if (event.target == carrito) {
@@ -55,4 +58,13 @@ btnCerrar.onclick = function() {
     modalContactar.style.display = "none";
 }
 
+btnRegistrar.onclick = function() {
+    document.getElementById("registrar").style.height = "60vh";
+    document.getElementById('contenedorLogin').style.display='none';
+    document.getElementById('textoBienvenidaRegistro').style.display = 'none';
+    document.getElementById('formularioRegistro').style.display = 'block';
+    document.getElementById('xRegistrar').style.display='block';
+}
 // CARRITO
+
+

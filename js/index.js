@@ -6,7 +6,6 @@ let marDelplata = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12576.6
 let btnBahia = document.getElementById('btnBahia');
 let btnCaba = document.getElementById('btnCaba');
 let btnHudson = document.getElementById('btnHudson');
-let btnRegistrar = document.getElementById('btnRegistrar');
 let btnMDQ = document.getElementById('btnMDQ');
 let btnAnterior = btnBahia;
 
@@ -38,11 +37,3 @@ btnHudson.onclick = function(){
     btnAnterior = btnHudson;
 }
 
-btnRegistrar.onclick = function() {
-    document.getElementById("registrar").style.height = "60vh";
-    document.getElementById('contenedorLogin').style.display='none';
-    document.getElementById('textoBienvenidaRegistro').style.display = 'none';
-    document.getElementById('formularioRegistro').style.display = 'block';
-    document.getElementById('formularioRegistro').style.display = 'block';
-    document.getElementById('xRegistrar').style.display='block';
-}

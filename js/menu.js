@@ -3,10 +3,15 @@ let btnHome = document.getElementById('btnHome');
 let btnFranquicias = document.getElementById('btnFranquicia');
 let btnLogin = document.getElementById('btnLogin');
 let linkInvitado = document.getElementById('ingresarInvitado');
+let btnReservar = document.getElementById('btnReservar');
 
+
+btnReservar.onclick = function(){
+    location.href='./reserva.html'
+}
 
 btnMenu.onclick = function(){
-    location.href='#menuResto';
+    location.href='./index.html#menuResto';
 }
 
 btnHome.onclick = function() {
@@ -14,7 +19,7 @@ btnHome.onclick = function() {
 }
 
 btnFranquicias.onclick = function(){
-    location.href='#dondeEncontrarnos'
+    location.href='./index.html#dondeEncontrarnos'
 }
 
 btnLogin.onclick = function() {
