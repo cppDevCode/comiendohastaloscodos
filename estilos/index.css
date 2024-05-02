@@ -2,6 +2,7 @@ body {
     background-color: #404040;
 }
 
+@media only screen and (min-width: 1000px) {
 .headerContenedor {
     padding: 0.2vw;
     grid-area: headerContenedor;
@@ -20,22 +21,27 @@ body {
     align-items: center;
     box-shadow: 0vh 0vw 0.5vh black;
     z-index: 2;
-}
-.ingresar {
-    position: absolute;
-    justify-self: end;
-    align-self: baseline;
+
+    
 }
 
-.carritoDiv {
+.ingresar {
   display: flex;
+  position: absolute;
+  justify-self: end;
+  align-self: baseline;
 }
+
+/* BOTON HEADER INGRESAR*/
+#ingresar {
+  padding: 1;
+  width: 6vw;
+}
+
 
 #btnCarrito {
-  width: 2vw;
-  /*display: none;*/
+width: 2vw;
 }
-
 
 /* COMIENZO DE CSS MENU CARRITO*/
 .modalCarritoS {
@@ -189,15 +195,10 @@ body {
 }
 
 /* FIN DE CSS MENU CARRITO */
-
-#ingresar {
-  padding: 0;
-  width: 6vw;
-}
-
 .link:hover {
   cursor: pointer;
 }
+
 .logo {
     grid-area: logoPPal;
 }
@@ -798,3 +799,15 @@ width: 51.5vw;
   height: 50vh;
   width: 40vw;
 }
+
+} 
+
+
+
+
+/* ---    FIN MEDIAQUERY 1000PX    ---*/
+
+
+
+
+
