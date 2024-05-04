@@ -817,7 +817,6 @@ width: 51.5vw;
 
 .modalContacto {
   background-color: white;
-  
   width: 25vw;
   padding: 1vh;
 }
@@ -826,7 +825,8 @@ width: 51.5vw;
 
 .formulario2 div{
   margin-top: 4vh;
-  margin-left: -4vw;}
+  margin-left: -2vw;
+}
 
 .formulario2 input {
   width: 20vw;
