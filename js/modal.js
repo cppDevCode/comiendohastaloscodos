@@ -6,6 +6,7 @@ let btnCerrarRegistrar = document.getElementById('xCerrar');
 let iUsuario = document.getElementById("usuario");
 let btnCarrito = document.getElementById('btnCarrito');
 let btnRegistrar = document.getElementById('btnRegistrar');
+let modalContactar = document.getElementById("modalContactar");
 
 
 
@@ -38,17 +39,18 @@ window.onclick = function(event) {
         modal.style.display = "none";
         document.getElementById('contenedorLogin').style.display='grid';
         document.getElementById('textoBienvenidaRegistro').style.display = 'block';
-        /*document.getElementById('formularioRegistro').style.display = 'none';*/
         document.getElementById("registrar").style.height = "50vh";
         document.getElementById('xRegistrar').style.display='none';
     } else if (event.target == carrito) {
         carrito.style.display = "none";
+    } else if (event.target == modalContactar) {
+        modalContactar.style.display = "none";
     }
 }
 
-var modalContactar = document.getElementById("modalContactar");
-var btnContactar = document.getElementById("contactar");
-var btnCerrar = document.getElementById("btnCerrar");
+
+let btnContactar = document.getElementById("contactar");
+let btnCerrar = document.getElementById("btnCerrar");
 
 btnContactar.onclick = function() {
     modalContactar.style.display = "block";

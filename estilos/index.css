@@ -1,8 +1,9 @@
-body {
-    background-color: #404040;
-}
-
 @media only screen and (min-width: 1000px) {
+  body {
+    background-color: #404040;
+
+  }
+
 .headerContenedor {
     padding: 0.2vw;
     grid-area: headerContenedor;
@@ -149,6 +150,7 @@ width: 2vw;
   font-size: 0.7em;
   height: 1vh;
   margin-left: 0.2vw;
+  margin-top: 0.1vh;
 }
 
 .eliminarPlatoCarrito {
@@ -192,6 +194,11 @@ width: 2vw;
 .imagenPlatoCarrito {
   width: 5vw;
   height: 5vw;
+}
+
+#btnFinalizarCompra {
+  width: 10vw;
+  margin-left: 10vw;
 }
 
 /* FIN DE CSS MENU CARRITO */
@@ -377,16 +384,15 @@ width: 2vw;
 
   
   #registrar {
-    display: flex;
+    display: grid;
     grid-template-columns: 1fr 0.5fr;
-    grid-template-areas: "registrar login";
+    grid-template-areas: "login registrar";
     background-color: #404040;
     width: 45vw;
     height: 50vh;
     margin-left: 25%;
     margin-top: 10%;
     border-radius: 0.5vh;
-
     box-shadow: 0vh 0vw 1vh #bfbfbf;
   }
 
@@ -395,7 +401,6 @@ width: 2vw;
     display: grid;   
     width: 25vw;
     height: 50vh;
-    overflow: scroll;
     background-color: white;
     grid-template-columns: 1fr 0.25fr 1fr;
     grid-template-rows: 0.25fr 1fr 1fr 1fr 1fr 1fr;
@@ -443,7 +448,7 @@ width: 2vw;
     color: white;
     position: absolute;
     margin-left: 0.5vw;
-    margin-top: 0.5vh;
+    margin-top: -1vh;
     font-size: 2vh;
   }
 
@@ -468,13 +473,14 @@ width: 2vw;
 
   .input {
     grid-area: input;
-    justify-self: right;
+    margin-left: 25%;
+    margin-top: 15%;
   }
 
 
   .input2 {
     grid-area: input2;
-    justify-self: right;
+    margin-left: 25%;
   }
 
   .loginOk {
@@ -488,7 +494,7 @@ width: 2vw;
     border: 0;
     background-color: transparent;
     font-size: 2.5vw;
-    margin-left: 2vw;
+    margin-left: -10vw;
   }
 
   .botonLoginOk:hover {
@@ -530,14 +536,18 @@ width: 2vw;
 /* FORMULARIO REGISTRO*/
 
 .registro {
+  grid-area: registrar;
   display: flex;
   flex-direction: column;
   align-self: center;
+  /*margin-top: -60%;*/
+  /*margin-left: 9vw;*/
 }
 
 #formularioRegistro {
   display: none;
   background-color: white;
+  width: 45vw;
 }
 
 .animar {
@@ -580,16 +590,18 @@ width: 2vw;
   }
 
 .h2Registro {
-  font-size: 1.2em;
+  font-size: 1em;
   text-align: center;
   color: white;
+  width: max-content;
+  margin-left: 0;
 }
 
 .textoBienvenidaRegistro {
-  margin-left: 10%;
   width: 100%;
   font-size: 0.8em;
   text-align: center;
+  width: 20vw;
   color: #bfbfbf;
 }
 
@@ -600,10 +612,13 @@ width: 2vw;
   color: black; 
 }
 
+#btnRegistrar {
+  width: 15vw;
+}
+
 .botonRegistrar {
   display: flex;
   justify-content: center;
-  margin-top: 5vh;
 }
 
 #botonTerminarRegistro {
@@ -799,6 +814,34 @@ width: 51.5vw;
   height: 50vh;
   width: 40vw;
 }
+
+.modalContacto {
+  background-color: white;
+  
+  width: 25vw;
+  padding: 1vh;
+}
+
+
+
+.formulario2 div{
+  margin-top: 4vh;
+  margin-left: -4vw;}
+
+.formulario2 input {
+  width: 20vw;
+}
+
+.formulario2 legend {
+  margin-top: 1vh;
+}
+
+#btnEnviar {
+  width: 15vw;
+  margin-top: -5vh;
+}
+
+
 
 } 
 

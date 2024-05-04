@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comiendo hasta los codos!</title>
-    <link rel="stylesheet" href="./estilos/index.css">
-    <link rel="stylesheet" href="./estilos/celulares.css">
     <link rel="stylesheet" href="./estilos/fuentes.css">
+    <link rel="stylesheet" href="./estilos/celulares.css">
+    <link rel="stylesheet" href="./estilos/tablets.css">
+    <link rel="stylesheet" href="./estilos/index.css">
     <script src="https://kit.fontawesome.com/a29be58ab7.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -65,7 +66,7 @@
                             <h2>$ 13500.00</h2>
                         </div>
                         <div class="btnFinalizarCarritoDiv">
-                            <button type="button" class="btnGen btnChico">Finalizar Compra</button>
+                            <button type="button" class="btnGen btnChico" id="btnFinalizarCompra">Finalizar Compra</button>
                         </div>
                         <div class="btnSeguirComprando">
                             Continuar comprando
@@ -94,11 +95,11 @@
                                 <p>¡Bienvenido/a al lugar donde los sueños tienen sabor y el hambre es nuestra musa inspiradora! En este portal, estamos aquí para satisfacer tus antojos más salvajes y hacer que tu estómago grite de alegría.</p>
                             </div>
                             <div class="input">
-                                <label for="usuario">👤</label>
+                                <label class="labelinput" for="usuario">👤</label>
                                 <input type="text" name="usuario" placeholder="AlanTuring99" id="usuario">
                             </div>
                             <div class="input2">
-                                <label for="contrasena">🔒</label>
+                                <label class="labelinput" for="contrasena">🔒</label>
                                 <input type="password" name="contrasena" id="contrasena" placeholder="Ingrese su contraseña">
                             </div>
                             <div class="loginOk">
@@ -245,39 +246,39 @@
             <!-- Inicio de Modal Contactos-->
             <div id="modalContactar" class="modal">
                 <div class="modal-content animar blur">
-                    <form action="/formulario"  method="post" class="contenedorModal formContenedor modalDerechaRedondeada">
+                    <form action="/formulario"  method="post" class="formContenedor modalDerechaRedondeada  modalContacto">
                         <div class="x xDerecha">
                             <span id="btnCerrar"><i class="fa-regular fa-circle-xmark"></i></span>
                         </div>
-                        <fieldset class="formulario">
+                        <fieldset class="formulario2">
                             <legend class="titulo bebas-neue-regular">Contactenos</legend>
                             <div class="nombreFormulario">
-                                <label id="Form_nombre" for="nombre" class="campos kanit-medium">Nombre </label>
-                                <input id="nombreRegistro" type="text" placeholder="Ingrese su nombre" class="input" required>
+                                <label id="Form_nombre" for="nombreRegistro" class="campos kanit-medium">Nombre </label>
+                                <input id="nombreRegistro" type="text" placeholder="Ingrese su nombre" class="input3" required>
                             </div>
                             <div class="nombreFormulario">
                                 <label for="Apellido" class="campos kanit-medium">Apellido</label>
-                                <input id="Apellido" type="text" placeholder="Ingrese Apellido" class="input">
+                                <input id="Apellido" type="text" placeholder="Ingrese Apellido" class="input3">
                             </div>
                             <div class="nombreFormulario">
                                 <label for="email" class="campos kanit-medium">Email</label>
-                                <input id="email" type="email" placeholder="Ingrese Email" class="input" required>
+                                <input id="email" type="email" placeholder="Ingrese Email" class="input3" required>
                             </div>
                             <div class="nombreFormulario">
-                                <label for="comentario" class="campos kanit-medium">Tipo:</label >
-                                <select name="option" id="option" class="input btnGen btnChico">
+                                <label for="option" class="campos kanit-medium">Tipo:</label >
+                                <select name="option" id="option" class="input3">
                                     <option value="reseña">Reseña</option>
                                     <option value="quejas">Quejas</option>
                                     <option value="otros">Otros</option>
                                 </select>
                             </div>
                             <div class="nombreFormulario">
-                                <textarea placeholder="Ingrese comentario" name="Comentario" id="comentario"  cols="30" rows="10" class="input"></textarea >
+                                <textarea placeholder="Ingrese comentario" name="Comentario" id="comentario"  cols="30" rows="10" class="input3"></textarea >
                                 <label for="archivo" class="archivo kanit-medium"></label>
                                 <input type="file" id="archivo">
                             </div>
                             <div class="nombreFormulario">
-                                <button type="submit" class="btnGen btnChico">Enviar</button >
+                                <button type="submit" class="btnGen btnChico" id="btnEnviar">Enviar</button >
                             </div>
                         </fieldset>
                     </form>
