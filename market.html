@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comiendo hasta los codos!</title>
     <link rel="stylesheet" href="./estilos/fuentes.css">
+    <link rel="stylesheet" href="./estilos/indexcelulares.css">
+    <link rel="stylesheet" href="./estilos/indextablets.css">
     <link rel="stylesheet" href="./estilos/index.css">
+    <link rel="stylesheet" href="./estilos/market.css">
     <script src="https://kit.fontawesome.com/a29be58ab7.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -201,41 +204,256 @@
         </div>
     </header>
     <main class="contenedor" >
-        <div class="contenedorImagenPPal">
-            <div class="flexPpal">
-                <div class="imagenResto" id="inicioHeader">
-                    <img  class="imagenCuadro" id="imagenResto1" src="./img/img.jpg" alt="Resto 1">
+       <div class="tituloMarket">
+            <h1>Carrito de Compras</h1>
+       </div>
+       <div class="buscador">
+            <form class="fBuscador" action="none">
+                <input type="search" name="buscador" id="buscador">
+                <button type="submit" id="btnBuscar"><i class="fa fa-search"></i></button>
+            </form>
+       </div>
+       <div class="filtros">
+            <label>Tipo de dieta:</label>
+                <ul>
+                    <li>Carnivoro</li>
+                    <li>Vegano</li>
+                    <li>Vegetariano</li>
+                    <li>Celiaco</li>
+                </ul>
+            <label>Otros:</label>
+                <ul>
+                    <li>Solo Promociones: <input type="checkbox" name="soloPromo" id="soloPromociones"></li>
+                    <li>Solo con Envio Gratis: <input type="checkbox" name="soloEnvioGratis" id="soloEnvioGratis"></li>
+                </ul>
+        </div>
+        <div class="cuerpo">
+            <div class="contenedorProductos">
+                <div class="producto producto1">
+                    <div class="nombre">
+                        <h2 class="nProducto">Pollo con chanpignones</h2>
+                    </div>
+                    <div class="imagenProducto">
+                        <img src="./img/platos/polloCChampignones.jpg" alt="Pollo con Champignones" class="imgPlato">
+                    </div>
+                    <div class="precioProducto">
+                        <h4 class="pProducto">$999.56</h4>
+                    </div>
+                    <div class="pedirProducto">
+                        <button type="button" class="btnPedir">Pedir!</button>
+                    </div>
                 </div>
-                <div class="imagenResto">
-                    <img src="./img/resto2.jpg" id="imagenResto2" class="imagenCuadro" alt="">
+                <div class="producto producto2">
+                    <div class="nombre">
+                        <h2 class="nProducto">Pollo con chanpignones</h2>
+                    </div>
+                    <div class="imagenProducto">
+                        <img src="./img/platos/polloCChampignones.jpg" alt="Pollo con Champignones" class="imgPlato">
+                    </div>
+                    <div class="precioProducto">
+                        <h4 class="pProducto">$999.56</h4>
+                    </div>
+                    <div class="pedirProducto">
+                        <button type="button" class="btnPedir">Pedir!</button>
+                    </div>
+                </div>
+                <div class="producto producto3">
+                    <div class="nombre">
+                        <h2 class="nProducto">Pollo con chanpignones</h2>
+                    </div>
+                    <div class="imagenProducto">
+                        <img src="./img/platos/polloCChampignones.jpg" alt="Pollo con Champignones" class="imgPlato">
+                    </div>
+                    <div class="precioProducto">
+                        <h4 class="pProducto">$999.56</h4>
+                    </div>
+                    <div class="pedirProducto">
+                        <button type="button" class="btnPedir">Pedir!</button>
+                    </div>
+                </div>
+                <div class="producto producto4">
+                    <div class="nombre">
+                        <h2 class="nProducto">Pollo con chanpignones</h2>
+                    </div>
+                    <div class="imagenProducto">
+                        <img src="./img/platos/polloCChampignones.jpg" alt="Pollo con Champignones" class="imgPlato">
+                    </div>
+                    <div class="precioProducto">
+                        <h4 class="pProducto">$999.56</h4>
+                    </div>
+                    <div class="pedirProducto">
+                        <button type="button" class="btnPedir">Pedir!</button>
+                    </div>
+                </div>
+                <div class="producto producto5">
+                    <div class="nombre">
+                        <h2 class="nProducto">Pollo con chanpignones</h2>
+                    </div>
+                    <div class="imagenProducto">
+                        <img src="./img/platos/polloCChampignones.jpg" alt="Pollo con Champignones" class="imgPlato">
+                    </div>
+                    <div class="precioProducto">
+                        <h4 class="pProducto">$999.56</h4>
+                    </div>
+                    <div class="pedirProducto">
+                        <button type="button" class="btnPedir">Pedir!</button>
+                    </div>
+                </div>
+                <div class="producto producto6">
+                    <div class="nombre">
+                        <h2 class="nProducto">Pollo con chanpignones</h2>
+                    </div>
+                    <div class="imagenProducto">
+                        <img src="./img/platos/polloCChampignones.jpg" alt="Pollo con Champignones" class="imgPlato">
+                    </div>
+                    <div class="precioProducto">
+                        <h4 class="pProducto">$999.56</h4>
+                    </div>
+                    <div class="pedirProducto">
+                        <button type="button" class="btnPedir">Pedir!</button>
+                    </div>
+                </div> 
+                <div class="producto producto7">
+                    <div class="nombre">
+                        <h2 class="nProducto">Pollo con chanpignones</h2>
+                    </div>
+                    <div class="imagenProducto">
+                        <img src="./img/platos/polloCChampignones.jpg" alt="Pollo con Champignones" class="imgPlato">
+                    </div>
+                    <div class="precioProducto">
+                        <h4 class="pProducto">$999.56</h4>
+                    </div>
+                    <div class="pedirProducto">
+                        <button type="button" class="btnPedir">Pedir!</button>
+                    </div>
+                </div>
+                <div class="producto producto8">
+                    <div class="nombre">
+                        <h2 class="nProducto">Pollo con chanpignones</h2>
+                    </div>
+                    <div class="imagenProducto">
+                        <img src="./img/platos/polloCChampignones.jpg" alt="Pollo con Champignones" class="imgPlato">
+                    </div>
+                    <div class="precioProducto">
+                        <h4 class="pProducto">$999.56</h4>
+                    </div>
+                    <div class="pedirProducto">
+                        <button type="button" class="btnPedir">Pedir!</button>
+                    </div>
+                </div>
+                <div class="producto producto9">
+                    <div class="nombre">
+                        <h2 class="nProducto">Pollo con chanpignones</h2>
+                    </div>
+                    <div class="imagenProducto">
+                        <img src="./img/platos/polloCChampignones.jpg" alt="Pollo con Champignones" class="imgPlato">
+                    </div>
+                    <div class="precioProducto">
+                        <h4 class="pProducto">$999.56</h4>
+                    </div>
+                    <div class="pedirProducto">
+                        <button type="button" class="btnPedir">Pedir!</button>
+                    </div>
+                </div>
+                <div class="producto producto10">
+                    <div class="nombre">
+                        <h2 class="nProducto">Pollo con chanpignones</h2>
+                    </div>
+                    <div class="imagenProducto">
+                        <img src="./img/platos/polloCChampignones.jpg" alt="Pollo con Champignones" class="imgPlato">
+                    </div>
+                    <div class="precioProducto">
+                        <h4 class="pProducto">$999.56</h4>
+                    </div>
+                    <div class="pedirProducto">
+                        <button type="button" class="btnPedir">Pedir!</button>
+                    </div>
+                </div>
+                <div class="producto producto11">
+                    <div class="nombre">
+                        <h2 class="nProducto">Pollo con chanpignones</h2>
+                    </div>
+                    <div class="imagenProducto">
+                        <img src="./img/platos/polloCChampignones.jpg" alt="Pollo con Champignones" class="imgPlato">
+                    </div>
+                    <div class="precioProducto">
+                        <h4 class="pProducto">$999.56</h4>
+                    </div>
+                    <div class="pedirProducto">
+                        <button type="button" class="btnPedir">Pedir!</button>
+                    </div>
+                </div>
+                <div class="producto producto12">
+                    <div class="nombre">
+                        <h2 class="nProducto">Pollo con chanpignones</h2>
+                    </div>
+                    <div class="imagenProducto">
+                        <img src="./img/platos/polloCChampignones.jpg" alt="Pollo con Champignones" class="imgPlato">
+                    </div>
+                    <div class="precioProducto">
+                        <h4 class="pProducto">$999.56</h4>
+                    </div>
+                    <div class="pedirProducto">
+                        <button type="button" class="btnPedir">Pedir!</button>
+                    </div>
+                </div>
+                <div class="producto producto13">
+                    <div class="nombre">
+                        <h2 class="nProducto">Pollo con chanpignones</h2>
+                    </div>
+                    <div class="imagenProducto">
+                        <img src="./img/platos/polloCChampignones.jpg" alt="Pollo con Champignones" class="imgPlato">
+                    </div>
+                    <div class="precioProducto">
+                        <h4 class="pProducto">$999.56</h4>
+                    </div>
+                    <div class="pedirProducto">
+                        <button type="button" class="btnPedir">Pedir!</button>
+                    </div>
+                </div>
+                <div class="producto producto14">
+                    <div class="nombre">
+                        <h2 class="nProducto">Pollo con chanpignones</h2>
+                    </div>
+                    <div class="imagenProducto">
+                        <img src="./img/platos/polloCChampignones.jpg" alt="Pollo con Champignones" class="imgPlato">
+                    </div>
+                    <div class="precioProducto">
+                        <h4 class="pProducto">$999.56</h4>
+                    </div>
+                    <div class="pedirProducto">
+                        <button type="button" class="btnPedir">Pedir!</button>
+                    </div>
+                </div>
+                <div class="producto producto15">
+                    <div class="nombre">
+                        <h2 class="nProducto">Pollo con chanpignones</h2>
+                    </div>
+                    <div class="imagenProducto">
+                        <img src="./img/platos/polloCChampignones.jpg" alt="Pollo con Champignones" class="imgPlato">
+                    </div>
+                    <div class="precioProducto">
+                        <h4 class="pProducto">$999.56</h4>
+                    </div>
+                    <div class="pedirProducto">
+                        <button type="button" class="btnPedir">Pedir!</button>
+                    </div>
+                </div>
+                <div class="producto producto16">
+                    <div class="nombre">
+                        <h2 class="nProducto">Pollo con chanpignones</h2>
+                    </div>
+                    <div class="imagenProducto">
+                        <img src="./img/platos/polloCChampignones.jpg" alt="Pollo con Champignones" class="imgPlato">
+                    </div>
+                    <div class="precioProducto">
+                        <h4 class="pProducto">$999.56</h4>
+                    </div>
+                    <div class="pedirProducto">
+                        <button type="button" class="btnPedir">Pedir!</button>
+                    </div>
                 </div>
             </div>
-            <div class="imagenResto">
-                <img src="./img/resto3.jpg" class="imagenCuadro" id="imagenResto3" alt="">
-            </div>
-        </div>
-        <div class="textoPPal" id="menuResto">
-            <h1 class="updock-regular" id="tituloHistoria">Comiendo hasta los codos!</h1>
-        </div>
-        <div class="flexTipoComidas">
-            <img src="./img/CarnivoreLogo.png" class="comidaLogo" alt="Logo Carnivoros">
-            <img src="./img/veganLogo.png" class="comidaLogo" alt="Logo Veganos">
-            <img src="./img/SinTaccLogo.png" class="comidaLogo" alt="Logo Sin Tacc">
-        </div>
-        <div class="carrousel">
-            <img id="carrouselImg" src="./img/sampleCarrousel.png" alt="">
-        </div>
-        <div class="DondeEncontrarnos">
-            <h1 class="updock-regular tituloLindo">Donde Encontrarnos?</h1>
-        </div>
-        <div class="mapa" id="dondeEncontrarnos">
-            <iframe id="imapa" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d6789.451349404773!2d-62.257093317938754!3d-38.718334628764985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sar!4v1714084357581!5m2!1ses!2sar"></iframe>
-        </div>
-        <div class="ubicacionFranquicias">
-            <button type="button" class="btnFranquicia btnApretado" id="btnBahia">Bahía Blanca</button>
-            <button type="button" class="btnFranquicia btnGen" id="btnCaba">Caba</button>
-            <button type="button" class="btnFranquicia btnGen" id="btnHudson">Hudson</button>
-            <button type="button" class="btnFranquicia btnGen" id="btnMDQ">Mar del Plata</button>
         </div>
     </main>
     <footer class="footer">
