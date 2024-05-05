@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comiendo hasta los codos!</title>
+    <link rel="stylesheet" href="./estilos/fuentes.css">
+    <link rel="stylesheet" href="./estilos/index.css">
+    <link rel="stylesheet" href="./estilos/carrusel.css">
+    <script src="https://kit.fontawesome.com/a29be58ab7.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Updock&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header class="headerContenedor fondoHeader">
+        <div class="logo">
+            <img src="./img/logo2.png" alt="Logo Comiendo Hasta los codos" id="logoPPal">
+        </div>
+        <nav class="menu">
+            <button type="button" class="botonMenu" id="btnHome">Home</button>
+            <button type="button" class="botonMenu" id="btnMenu">Menu</button>
+            <button type="button" class="botonMenu" id="btnReservar">Reservar</button>
+            <button type="button" class="botonMenu" id="btnFranquicia">Franquicias</button>
+        </nav>
+        <div class="ingresar">
+            <div class="carritoDiv">
+                <button type="button" class="botonMenu btnTopMenu" id="btnCarrito"><i class="fa-solid fa-cart-shopping"></i></button>
+                <!-- VENTANA MODAL CARRITO-->
+                <div id="modalCarrito" class="modal">
+                    <div class="modal-content modalCarritoS animar popup">
+                        <div id="cantidadArticulos">
+                            <p>Articulos en el carrito: 1</p>
+                        </div>
+                        <div class="listaProductos">
+                            <ol id="listaProductosAComprar">
+                                <li id="liCarrito">
+                                    <div class="tarjetaProducto">
+                                        <div class="imagenPlatoCarrito">
+                                            <img class="imagenPlatoCarrito" src="./img/platos/ejemploPlato.webp" alt="plato ejemplo">
+                                        </div>
+                                        <div class="nombrePlatoCarrito">
+                                            <h4>Torta Helada "Hasta los codos"</h4>
+                                        </div>
+                                        <div class="eliminarPlatoCarrito">
+                                            <span class="cerrar"><i class="fa-regular fa-circle-xmark"></i></span>
+                                        </div>
+                                        <div class="valorPlatoCarrito">
+                                            <h3>$ 13500.00</h3>
+                                        </div>
+                                        <div class="cantidadPlatoCarrito">
+                                            Cantidad: 2
+                                        </div>
+                                    </div>
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="tituloFooterCarrito">
+                            <h3>Subtotal:</h3>
+                        </div>
+                        <div class="valorTotalCarrito">
+                            <h2>$ 13500.00</h2>
+                        </div>
+                        <div class="btnFinalizarCarritoDiv">
+                            <button type="button" class="btnGen btnChico" id="btnFinalizarCompra">Finalizar Compra</button>
+                        </div>
+                        <div class="btnSeguirComprando">
+                            Continuar comprando
+                        </div>
+                        <div class="btnEditarCarrito">
+                            Ver y editar carrito
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ingresarbtn">
+                <button type="button" class="botonMenu btnTopMenu" id="ingresar"><i class="fa-solid fa-circle-user"></i> Ingresar</button>
+            </div>
+             <!-- VENTANA MODAL-->
+             <div id="modal1" class="modal">
+                <div class="modal-content">
+                    <div id="registrar" class="animar blur">
+                        <div class="contenedorModal" id="contenedorLogin">
+                            <div class="x">
+                                <span class="cerrar"><i class="fa-regular fa-circle-xmark"></i></span>
+                            </div>
+                            <div class="logo1">
+                                <img id="logoIMG" src="./img/logo2.png" alt="Logo">
+                            </div>
+                            <div class="textoLogin">
+                                <p>¡Bienvenido/a al lugar donde los sueños tienen sabor y el hambre es nuestra musa inspiradora! En este portal, estamos aquí para satisfacer tus antojos más salvajes y hacer que tu estómago grite de alegría.</p>
+                            </div>
+                            <div class="input">
+                                <label class="labelinput" for="usuario">👤</label>
+                                <input type="text" name="usuario" placeholder="AlanTuring99" id="usuario">
+                            </div>
+                            <div class="input2">
+                                <label class="labelinput" for="contrasena">🔒</label>
+                                <input type="password" name="contrasena" id="contrasena" placeholder="Ingrese su contraseña">
+                            </div>
+                            <div class="loginOk">
+                                <button type="button" class="botonLoginOk" id="btnLogin"><i class="fa-solid fa-right-to-bracket fa-beat"></i></button>
+                            </div>
+                            <div class="invitado">
+                                <a class="link" id="ingresarInvitado">Ingresar como invitado</a>
+                            </div>
+                        </div>
+                        <div class="registro">
+                            <div class="tituloRegistro">
+                                <div class="x1" id="xRegistrar">
+                                    <span class="cerrar" id="xCerrar"><i class="fa-regular fa-circle-xmark"></i></span>
+                                </div>
+                                <h2 class="h2Registro">¿Necesitas una cuenta?</h2>
+                            </div>
+                            <div id="textoBienvenidaRegistro">
+                                <p class="textoBienvenidaRegistro">Registrate para descubrir sabores increibles! 🎉</p>
+                                <div class="botonRegistrar">
+                                    <button type="button" class="btnGen btnChico" id="btnRegistrar">Me quiero Registrar!</button>
+                                </div>
+                            </div>
+                            <div id="formularioRegistro" class="animar volar">
+                                <p class="textoRegistro">Estamos emocionados de tenerte aquí. Prepárate para sumergirte en una comunidad llena de energía positiva y buena comida. ¡Únete y sé parte de algo especial!</p>
+                                <form action="none">
+                                    <fieldset>
+                                        <legend>👤 Contanos como te llamas?</legend>
+                                    <div class="fila">
+                                        <label for="nombre">Nombre:</label>
+                                        <input type="text" class="txt" name="nombre" id="nombre" placeholder="Alan" required>
+                                    </div>
+                                    <div class="fila">
+                                        <label for="apellido">Apellido:</label>
+                                        <input type="text" name="apellido" id="apellido" placeholder="Turing" required>
+                                    </div>
+                                    </fieldset>
+                                    <fieldset>
+                                        <legend>📧 Como te contactamos?</legend>
+                                        <div class="fila">
+                                            <label for="mail">Correo Electronico:</label>
+                                            <input type="email" name="mail" id="mail" placeholder="alanturing@enigma.com" required>
+                                        </div>
+                                        <div class="fila">
+                                            <label for="mail2">Reingrese correo electronico:</label>
+                                            <input type="email" name="mail2" id="mail2" placeholder="alanturing@enigma.com" required>
+                                        </div>
+                                        <div class="fila">
+                                            <label for="telefono">Telefono:</label>
+                                            <input type="tel" name="telefono" id="telefono" placeholder="2914879847" required>
+                                        </div>
+                                    </fieldset>
+                                    <fieldset>
+                                        <legend>📦 Donde te llevamos el pedido?</legend>
+                                        <div class="fila">
+                                            <label for="domicilio">Dirección:</label>
+                                            <input type="text" name="domicilio" id="domicilio" placeholder="Catamarca 5247" required>
+                                            <label for="piso">piso:</label>
+                                            <input type="number" name="piso" id="piso" placeholder="1" required>
+                                            <label for="depto">Departamento:</label>
+                                            <input type="text" name="depto" id="depto" placeholder="A" required>
+                                        </div>
+                                        <div class="fila">
+                                            <label for="provincia">Provincia:</label>
+                                            <input type="text" name="provincia" id="provincia" placeholder="Cordoba" required>
+                                        </div>
+                                        <div class="fila">
+                                            <label for="pais">Pais:</label>
+                                            <input type="text" name="pais" id="pais" placeholder="Argentina" required>
+                                        </div>
+                                    </fieldset>
+                                    <fieldset>
+                                    <legend>🥘 Que tipo de comida preferis ver?</legend>
+                                        <div class="fila">
+                                            <input type="checkbox" name="dieta" id="dieta" value="1" checked>Carnivoro
+                                            <input type="checkbox" name="dieta1" id="dieta1" value="2" checked>Vegetariano
+                                            <input type="checkbox" name="dieta2" id="dieta2" value="3" checked>Celiaco
+                                            <input type="checkbox" name="dieta3" id="dieta3" value="4" checked>Vegano
+                                        </div>
+                                    </fieldset>
+                                    <fieldset>
+                                        <legend>🔐 Seguridad</legend>
+                                        <div class="fila">
+                                            <label for="contrasena">Contraseña:</label>
+                                            <input type="password" name="contrasena" id="contrasenaRegistro" required>
+                                        </div>
+                                        <div class="fila">
+                                            <label for="RcontrasenaRegistro">Reingrese contraseña:</label>
+                                            <input type="password" name="Rcontrasena" id="RcontrasenaRegistro" required>
+                                        </div>
+                                    </fieldset>
+                                    <div id="botonTerminarRegistro">
+                                        <button type="submit" class="btnGen btnChico" id="btnTerminarRegistro">Terminar Registro</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- FIN DE VENTANA MODAL-->
+        </div>
+    </header>
+    <main class="contenedor" >
+        <div class="contenedorImagenPPal">
+            <div class="flexPpal">
+                <div class="imagenResto" id="inicioHeader">
+                    <img  class="imagenCuadro" id="imagenResto1" src="./img/img.jpg" alt="Resto 1">
+                </div>
+                <div class="imagenResto">
+                    <img src="./img/resto2.jpg" id="imagenResto2" class="imagenCuadro" alt="">
+                </div>
+            </div>
+            <div class="imagenResto">
+                <img src="./img/resto3.jpg" class="imagenCuadro" id="imagenResto3" alt="">
+            </div>
+        </div>
+        <div class="textoPPal" id="menuResto">
+            <h1 class="updock-regular" id="tituloHistoria">Comiendo hasta los codos!</h1>
+        </div>
+        <div class="flexTipoComidas">
+            <img src="./img/CarnivoreLogo.png" class="comidaLogo" alt="Logo Carnivoros">
+            <img src="./img/veganLogo.png" class="comidaLogo" alt="Logo Veganos">
+            <img src="./img/SinTaccLogo.png" class="comidaLogo" alt="Logo Sin Tacc">
+        </div>
+        <div class="carrousel">
+            <div id="carrusel">
+                <ul class="slider">
+                    <li id="plato1">
+                        <img src="./img/platos/burguers-veganas-linwoods800600.jpg" />
+                        <h2>Hamburgeza vegana</h2>
+                    </li>
+                    <li id="plato2">
+                        <img src="./img/platos/caldereta-de-seitan800600.jpg"/>
+                    </li>
+                    <li id="plato3">
+                        <img src="./img/platos/Lasaña-vegetal_800600.jpg"/>
+                    </li>
+                    <li id="plato5">
+                        <img src="./img/platos/sopa-ramen-taifun800600.jpg"/>
+                    </li>
+                </ul>
+                <ul class="menu">
+                    <li>
+                        <a href="#plato1">1</a>
+                    </li>
+                    <li>
+                        <a href="#plato2">2</a>
+                    </li>
+                    <li>
+                        <a href="#plato3">3</a>
+                    </li>
+                    <li>
+                        <a href="#plato4">4</a>
+                    </li>
+                    <li>
+                        <a href="#plato5">5</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="DondeEncontrarnos">
+            <h1 class="updock-regular tituloLindo">Donde Encontrarnos?</h1>
+        </div>
+        <div class="mapa" id="dondeEncontrarnos">
+            <iframe id="imapa" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d6789.451349404773!2d-62.257093317938754!3d-38.718334628764985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sar!4v1714084357581!5m2!1ses!2sar"></iframe>
+        </div>
+        <div class="ubicacionFranquicias">
+            <button type="button" class="btnFranquicia btnApretado" id="btnBahia">Bahía Blanca</button>
+            <button type="button" class="btnFranquicia btnGen" id="btnCaba">Caba</button>
+            <button type="button" class="btnFranquicia btnGen" id="btnHudson">Hudson</button>
+            <button type="button" class="btnFranquicia btnGen" id="btnMDQ">Mar del Plata</button>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="contacto">
+            <button type="button" class="btnGen" id="contactar"><i class="fa-solid fa-file-signature"></i> Contactar</button>
+            <!-- Inicio de Modal Contactos-->
+            <div id="modalContactar" class="modal">
+                <div class="modal-content animar blur">
+                    <form action="/formulario"  method="post" class="formContenedor modalDerechaRedondeada  modalContacto">
+                        <div class="x xDerecha">
+                            <span id="btnCerrar"><i class="fa-regular fa-circle-xmark"></i></span>
+                        </div>
+                        <fieldset class="formulario2">
+                            <legend class="titulo bebas-neue-regular">Contactenos</legend>
+                            <div class="nombreFormulario">
+                                <label id="Form_nombre" for="nombreRegistro" class="campos kanit-medium">Nombre </label>
+                                <input id="nombreRegistro" type="text" placeholder="Ingrese su nombre" class="input3" required>
+                            </div>
+                            <div class="nombreFormulario">
+                                <label for="Apellido" class="campos kanit-medium">Apellido</label>
+                                <input id="Apellido" type="text" placeholder="Ingrese Apellido" class="input3">
+                            </div>
+                            <div class="nombreFormulario">
+                                <label for="email" class="campos kanit-medium">Email</label>
+                                <input id="email" type="email" placeholder="Ingrese Email" class="input3" required>
+                            </div>
+                            <div class="nombreFormulario">
+                                <label for="option" class="campos kanit-medium">Tipo:</label >
+                                <select name="option" id="option" class="input3">
+                                    <option value="reseña">Reseña</option>
+                                    <option value="quejas">Quejas</option>
+                                    <option value="otros">Otros</option>
+                                </select>
+                            </div>
+                            <div class="nombreFormulario">
+                                <textarea placeholder="Ingrese comentario" name="Comentario" id="comentario"  cols="30" rows="10" class="input3"></textarea >
+                                <label for="archivo" class="archivo kanit-medium"></label>
+                                <input type="file" id="archivo">
+                            </div>
+                            <div class="nombreFormulario">
+                                <button type="submit" class="btnGen btnChico" id="btnEnviar">Enviar</button >
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="copyRight">
+            <p id="copyRight">(C) 2024 - Comiendo hasta los codos</p>
+        </div>
+    </footer>
+    <a class="whatsapp" href="https://wa.me/5492915442654?text=Hola!%20Necesito%20Reservar%20" target="_blank"><img id="wappIMG" src="img/WhatsApp_icon.png" alt="Whatsapp"></a>
+    <script src="./js/modal.js">  </script>
+    <script src="./js/menu.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+</html>

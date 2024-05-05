@@ -1,0 +1,171 @@
+/*          ESCRITORIO         */
+
+@media only screen and (min-width: 1000px) {
+    .contenedorReserva {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: "main"
+                             "sliders"
+                             "footer";
+        margin-top: 30vh;
+    }
+
+    .reserva {
+        grid-area: main;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        width: 100vw;
+        height: 7vh;
+        justify-content: center;
+    }
+
+
+    .sliders {
+        grid-area: sliders;
+        width: 100vw;
+        height: 48vh;
+    }
+
+    .footer {
+        grid-area: footer;
+    }
+    .headerContenedor {
+        grid-area: header;
+    }
+
+    .btnEstadoReserva {
+        display: none;
+        height: 4vh;
+        border-radius: 2vh;
+        border-style: solid;
+        background-color: rgba(0, 0, 0, 0);
+        color: lightgray;
+        margin-left: 1vw;
+        padding-top:6px;
+    }
+
+
+    .btnEstadoReserva:hover {
+        cursor: pointer;
+    }
+
+    /* 1ER SLIDER: COMENSALES*/
+
+    .comensales {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.25fr 1fr 1fr;
+        grid-template-areas: "titulo"
+                            "hasta4"
+                            "masde4";
+        justify-items: center;
+    }
+
+
+
+    .titulo2 {
+        grid-area: titulo;
+        color: white;
+    }
+
+    .titulo {
+        color: black;
+    }
+
+    .tituloComensal {
+        color: white;
+    }
+
+    .radiobuttom {
+        grid-area: hasta4;
+    }
+
+    .masDe4 {
+        grid-area: masde4;
+    }
+
+    .btnRedondo {
+        border-radius: 12vh;
+        border-style: solid;
+        border-color: black;
+        background-color: rgba(0, 0, 0, 0);
+        height: 6vh;
+        width: 3vw;
+    }
+
+    .btnRedondo:hover {
+        cursor: pointer;
+        background-color: lightgray;
+    }
+
+    .btnInactivo {
+        height: 12vh;
+        width: 6vw;
+        border-style: none;
+        background-color: black;
+        font-size: 2em;
+        color: white;
+        margin-top: 2vh;
+    }
+
+    .btnChicoFondo {
+        background-color: gray;
+        border-color: lightgray;
+        height: 6vh;
+    }
+
+    .btnMenos:disabled,
+    btnMenos[disabled]{
+    border: 1px solid #999999;
+    color: #666666;
+    }
+
+    /* FIN DE PRIMER SLIDER: COMENZALES*/
+
+    /* 2do SLIDER: FECHA */
+    .fechaReserva {
+        display: none;
+    }
+
+    #fecha {
+        height: 5vh;
+        width: 15vw;
+        background-color: rgba(0, 0, 0, 0);
+        font-size: 2.5rem;
+    }
+
+    #btnSeleccionFecha {
+        margin-top: 1vh;
+    }
+    /* FIN DE SEGUNDO SLIDER: FECHA */
+
+    /* 3er SLIDER: HORARIO */
+    .horario {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 2vh;
+        margin-top: 10vh;
+    }
+
+
+    /* FIN TERCER SLIDER: HORARIO */
+
+}
+
+    /* 3er SLIDER: HORARIO */
+    .horario {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 2vh;
+        margin-top: 10vh;
+    }
+
+    .btnTipoComida {
+        width: 60vw;
+        height: 10vh;
+    }
+
+    /* FIN TERCER SLIDER: HORARIO */
