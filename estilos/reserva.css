@@ -1,3 +1,7 @@
+@import url("reservacelulares.css") (width <= 768px);
+
+@import url("reservatablets.css") (width >= 769px);
+
 /*          ESCRITORIO         */
 
 @media only screen and (min-width: 1000px) {

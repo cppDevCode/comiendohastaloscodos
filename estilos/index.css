@@ -2,6 +2,7 @@
 
 @import url("indextablets.css") (width >= 769px);
 
+
 @media only screen and (min-width: 1000px) {
   body {
     background-color: #404040;
