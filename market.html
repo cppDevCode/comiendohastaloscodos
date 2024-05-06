@@ -13,6 +13,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Updock&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Freeman&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sedan+SC&display=swap" rel="stylesheet">
+
 
 </head>
 <body>
@@ -24,6 +27,7 @@
             <button type="button" class="botonMenu" id="btnHome">Home</button>
             <button type="button" class="botonMenu" id="btnMenu">Menu</button>
             <button type="button" class="botonMenu" id="btnReservar">Reservar</button>
+            <button type="button" class="botonMenu" id="btnDelivery">Delivery</button>
             <button type="button" class="botonMenu" id="btnFranquicia">Franquicias</button>
         </nav>
         <div class="ingresar">
@@ -203,7 +207,7 @@
     </header>
     <main class="contenedor" >
        <div class="tituloMarket">
-            <h1>Carrito de Compras</h1>
+            <h1 class="updock-regular tituloLindo">Carrito de Compras</h1>
        </div>
        <div class="buscador">
             <form class="fBuscador" action="none">
@@ -212,17 +216,21 @@
             </form>
        </div>
        <div class="filtros">
-            <label>Tipo de dieta:</label>
-                <ul>
-                    <li>Carnivoro</li>
-                    <li>Vegano</li>
-                    <li>Vegetariano</li>
-                    <li>Celiaco</li>
+            <div class="tituloFiltro">
+                <label>Tipo de dieta:</label>
+            </div>
+                <ul class="listaFiltro">
+                    <li class="itemFiltro">Carnivoro</li>
+                    <li class="itemFiltro">Vegano</li>
+                    <li class="itemFiltro">Vegetariano</li>
+                    <li class="itemFiltro">Celiaco</li>
                 </ul>
-            <label>Otros:</label>
-                <ul>
-                    <li>Solo Promociones: <input type="checkbox" name="soloPromo" id="soloPromociones"></li>
-                    <li>Solo con Envio Gratis: <input type="checkbox" name="soloEnvioGratis" id="soloEnvioGratis"></li>
+            <div class="tituloFiltro">
+                <label>Otros:</label>
+            </div>
+                <ul class="listaFiltro">
+                    <li class="itemFiltro">Solo Promociones: <input type="checkbox" name="soloPromo" id="soloPromociones"></li>
+                    <li class="itemFiltro">Solo con Envio Gratis: <input type="checkbox" name="soloEnvioGratis" id="soloEnvioGratis"></li>
                 </ul>
         </div>
         <div class="cuerpo">
@@ -243,13 +251,13 @@
                 </div>
                 <div class="producto producto2">
                     <div class="nombre">
-                        <h2 class="nProducto">Pollo con chanpignones</h2>
+                        <h2 class="nProducto">Pollo y Vegetales</h2>
                     </div>
                     <div class="imagenProducto">
-                        <img src="./img/platos/polloCChampignones.jpg" alt="Pollo con Champignones" class="imgPlato">
+                        <img src="./img/platos/polloyvegetales.jpeg" alt="Pollo y vegetales" class="imgPlato">
                     </div>
                     <div class="precioProducto">
-                        <h4 class="pProducto">$999.56</h4>
+                        <h4 class="pProducto">$540.56</h4>
                     </div>
                     <div class="pedirProducto">
                         <button type="button" class="btnPedir">Pedir!</button>
@@ -257,13 +265,13 @@
                 </div>
                 <div class="producto producto3">
                     <div class="nombre">
-                        <h2 class="nProducto">Pollo con chanpignones</h2>
+                        <h2 class="nProducto">Bife Rustico</h2>
                     </div>
                     <div class="imagenProducto">
-                        <img src="./img/platos/polloCChampignones.jpg" alt="Pollo con Champignones" class="imgPlato">
+                        <img src="./img/platos/bifeRustico.jpg" alt="Bife Rustico" class="imgPlato">
                     </div>
                     <div class="precioProducto">
-                        <h4 class="pProducto">$999.56</h4>
+                        <h4 class="pProducto">$599.56</h4>
                     </div>
                     <div class="pedirProducto">
                         <button type="button" class="btnPedir">Pedir!</button>
@@ -271,13 +279,13 @@
                 </div>
                 <div class="producto producto4">
                     <div class="nombre">
-                        <h2 class="nProducto">Pollo con chanpignones</h2>
+                        <h2 class="nProducto">Ensalada Rissiotti</h2>
                     </div>
                     <div class="imagenProducto">
-                        <img src="./img/platos/polloCChampignones.jpg" alt="Pollo con Champignones" class="imgPlato">
+                        <img src="./img/platos/ensaladaRissiotti.jpg" alt="Ensalada Rissiotti" class="imgPlato">
                     </div>
                     <div class="precioProducto">
-                        <h4 class="pProducto">$999.56</h4>
+                        <h4 class="pProducto">$399.00</h4>
                     </div>
                     <div class="pedirProducto">
                         <button type="button" class="btnPedir">Pedir!</button>
@@ -285,13 +293,13 @@
                 </div>
                 <div class="producto producto5">
                     <div class="nombre">
-                        <h2 class="nProducto">Pollo con chanpignones</h2>
+                        <h2 class="nProducto">Dulcecito</h2>
                     </div>
                     <div class="imagenProducto">
-                        <img src="./img/platos/polloCChampignones.jpg" alt="Pollo con Champignones" class="imgPlato">
+                        <img src="./img/platos/dulcecito.jpg" alt="Dulcecito" class="imgPlato">
                     </div>
                     <div class="precioProducto">
-                        <h4 class="pProducto">$999.56</h4>
+                        <h4 class="pProducto">$250.99</h4>
                     </div>
                     <div class="pedirProducto">
                         <button type="button" class="btnPedir">Pedir!</button>
@@ -299,13 +307,13 @@
                 </div>
                 <div class="producto producto6">
                     <div class="nombre">
-                        <h2 class="nProducto">Pollo con chanpignones</h2>
+                        <h2 class="nProducto">Gringo Fest!</h2>
                     </div>
                     <div class="imagenProducto">
-                        <img src="./img/platos/polloCChampignones.jpg" alt="Pollo con Champignones" class="imgPlato">
+                        <img src="./img/platos/gringoFest.jpg" alt="Gringo Fest!" class="imgPlato">
                     </div>
                     <div class="precioProducto">
-                        <h4 class="pProducto">$999.56</h4>
+                        <h4 class="pProducto">$1500.00</h4>
                     </div>
                     <div class="pedirProducto">
                         <button type="button" class="btnPedir">Pedir!</button>
@@ -313,13 +321,13 @@
                 </div>
                 <div class="producto producto7">
                     <div class="nombre">
-                        <h2 class="nProducto">Pollo con chanpignones</h2>
+                        <h2 class="nProducto">Asian Fest!</h2>
                     </div>
                     <div class="imagenProducto">
-                        <img src="./img/platos/polloCChampignones.jpg" alt="Pollo con Champignones" class="imgPlato">
+                        <img src="./img/platos/asianfest.jpg" alt="AsianFest!" class="imgPlato">
                     </div>
                     <div class="precioProducto">
-                        <h4 class="pProducto">$999.56</h4>
+                        <h4 class="pProducto">$21999.99</h4>
                     </div>
                     <div class="pedirProducto">
                         <button type="button" class="btnPedir">Pedir!</button>
@@ -327,13 +335,13 @@
                 </div>
                 <div class="producto producto8">
                     <div class="nombre">
-                        <h2 class="nProducto">Pollo con chanpignones</h2>
+                        <h2 class="nProducto">Veggie Crunch!</h2>
                     </div>
                     <div class="imagenProducto">
-                        <img src="./img/platos/polloCChampignones.jpg" alt="Pollo con Champignones" class="imgPlato">
+                        <img src="./img/platos/VeggieCrunch.jpg" alt="Veggie Crunch!" class="imgPlato">
                     </div>
                     <div class="precioProducto">
-                        <h4 class="pProducto">$999.56</h4>
+                        <h4 class="pProducto">$899.00</h4>
                     </div>
                     <div class="pedirProducto">
                         <button type="button" class="btnPedir">Pedir!</button>
@@ -341,13 +349,13 @@
                 </div>
                 <div class="producto producto9">
                     <div class="nombre">
-                        <h2 class="nProducto">Pollo con chanpignones</h2>
+                        <h2 class="nProducto">Madrid Potato</h2>
                     </div>
                     <div class="imagenProducto">
-                        <img src="./img/platos/polloCChampignones.jpg" alt="Pollo con Champignones" class="imgPlato">
+                        <img src="./img/platos/madrid.webp" alt="Madrid Potato" class="imgPlato">
                     </div>
                     <div class="precioProducto">
-                        <h4 class="pProducto">$999.56</h4>
+                        <h4 class="pProducto">$999.00</h4>
                     </div>
                     <div class="pedirProducto">
                         <button type="button" class="btnPedir">Pedir!</button>
@@ -355,13 +363,13 @@
                 </div>
                 <div class="producto producto10">
                     <div class="nombre">
-                        <h2 class="nProducto">Pollo con chanpignones</h2>
+                        <h2 class="nProducto">Con Sabor a Poco!</h2>
                     </div>
                     <div class="imagenProducto">
-                        <img src="./img/platos/polloCChampignones.jpg" alt="Pollo con Champignones" class="imgPlato">
+                        <img src="./img/platos/saborPoco.jpeg" alt="Con Sabor a poco" class="imgPlato">
                     </div>
                     <div class="precioProducto">
-                        <h4 class="pProducto">$999.56</h4>
+                        <h4 class="pProducto">$99.50</h4>
                     </div>
                     <div class="pedirProducto">
                         <button type="button" class="btnPedir">Pedir!</button>
@@ -369,13 +377,13 @@
                 </div>
                 <div class="producto producto11">
                     <div class="nombre">
-                        <h2 class="nProducto">Pollo con chanpignones</h2>
+                        <h2 class="nProducto">Le ponemos de todo!</h2>
                     </div>
                     <div class="imagenProducto">
-                        <img src="./img/platos/polloCChampignones.jpg" alt="Pollo con Champignones" class="imgPlato">
+                        <img src="./img/platos/leponemodetodo.jpeg" alt="Le ponemos de todo" class="imgPlato">
                     </div>
                     <div class="precioProducto">
-                        <h4 class="pProducto">$999.56</h4>
+                        <h4 class="pProducto">$4999.56</h4>
                     </div>
                     <div class="pedirProducto">
                         <button type="button" class="btnPedir">Pedir!</button>
@@ -383,13 +391,13 @@
                 </div>
                 <div class="producto producto12">
                     <div class="nombre">
-                        <h2 class="nProducto">Pollo con chanpignones</h2>
+                        <h2 class="nProducto">Italianita</h2>
                     </div>
                     <div class="imagenProducto">
-                        <img src="./img/platos/polloCChampignones.jpg" alt="Pollo con Champignones" class="imgPlato">
+                        <img src="./img/platos/italianita.jpg" alt="italianita" class="imgPlato">
                     </div>
                     <div class="precioProducto">
-                        <h4 class="pProducto">$999.56</h4>
+                        <h4 class="pProducto">$499.99</h4>
                     </div>
                     <div class="pedirProducto">
                         <button type="button" class="btnPedir">Pedir!</button>
@@ -397,13 +405,13 @@
                 </div>
                 <div class="producto producto13">
                     <div class="nombre">
-                        <h2 class="nProducto">Pollo con chanpignones</h2>
+                        <h2 class="nProducto">Criollo</h2>
                     </div>
                     <div class="imagenProducto">
-                        <img src="./img/platos/polloCChampignones.jpg" alt="Pollo con Champignones" class="imgPlato">
+                        <img src="./img/platos/criollo.webp" alt="Criollo" class="imgPlato">
                     </div>
                     <div class="precioProducto">
-                        <h4 class="pProducto">$999.56</h4>
+                        <h4 class="pProducto">$300.00</h4>
                     </div>
                     <div class="pedirProducto">
                         <button type="button" class="btnPedir">Pedir!</button>
@@ -411,13 +419,13 @@
                 </div>
                 <div class="producto producto14">
                     <div class="nombre">
-                        <h2 class="nProducto">Pollo con chanpignones</h2>
+                        <h2 class="nProducto">Finolli</h2>
                     </div>
                     <div class="imagenProducto">
-                        <img src="./img/platos/polloCChampignones.jpg" alt="Pollo con Champignones" class="imgPlato">
+                        <img src="./img/platos/finoli.jpeg" alt="Finolli" class="imgPlato">
                     </div>
                     <div class="precioProducto">
-                        <h4 class="pProducto">$999.56</h4>
+                        <h4 class="pProducto">$1999.56</h4>
                     </div>
                     <div class="pedirProducto">
                         <button type="button" class="btnPedir">Pedir!</button>
@@ -425,13 +433,13 @@
                 </div>
                 <div class="producto producto15">
                     <div class="nombre">
-                        <h2 class="nProducto">Pollo con chanpignones</h2>
+                        <h2 class="nProducto">Ay mi colesterol!</h2>
                     </div>
                     <div class="imagenProducto">
-                        <img src="./img/platos/polloCChampignones.jpg" alt="Pollo con Champignones" class="imgPlato">
+                        <img src="./img/platos/burguer.jpeg" alt="Ay mi colesterol!" class="imgPlato">
                     </div>
                     <div class="precioProducto">
-                        <h4 class="pProducto">$999.56</h4>
+                        <h4 class="pProducto">$299.99</h4>
                     </div>
                     <div class="pedirProducto">
                         <button type="button" class="btnPedir">Pedir!</button>
@@ -439,13 +447,13 @@
                 </div>
                 <div class="producto producto16">
                     <div class="nombre">
-                        <h2 class="nProducto">Pollo con chanpignones</h2>
+                        <h2 class="nProducto">La Linda</h2>
                     </div>
                     <div class="imagenProducto">
-                        <img src="./img/platos/polloCChampignones.jpg" alt="Pollo con Champignones" class="imgPlato">
+                        <img src="./img/platos/lalinda.jpeg" alt="La Linda" class="imgPlato">
                     </div>
                     <div class="precioProducto">
-                        <h4 class="pProducto">$999.56</h4>
+                        <h4 class="pProducto">$99.99</h4>
                     </div>
                     <div class="pedirProducto">
                         <button type="button" class="btnPedir">Pedir!</button>

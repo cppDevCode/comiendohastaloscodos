@@ -6,7 +6,7 @@
         grid-template-areas: "titulo buscador"
                               "filtros cuerpo";
         
-        
+        margin-bottom: 2vh;
     }
 
     .tituloMarket {
@@ -126,16 +126,23 @@
 
 
     .nProducto {
-        font-size: 0.8em;
-        
+        background-color: white;
+        font-size: 1em;
+        font-family: "Sedan SC", serif;
+        font-weight: 400;
+        font-style: normal;
     }
 
     .imgPlato {
         width: 15vw;
+        height: 15vh;
     }
 
     .pProducto {
         font-size: 1.5em;
+        font-family: "Freeman", sans-serif;
+        font-weight: 400;
+        font-style: normal;
     }
     
     .btnPedir{
@@ -145,5 +152,38 @@
         border-top-left-radius: 0vh;
         border-bottom-left-radius: 1vh;
         border-bottom-right-radius: 1vh;
+        background-color: black;
+        color: white;
+    }
+
+    .btnPedir:hover {
+        cursor: pointer;
+        background-color: white;
+        color: black;
+    }
+
+    .tituloLindo {
+        margin-top: 0vh;
+        width: 40vw;
+    }
+
+    .tituloFiltro {
+        text-indent: 1vw;
+        background-color: #404040;
+        color: white;
+    }
+
+    .listaFiltro {
+        list-style: none;
+    }
+
+    .itemFiltro {
+        margin-bottom: 1vh;
+    }
+
+    .itemFiltro:hover {
+        background-color: white;
+        cursor: pointer;
+        width: 10vw;
     }
 }

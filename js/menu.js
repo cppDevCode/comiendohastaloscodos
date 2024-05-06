@@ -4,7 +4,12 @@ let btnFranquicias = document.getElementById('btnFranquicia');
 let btnLogin = document.getElementById('btnLogin');
 let linkInvitado = document.getElementById('ingresarInvitado');
 let btnReservar = document.getElementById('btnReservar');
+let btnDelivery = document.getElementById('btnDelivery');
 
+
+btnDelivery.onclick = function() {
+    location.href = './market.html'
+}
 
 btnReservar.onclick = function(){
     location.href='./reserva.html'
