@@ -224,12 +224,19 @@
             <img src="./img/veganLogo.png" class="comidaLogo" alt="Logo Veganos">
             <img src="./img/SinTaccLogo.png" class="comidaLogo" alt="Logo Sin Tacc">
         </div>
+<!--Comieza el carrysel-->
         <div class="carrusel">
             <div class="tituloCarrusel">
                 <h2 id="tituloCarrusel">Lasaña vegana de espinacas, nueces y soja</h2>
             </div>
             <div class="imgCarrusel">
-                <img src="./img/platos/burguers-veganas-linwoods.jpg" id="imgPlatos">
+                <div class="imgBox">
+                <img src="./img/platos/burguers-veganas-linwoods.jpg" id="imgPlatos" onmouseover="datoPlato()">
+                </div>
+                <div class="text-box">
+                    <div class="main"><span id="platoTitulo"></span></div>
+                    <div class="sub"><span id="platoSub"></span></div>
+                </div>
             </div>
             <div class="imgAnteriorcarrusel">
                 <img src="" id="imgAnterior">
@@ -237,7 +244,8 @@
             <div class="imgPostcarrusel">
                 <img src="./img/platos/caldereta-de-seitan.jpg" id="imgPost">
             </div>
-            <div class ="botomCarrusel">
+
+            <div class="botomCarrusel">
                 <button onclick="cambiarPlato(0)"  type="button">1</button>
                 <button onclick="cambiarPlato(1)"  type="button">2</button>
                 <button onclick="cambiarPlato(2)"  type="button">3</button>

@@ -5,12 +5,23 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas: "titulo titulo  titulo"
                          "imgAnterior img imgPost"
-                         "botones botones botones";
+                         "botones botones botones";                   
+}
+.carrusel {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
 }
 
 .tituloCarrusel {
     grid-area: titulo;
-
+    justify-content: center;
+    align-items: center;
+    color: rgb(8, 8, 8);
 }
 
 .imgCarrusel {
@@ -27,12 +38,6 @@
 .botomCarrusel {
     grid-area: botones;
 }
-.carrusel img {
-    height: 60vh;
-    width: 80vh;
-    border-radius: 30px;
-    
-}
 
 #imgAnterior {
     opacity: 0;
@@ -41,4 +46,104 @@
 #imgPost {
     opacity: 0.3;
 }
+.carrusel img {
+    height: 60vh;
+    width: 80vh;
+    border-radius: 30px;
+    display: grid;
+    place-items: center;
+ 
+}
+.imgCarrusel .imgBox {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 30px;
+}
+
+.imgCarrusel .imgBox img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(0) brightness(1);
+    scale: 1.2;
+    transition: scale 2s ease-in-out, filter 1s ease-in-out;
+}
+
+.imgCarrusel:hover .imgBox img {
+    filter: grayscale(1) brightness(0.7);
+    scale: 1;
+}
+
+.imgCarrusel.text-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    
+  }
+
+
+.text-box :is(.main , .sub){
+    height: 34px;
+    line-height: 34px;
+    overflow: hidden;
+}
+
+
+.text-box .main {
+  font-size: 26px;
+  font-weight: 600;
+  text-transform: uppercase;
+  position: relative;
+}
+.text-box .sub {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.main span, .sub span {
+  display: block;
+  transition: transform 0.5s ease-in-out;
+}
+.main span {
+  transition-delay: 0.2s;
+  transform: translateY(100%);
+}
+.sub span {
+  transform: translateY(-100%);
+  transition-delay: 0.5s;
+}
+
+.imgCarrusel:hover .text-box :is(span){
+    transform: translateY(0%);
+}
+.text-box::after {
+    position: absolute;
+    content: "";
+    top: 20%;
+    left: 50%;
+    width: 100%;
+    height: 5px;
+    transform: translate(-50%, -50%) scaleX(0);
+    transform-origin: left;
+    transition: 0.5s ease;
+    background-color: cyan;
+    
+}
+
+.imgCarrusel:hover .text-box::after {
+    transform: translate(-50%, -50%) scaleX(1);
+}
+
+
+.imgCarrusel {
+    width: 100%;
+    aspect-ratio: 1/1.2;
+    position: relative;
+}
+
 
