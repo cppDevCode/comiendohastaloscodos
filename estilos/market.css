@@ -1,10 +1,9 @@
 @media only screen and (min-width: 1000px) {
     .contenedor {
         display: grid;
-        grid-template-columns: 0.3fr 1fr;
-        grid-template-rows: 0.1fr 2fr;
-        grid-template-areas: "titulo buscador"
-                              "filtros cuerpo";
+        grid-template-columns: 0.3fr 1fr 0.3fr;
+        grid-template-rows: 2fr;
+        grid-template-areas: "filtros cuerpo buscador";
         
         margin-bottom: 2vh;
     }
@@ -24,6 +23,7 @@
     #buscador {
         height: 3.2vh;
         float: right;
+        margin-right: 5vw;
     }
     #btnBuscar {
         float: right;
@@ -49,6 +49,7 @@
     .cuerpo {
         grid-area: cuerpo;
         height: 200vh;
+        margin-left: 2vw;
     }
 
 
@@ -56,11 +57,11 @@
         display: grid;
         width: 40vw;
         grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 0.15fr;
         grid-template-areas: "producto1 producto2 producto3 producto4"
                     "producto5 producto6 producto7 producto8"
-                    "producto9 producto10 producto11 producto12"
-                    "producto13 producto14 producto15 producto16";
+                    "botonera botonera botonera botonera";
+                   
         row-gap: 1vw;
         column-gap: 1vw;
     }
@@ -88,35 +89,16 @@
     .producto8 {
         grid-area: producto8;
     }
-    .producto9 {
-        grid-area: producto9;
-    }
-    .producto10 {
-        grid-area: producto10;
-    }
-    .producto11 {
-        grid-area: producto11;
-    }
-    .producto12 {
-        grid-area: producto12;
-    }
-    .producto13 {
-        grid-area: producto13;
-    }
-    .producto14 {
-        grid-area: producto14;
-    }
-    .producto15 {
-        grid-area: producto15;
-    }
-    .producto16 {
-        grid-area: producto16;
+  
+    #botonera {
+        grid-area: botonera;
+        margin-top: -5vh;
     }
 
     .producto {
         display: flex;
         flex-direction: column;
-        width: 15vw;
+        width: 12vw;
         background-color: #7f7f7f;
         /*padding: 1vh;*/
         border-radius: 1vh;
@@ -134,8 +116,8 @@
     }
 
     .imgPlato {
-        width: 15vw;
-        height: 15vh;
+        width: 12vw;
+        height: 12vh;
     }
 
     .pProducto {
@@ -147,7 +129,7 @@
     
     .btnPedir{
         height: 4vh;
-        width: 15vw;
+        width: 12vw;
         border-width: 0;
         border-top-left-radius: 0vh;
         border-bottom-left-radius: 1vh;
@@ -185,5 +167,18 @@
         background-color: white;
         cursor: pointer;
         width: 10vw;
+    }
+
+    .btnPlatos {
+        border: 0;
+        background-color: #7f7f7f;
+        margin-left: 0.1vw;
+        height: 3vh;
+        width: 2vw;
+    }
+
+    .btnPlatos:hover {
+        background-color: white;
+        cursor: pointer;
     }
 }

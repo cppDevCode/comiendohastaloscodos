@@ -15,10 +15,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Updock&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Freeman&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Sedan+SC&display=swap" rel="stylesheet">
-
+    <script src="./js/market.js"></script>
 
 </head>
-<body>
+<body onpageshow="renderizar()">
     <header class="headerContenedor fondoHeader">
         <div class="logo">
             <img src="./img/logo2.png" alt="Logo Comiendo Hasta los codos" id="logoPPal">
@@ -206,9 +206,6 @@
         </div>
     </header>
     <main class="contenedor" >
-       <div class="tituloMarket">
-            <h1 class="updock-regular tituloLindo">Carrito de Compras</h1>
-       </div>
        <div class="buscador">
             <form class="fBuscador" action="none">
                 <input type="search" name="buscador" id="buscador">
@@ -220,10 +217,10 @@
                 <label>Tipo de dieta:</label>
             </div>
                 <ul class="listaFiltro">
-                    <li class="itemFiltro">Carnivoro</li>
-                    <li class="itemFiltro">Vegano</li>
-                    <li class="itemFiltro">Vegetariano</li>
-                    <li class="itemFiltro">Celiaco</li>
+                    <li class="itemFiltro" onclick="filtrarPlatos('carnivoro')" id="carnivoro" >Carnivoro</li>
+                    <li class="itemFiltro" onclick="filtrarPlatos('vegano')" id="vegano">Vegano</li>
+                    <li class="itemFiltro" onclick="filtrarPlatos('vegetariano')" id="vegetariano">Vegetariano</li>
+                    <li class="itemFiltro" onclick="filtrarPlatos('celiaco')" id="celiaco">Celiaco</li>
                 </ul>
             <div class="tituloFiltro">
                 <label>Otros:</label>
@@ -234,231 +231,9 @@
                 </ul>
         </div>
         <div class="cuerpo">
-            <div class="contenedorProductos">
-                <div class="producto producto1">
-                    <div class="nombre">
-                        <h2 class="nProducto">Pollo con chanpignones</h2>
-                    </div>
-                    <div class="imagenProducto">
-                        <img src="./img/platos/polloCChampignones.jpg" alt="Pollo con Champignones" class="imgPlato">
-                    </div>
-                    <div class="precioProducto">
-                        <h4 class="pProducto">$999.56</h4>
-                    </div>
-                    <div class="pedirProducto">
-                        <button type="button" class="btnPedir">Pedir!</button>
-                    </div>
-                </div>
-                <div class="producto producto2">
-                    <div class="nombre">
-                        <h2 class="nProducto">Pollo y Vegetales</h2>
-                    </div>
-                    <div class="imagenProducto">
-                        <img src="./img/platos/polloyvegetales.jpeg" alt="Pollo y vegetales" class="imgPlato">
-                    </div>
-                    <div class="precioProducto">
-                        <h4 class="pProducto">$540.56</h4>
-                    </div>
-                    <div class="pedirProducto">
-                        <button type="button" class="btnPedir">Pedir!</button>
-                    </div>
-                </div>
-                <div class="producto producto3">
-                    <div class="nombre">
-                        <h2 class="nProducto">Bife Rustico</h2>
-                    </div>
-                    <div class="imagenProducto">
-                        <img src="./img/platos/bifeRustico.jpg" alt="Bife Rustico" class="imgPlato">
-                    </div>
-                    <div class="precioProducto">
-                        <h4 class="pProducto">$599.56</h4>
-                    </div>
-                    <div class="pedirProducto">
-                        <button type="button" class="btnPedir">Pedir!</button>
-                    </div>
-                </div>
-                <div class="producto producto4">
-                    <div class="nombre">
-                        <h2 class="nProducto">Ensalada Rissiotti</h2>
-                    </div>
-                    <div class="imagenProducto">
-                        <img src="./img/platos/ensaladaRissiotti.jpg" alt="Ensalada Rissiotti" class="imgPlato">
-                    </div>
-                    <div class="precioProducto">
-                        <h4 class="pProducto">$399.00</h4>
-                    </div>
-                    <div class="pedirProducto">
-                        <button type="button" class="btnPedir">Pedir!</button>
-                    </div>
-                </div>
-                <div class="producto producto5">
-                    <div class="nombre">
-                        <h2 class="nProducto">Dulcecito</h2>
-                    </div>
-                    <div class="imagenProducto">
-                        <img src="./img/platos/dulcecito.jpg" alt="Dulcecito" class="imgPlato">
-                    </div>
-                    <div class="precioProducto">
-                        <h4 class="pProducto">$250.99</h4>
-                    </div>
-                    <div class="pedirProducto">
-                        <button type="button" class="btnPedir">Pedir!</button>
-                    </div>
-                </div>
-                <div class="producto producto6">
-                    <div class="nombre">
-                        <h2 class="nProducto">Gringo Fest!</h2>
-                    </div>
-                    <div class="imagenProducto">
-                        <img src="./img/platos/gringoFest.jpg" alt="Gringo Fest!" class="imgPlato">
-                    </div>
-                    <div class="precioProducto">
-                        <h4 class="pProducto">$1500.00</h4>
-                    </div>
-                    <div class="pedirProducto">
-                        <button type="button" class="btnPedir">Pedir!</button>
-                    </div>
-                </div>
-                <div class="producto producto7">
-                    <div class="nombre">
-                        <h2 class="nProducto">Asian Fest!</h2>
-                    </div>
-                    <div class="imagenProducto">
-                        <img src="./img/platos/asianfest.jpg" alt="AsianFest!" class="imgPlato">
-                    </div>
-                    <div class="precioProducto">
-                        <h4 class="pProducto">$21999.99</h4>
-                    </div>
-                    <div class="pedirProducto">
-                        <button type="button" class="btnPedir">Pedir!</button>
-                    </div>
-                </div>
-                <div class="producto producto8">
-                    <div class="nombre">
-                        <h2 class="nProducto">Veggie Crunch!</h2>
-                    </div>
-                    <div class="imagenProducto">
-                        <img src="./img/platos/VeggieCrunch.jpg" alt="Veggie Crunch!" class="imgPlato">
-                    </div>
-                    <div class="precioProducto">
-                        <h4 class="pProducto">$899.00</h4>
-                    </div>
-                    <div class="pedirProducto">
-                        <button type="button" class="btnPedir">Pedir!</button>
-                    </div>
-                </div>
-                <div class="producto producto9">
-                    <div class="nombre">
-                        <h2 class="nProducto">Madrid Potato</h2>
-                    </div>
-                    <div class="imagenProducto">
-                        <img src="./img/platos/madrid.webp" alt="Madrid Potato" class="imgPlato">
-                    </div>
-                    <div class="precioProducto">
-                        <h4 class="pProducto">$999.00</h4>
-                    </div>
-                    <div class="pedirProducto">
-                        <button type="button" class="btnPedir">Pedir!</button>
-                    </div>
-                </div>
-                <div class="producto producto10">
-                    <div class="nombre">
-                        <h2 class="nProducto">Con Sabor a Poco!</h2>
-                    </div>
-                    <div class="imagenProducto">
-                        <img src="./img/platos/saborPoco.jpeg" alt="Con Sabor a poco" class="imgPlato">
-                    </div>
-                    <div class="precioProducto">
-                        <h4 class="pProducto">$99.50</h4>
-                    </div>
-                    <div class="pedirProducto">
-                        <button type="button" class="btnPedir">Pedir!</button>
-                    </div>
-                </div>
-                <div class="producto producto11">
-                    <div class="nombre">
-                        <h2 class="nProducto">Le ponemos de todo!</h2>
-                    </div>
-                    <div class="imagenProducto">
-                        <img src="./img/platos/leponemodetodo.jpeg" alt="Le ponemos de todo" class="imgPlato">
-                    </div>
-                    <div class="precioProducto">
-                        <h4 class="pProducto">$4999.56</h4>
-                    </div>
-                    <div class="pedirProducto">
-                        <button type="button" class="btnPedir">Pedir!</button>
-                    </div>
-                </div>
-                <div class="producto producto12">
-                    <div class="nombre">
-                        <h2 class="nProducto">Italianita</h2>
-                    </div>
-                    <div class="imagenProducto">
-                        <img src="./img/platos/italianita.jpg" alt="italianita" class="imgPlato">
-                    </div>
-                    <div class="precioProducto">
-                        <h4 class="pProducto">$499.99</h4>
-                    </div>
-                    <div class="pedirProducto">
-                        <button type="button" class="btnPedir">Pedir!</button>
-                    </div>
-                </div>
-                <div class="producto producto13">
-                    <div class="nombre">
-                        <h2 class="nProducto">Criollo</h2>
-                    </div>
-                    <div class="imagenProducto">
-                        <img src="./img/platos/criollo.webp" alt="Criollo" class="imgPlato">
-                    </div>
-                    <div class="precioProducto">
-                        <h4 class="pProducto">$300.00</h4>
-                    </div>
-                    <div class="pedirProducto">
-                        <button type="button" class="btnPedir">Pedir!</button>
-                    </div>
-                </div>
-                <div class="producto producto14">
-                    <div class="nombre">
-                        <h2 class="nProducto">Finolli</h2>
-                    </div>
-                    <div class="imagenProducto">
-                        <img src="./img/platos/finoli.jpeg" alt="Finolli" class="imgPlato">
-                    </div>
-                    <div class="precioProducto">
-                        <h4 class="pProducto">$1999.56</h4>
-                    </div>
-                    <div class="pedirProducto">
-                        <button type="button" class="btnPedir">Pedir!</button>
-                    </div>
-                </div>
-                <div class="producto producto15">
-                    <div class="nombre">
-                        <h2 class="nProducto">Ay mi colesterol!</h2>
-                    </div>
-                    <div class="imagenProducto">
-                        <img src="./img/platos/burguer.jpeg" alt="Ay mi colesterol!" class="imgPlato">
-                    </div>
-                    <div class="precioProducto">
-                        <h4 class="pProducto">$299.99</h4>
-                    </div>
-                    <div class="pedirProducto">
-                        <button type="button" class="btnPedir">Pedir!</button>
-                    </div>
-                </div>
-                <div class="producto producto16">
-                    <div class="nombre">
-                        <h2 class="nProducto">La Linda</h2>
-                    </div>
-                    <div class="imagenProducto">
-                        <img src="./img/platos/lalinda.jpeg" alt="La Linda" class="imgPlato">
-                    </div>
-                    <div class="precioProducto">
-                        <h4 class="pProducto">$99.99</h4>
-                    </div>
-                    <div class="pedirProducto">
-                        <button type="button" class="btnPedir">Pedir!</button>
-                    </div>
-                </div>
+            <div class="contenedorProductos" id="contenedorProducto123">
+            </div>
+            <div id="botonera">
             </div>
         </div>
     </main>
