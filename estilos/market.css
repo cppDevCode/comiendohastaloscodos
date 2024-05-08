@@ -2,7 +2,7 @@
     .contenedor {
         display: grid;
         grid-template-columns: 0.3fr 1fr 0.3fr;
-        grid-template-rows: 2fr;
+        grid-template-rows: 1fr;
         grid-template-areas: "filtros cuerpo buscador";
         
         margin-bottom: 2vh;
@@ -48,7 +48,7 @@
 
     .cuerpo {
         grid-area: cuerpo;
-        height: 200vh;
+        height: 75vh;
         margin-left: 2vw;
     }
 
