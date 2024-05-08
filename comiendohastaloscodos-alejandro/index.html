@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Updock&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sedan+SC&display=swap" rel="stylesheet">
     <script src="./js/carrusel.js"></script>
 </head>
 
@@ -226,9 +227,6 @@
         </div>
 <!--Comieza el carrysel-->
         <div class="carrusel">
-            <div class="tituloCarrusel">
-                <h2 id="tituloCarrusel">Lasaña vegana de espinacas, nueces y soja</h2>
-            </div>
             <div class="imgCarrusel">
                 <div class="imgBox">
                 <img src="./img/platos/burguers-veganas-linwoods.jpg" id="imgPlatos" onmouseover="datoPlato()">
@@ -239,18 +237,17 @@
                 </div>
             </div>
             <div class="imgAnteriorcarrusel">
-                <img src="" id="imgAnterior">
+                <img src="" id="imgAnterior" onclick="platoAnterior()">
             </div>
             <div class="imgPostcarrusel">
-                <img src="./img/platos/caldereta-de-seitan.jpg" id="imgPost">
+                <img src="./img/platos/caldereta-de-seitan.jpg" id="imgPost" onclick="siguientePlato()">
             </div>
-
             <div class="botomCarrusel">
-                <button onclick="cambiarPlato(0)"  type="button">1</button>
-                <button onclick="cambiarPlato(1)"  type="button">2</button>
-                <button onclick="cambiarPlato(2)"  type="button">3</button>
-                <button onclick="cambiarPlato(3)"  type="button">4</button>
-                <button onclick="cambiarPlato(4)"  type="button">5</button>
+                <button onclick="cambiarPlato(0)"  type="button"></button>
+                <button onclick="cambiarPlato(1)"  type="button"></button>
+                <button onclick="cambiarPlato(2)"  type="button"></button>
+                <button onclick="cambiarPlato(3)"  type="button"></button>
+                <button onclick="cambiarPlato(4)"  type="button"></button>
             </div>
         </div>
         <div class="DondeEncontrarnos">

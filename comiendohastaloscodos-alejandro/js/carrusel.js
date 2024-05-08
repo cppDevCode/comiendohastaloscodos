@@ -8,7 +8,8 @@ function cambiarPlato (nombrePlato){
     
 
     document.getElementById("imgPlatos").src= platos [0][nombrePlato];
-    document.getElementById("tituloCarrusel").innerHTML = platos [1][nombrePlato];
+    document.getElementById("platoTitulo").innerHTML =  platos [1][nombrePlato];
+    document.getElementById("platoTitulo").className += "SedanFuente";
 
     
     switch (nombrePlato){
@@ -44,4 +45,13 @@ function datoPlato(){
 
     }
 
+}
+
+function siguientePlato (){
+    cambiarPlato(numPlatoActual + 1);
+   
+}
+
+function platoAnterior (){
+    cambiarPlato(numPlatoActual - 1);
 }
