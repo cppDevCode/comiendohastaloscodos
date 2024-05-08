@@ -31,6 +31,7 @@ function cambiarPlato (nombrePlato){
         document.getElementById("imgPost").src= platos [0][nombrePlato +1 ];
         break;
     }
+
     numPlatoActual = nombrePlato;
 }
 function datoPlato(){
@@ -47,11 +48,28 @@ function datoPlato(){
 
 }
 
+let botonAnterior = 0;
+
+function clickbtnCarrusel(id){
+    document.getElementById(botonAnterior).style.borderColor = 'black';
+    document.getElementById(id).style.borderColor = 'white';
+}
+
 function siguientePlato (){
-    cambiarPlato(numPlatoActual + 1);
-   
+    if ((numPlatoActual+1) < 5){
+        cambiarPlato(numPlatoActual + 1);
+        botonAnterior = "botonCarrusel" + (numPlatoActual-1)
+        plato = "botonCarrusel" + (numPlatoActual);
+        clickbtnCarrusel(plato);
+    }
 }
 
 function platoAnterior (){
-    cambiarPlato(numPlatoActual - 1);
+    if ((numPlatoActual - 1) > -1) {
+        cambiarPlato(numPlatoActual - 1);
+        botonAnterior = "botonCarrusel" + (numPlatoActual+1)
+        plato = "botonCarrusel" + (numPlatoActual);
+        clickbtnCarrusel(plato);
+    }
 }
+

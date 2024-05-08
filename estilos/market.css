@@ -177,8 +177,11 @@
         width: 2vw;
     }
 
-    .btnPlatos:hover {
-        background-color: white;
-        cursor: pointer;
-    }
+}
+
+
+
+.btnPlatos:hover {
+    background-color: white;
+    cursor: pointer;
 }
