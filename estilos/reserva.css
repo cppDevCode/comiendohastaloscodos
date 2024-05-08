@@ -1,7 +1,10 @@
+<<<<<<< HEAD:estilos/reserva.css
 @import url("reservacelulares.css") (width <= 768px);
 
 @import url("reservatablets.css") (width >= 769px);
 
+=======
+>>>>>>> f79e9684b497170457a31b6b8744a55eb42fffc9:comiendohastaloscodos-alejandro/estilos/reserva.css
 /*          ESCRITORIO         */
 
 @media only screen and (min-width: 1000px) {

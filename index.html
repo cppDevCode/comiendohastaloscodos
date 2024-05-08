@@ -6,14 +6,17 @@
     <title>Comiendo hasta los codos!</title>
     <link rel="stylesheet" href="./estilos/fuentes.css">
     <link rel="stylesheet" href="./estilos/index.css">
+    <link rel="stylesheet" href="./estilos/carrusel.css">
     <script src="https://kit.fontawesome.com/a29be58ab7.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Updock&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Sedan+SC&display=swap" rel="stylesheet">
+    <script src="./js/carrusel.js"></script>
 </head>
+
 <body>
     <header class="headerContenedor fondoHeader">
         <div class="logo">
@@ -222,8 +225,30 @@
             <img src="./img/veganLogo.png" class="comidaLogo" alt="Logo Veganos">
             <img src="./img/SinTaccLogo.png" class="comidaLogo" alt="Logo Sin Tacc">
         </div>
-        <div class="carrousel">
-            <img id="carrouselImg" src="./img/sampleCarrousel.png" alt="">
+<!--Comieza el carrysel-->
+        <div class="carrusel">
+            <div class="imgCarrusel">
+                <div class="imgBox">
+                <img src="./img/platos/burguers-veganas-linwoods.jpg" id="imgPlatos" onmouseover="datoPlato()">
+                </div>
+                <div class="text-box">
+                    <div class="main"><span id="platoTitulo"></span></div>
+                    <div class="sub"><span id="platoSub"></span></div>
+                </div>
+            </div>
+            <div class="imgAnteriorcarrusel">
+                <img src="" id="imgAnterior" onclick="platoAnterior()">
+            </div>
+            <div class="imgPostcarrusel">
+                <img src="./img/platos/caldereta-de-seitan.jpg" id="imgPost" onclick="siguientePlato()">
+            </div>
+            <div class="botomCarrusel">
+                <button onclick="cambiarPlato(0)"  type="button"></button>
+                <button onclick="cambiarPlato(1)"  type="button"></button>
+                <button onclick="cambiarPlato(2)"  type="button"></button>
+                <button onclick="cambiarPlato(3)"  type="button"></button>
+                <button onclick="cambiarPlato(4)"  type="button"></button>
+            </div>
         </div>
         <div class="DondeEncontrarnos">
             <h1 class="updock-regular tituloLindo">Donde Encontrarnos?</h1>
@@ -288,6 +313,7 @@
         </div>
     </footer>
     <a class="whatsapp" href="https://wa.me/5492915442654?text=Hola!%20Necesito%20Reservar%20" target="_blank"><img id="wappIMG" src="img/WhatsApp_icon.png" alt="Whatsapp"></a>
+    
     <script src="./js/modal.js">  </script>
     <script src="./js/menu.js"></script>
     <script src="./js/index.js"></script>
