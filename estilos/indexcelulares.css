@@ -1,5 +1,4 @@
-@media only screen and (max-width: 767px) {
-    body {
+body {
       background-color: #404040;
 
     }
@@ -862,7 +861,6 @@
     width: 25vh;
   }
 
-}
   
   
   

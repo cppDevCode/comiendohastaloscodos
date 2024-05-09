@@ -1,5 +1,4 @@
-@media only screen and (max-width: 767px) {
-    .contenedorReserva {
+.contenedorReserva {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-areas: "main"
@@ -156,4 +155,3 @@
 
     /* FIN TERCER SLIDER: HORARIO */
 
-}

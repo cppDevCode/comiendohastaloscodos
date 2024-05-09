@@ -1,4 +1,3 @@
-@media only screen and (min-width: 768px){
     .contenedorReserva {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
@@ -144,4 +143,3 @@
     /* FIN DE SEGUNDO SLIDER: FECHA */
 
 
-}
