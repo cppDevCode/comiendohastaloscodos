@@ -43,7 +43,6 @@ function cargoPedido (){
         if (carritoPedido != undefined) {
             for (p in carritoPedido) {
                 agregarPedido(carritoPedido[p].plato);
-                valorTotal += dbProductos.productos[carritoPedido[p].plato].precio;
             }
             document.getElementById("artCantidad").innerHTML = "Articulos en el carrito: " + carritoPedido.length;
             document.getElementById("precio").innerHTML = "$ " + valorTotal.toFixed(2);
