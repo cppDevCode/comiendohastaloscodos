@@ -15,11 +15,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Updock&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Sedan+SC&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+    <script src="./js/market.js"></script>
     <script src="./js/carrusel.js"></script>
     <script src="./js/pedidos.js"></script>
 </head>
 
-<body>
+<body onpageshow="cargoPedido()">
     <header class="headerContenedor fondoHeader">
         <div class="logo">
             <img src="./img/logo2.png" alt="Logo Comiendo Hasta los codos" id="logoPPal">
@@ -38,7 +39,7 @@
                 <div id="modalCarrito" class="modal">
                     <div class="modal-content modalCarritoS animar popup">
                         <div id="cantidadArticulos">
-                            <p>Articulos en el carrito: 1</p>
+                            <p  id="artCantidad">Articulos en el carrito: 0</p>
                         </div>
                         <div class="listaProductos">
                             <ol id="listaProductosAComprar">
@@ -48,7 +49,7 @@
                             <h3>Subtotal:</h3>
                         </div>
                         <div class="valorTotalCarrito">
-                            <h2>$ 13500.00</h2>
+                            <h2 id="precio">$ 0.00</h2>
                         </div>
                         <div class="btnFinalizarCarritoDiv">
                             <button type="button" class="btnGen btnChico" id="btnFinalizarCompra">Finalizar Compra</button>

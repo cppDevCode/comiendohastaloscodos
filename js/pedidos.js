@@ -21,6 +21,8 @@ function agregarPedido (plato){
                                         </div>
                                     </div>
                                 </li>`
+    valorTotal += dbProductos.productos[plato].precio;
+    document.getElementById("precio").innerHTML = "$ " + valorTotal.toFixed(2);
 }
 
 
@@ -35,6 +37,7 @@ function agregarYSalvarPedido(plato){
 }
 
 function cargoPedido (){
+    valorTotal = 0;
     if (Storage != undefined) {
         carritoPedido = JSON.parse(localStorage.getItem("carrito"));
         if (carritoPedido != undefined) {
