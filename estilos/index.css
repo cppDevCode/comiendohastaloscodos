@@ -61,7 +61,7 @@ width: 2vw;
   align-items: center;
   background-color: #7f7f7f;
   width: 20vw;
-  height: 35vh;
+  height: 45vh;
   margin-left: 75vw;
   margin-top: 3vh;
   border-radius: 1vh;
@@ -78,6 +78,8 @@ width: 2vw;
 
 .listaProductos {
   grid-area: productos;
+  height: 25vh;
+  overflow: auto;
 }
 
 .tituloFooterCarrito {
