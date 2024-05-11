@@ -21,7 +21,11 @@ let dbProductos = {
 
 
 
+
+
+
 let platosPorHoja = 8;
+
 let platosFiltrados;
 let filtrado = false;
 let filtroAnterior = "";
@@ -31,15 +35,21 @@ function mostrarElementos (platos){
     let topePlatos = platos.length;
     let topeFor;
     let botones = parseInt(topePlatos/8);
+    if (getComputedStyle(document.body).getPropertyValue('--plataforma') === "celulares") {
+        platosPorHoja = 4;
+        botones = parseInt(topePlatos/4);
+    }
+    
     if (botones != 0){
         for (let i = 0; i< botones; i++) {
             document.getElementById('botonera').innerHTML += "<button type=\"button\"  class=\"btnPlatos\" id=\"btn" + i + "\" onclick=\"mostrarPlatos(" + i +")\">" + (i + 1) + "</button>"
         }
     }
-    if (platos.length < 8) {
+    
+    if (platos.length < platosPorHoja) {
         topeFor = platos.length;
     } else {
-        topeFor = 8;
+        topeFor = platosPorHoja;
     }
     for (let i = 0; i < topeFor;i++){
         let numero = parseInt(i)+1;
@@ -59,11 +69,11 @@ function renderizar(){
 
 
 function mostrarElementosPorRango(objetos,numPlato){
-    let topeFor = (numPlato+1)*8;
+    let topeFor = (numPlato+1)*platosPorHoja;
     let inicioFor = 0;
 
     if (numPlato != 0) {
-        inicioFor = numPlato*8;
+        inicioFor = numPlato*platosPorHoja;
     }
 
     document.getElementById('contenedorProducto123').innerHTML = "";
@@ -110,3 +120,16 @@ function filtrarPlatos (tipoComida){
     }
 }
 
+function btnBuscarClick(){
+    textoBuscado = document.getElementById('buscador');
+    document.getElementById('contenedorProducto123').innerHTML = "";
+    document.getElementById('botonera').innerHTML = "";
+    encontrados = dbProductos.productos.filter(producto => (producto.nombre.toLowerCase().search(textoBuscado.value.toLowerCase()) != -1));
+    mostrarElementos(encontrados);
+}
+
+function buscarEnter(event) {
+    if (event.keyCode == 13) {
+        btnBuscarClick();
+    }
+}

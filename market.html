@@ -189,10 +189,10 @@
     </header>
     <main class="contenedor" >
        <div class="buscador">
-            <form class="fBuscador" action="none">
-                <input type="search" name="buscador" id="buscador">
-                <button type="submit" id="btnBuscar"><i class="fa fa-search"></i></button>
-            </form>
+            <div class="fBuscador" action="none">
+                <input type="search" name="buscador" id="buscador" onkeypress="buscarEnter(event)">
+                <button type="button" id="btnBuscar" onclick="btnBuscarClick()"><i class="fa fa-search"></i></button>
+            </div>
        </div>
        <div class="filtros">
             <div class="tituloFiltro">
