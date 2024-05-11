@@ -1,14 +1,15 @@
 @import url(marketcelulares.css) (width<= 768px);
+@import url(markettablets.css) (width >= 769px);
 @media only screen and (min-width: 1000px) {
+
     .contenedor {
         display: grid;
         grid-template-columns: 0.3fr 1fr 0.3fr;
         grid-template-rows: 1fr;
         grid-template-areas: "filtros cuerpo buscador";
-        
         margin-bottom: 2vh;
     }
-
+        
     .tituloMarket {
         grid-area: titulo;
         height: 1vh;
@@ -100,11 +101,13 @@
         display: flex;
         flex-direction: column;
         width: 12vw;
+        height: 30vh;
         background-color: #7f7f7f;
         /*padding: 1vh;*/
         border-radius: 1vh;
         box-shadow: 0vw 0vh 0.5vw black;
         text-align: center;
+        margin-bottom: 1vh;
     }
 
 
@@ -126,6 +129,7 @@
         font-family: "Freeman", sans-serif;
         font-weight: 400;
         font-style: normal;
+        margin-top: -1vh;
     }
     
     .btnPedir{
@@ -176,6 +180,39 @@
         margin-left: 0.1vw;
         height: 3vh;
         width: 2vw;
+    }
+
+    .cantidadProducto{
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        justify-content: space-evenly;
+    }
+
+    .btnCantidadProducto {
+        border: 0;
+        height: 4vh;
+        width: 4vh;
+        margin-top: -2vh;
+        padding: 1vw;
+        background-color: #7f7f7f;
+        font-size: 2em;
+    }
+
+    .btnCantidadProducto:hover {
+        cursor: pointer;
+        color: white;
+    }
+
+    #labCantidad {
+        font-size: 1.2em;
+        margin-top: 0.5vw;
+        text-align: center;
+    }
+
+    .precioProducto {
+        padding: 1vh;
+        height: 2vh;
     }
 
 }

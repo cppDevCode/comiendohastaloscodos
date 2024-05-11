@@ -406,18 +406,19 @@ width: 2vw;
     width: 25vw;
     height: 50vh;
     background-color: white;
-    grid-template-columns: 1fr 0.25fr 1fr;
-    grid-template-rows: 0.25fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 0.25fr 0.25fr;
+    grid-template-rows: 0.25fr 1fr 1fr 1fr 1fr 0.25fr;
     grid-template-areas: "x x x"
                          "logo logo logo"
                          "texto texto texto"
-                         "input input ingresar"
-                         "input2 input2 ingresar"
+                         "input input ingresar2"
+                         "input2 input2 ingresar2"
                          "invitado invitado invitado";
     border-top-left-radius: 0.5vh;
     border-bottom-left-radius: 0.5vh;
     column-gap: 0;
     row-gap: 0;
+    justify-content: center;
     align-self: center;
   }
 
@@ -473,22 +474,23 @@ width: 2vw;
   .textoLogin {
     grid-area: texto;
     text-align: center;
+    justify-self: center;
+    width: 25vw;
   }
 
   .input {
     grid-area: input;
     margin-left: 25%;
     margin-top: 15%;
+    
   }
-
-
   .input2 {
     grid-area: input2;
     margin-left: 25%;
   }
-
+  
   .loginOk {
-    grid-area: ingresar;
+    grid-area: ingresar2;
     justify-self: left;
     align-self: center;
     
@@ -505,11 +507,38 @@ width: 2vw;
     cursor: pointer;
   }
 
-
   .invitado {
     grid-area: invitado;
     justify-self: center;
   }
+
+
+  @supports (not (-moz-appearance: none)) {
+    .input {
+      margin-left: 25vw;
+      margin-top: 0vh;
+    }
+
+    .input2 {
+      margin-left: 25vw;
+      margin-top: -5vh;
+    }
+    
+    .botonLoginOk {
+      margin-left: -30vw;
+    }
+
+    .invitado {
+      margin-top: -1vw;
+    }
+  }
+
+
+  
+
+
+
+  
 
 
   input {

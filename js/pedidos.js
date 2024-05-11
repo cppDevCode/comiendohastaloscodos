@@ -1,21 +1,22 @@
 let carritoPedido = new Array();
 let valorTotal = 0;
+let articulosTotales = 0;
 
 
 
 
-
-function cerrarClick(idElemento,plato) {
+function cerrarClick(idElemento,plato, cantidad) {
     if (plato != undefined) {
         document.getElementById(idElemento).remove();
-        document.getElementById("artCantidad").innerHTML = "Articulos en el carrito: " + (carritoPedido.length-1);
+        articulosTotales = (articulosTotales - cantidad);
+        document.getElementById("artCantidad").innerHTML = "Articulos en el carrito: " + articulosTotales;
         if (plato >= carritoPedido.length) {
                 plato = (carritoPedido.length - plato);    
         }
         if (carritoPedido[plato] == undefined) {
             document.getElementById("precio").innerHTML = "$ 0.00";
         } else {
-            valorTotal -= dbProductos.productos[carritoPedido[plato].plato].precio
+            valorTotal -= (dbProductos.productos[carritoPedido[plato].plato].precio * cantidad)
             document.getElementById("precio").innerHTML = "$ " + (valorTotal).toFixed(2);
         }
         carritoPedido.splice(plato,1);
@@ -25,7 +26,7 @@ function cerrarClick(idElemento,plato) {
     
 }
 
-function agregarPedido (plato, p){
+function agregarPedido (plato, p,cantidad){
     document.getElementById("listaProductosAComprar").innerHTML += `<li class="liCarrito" id="liCarrito`+ p +`">
                                     <div class="tarjetaProducto">
                                         <div class="imagenPlatoCarrito">
@@ -35,29 +36,31 @@ function agregarPedido (plato, p){
                                             <h4>`+ dbProductos.productos[plato].nombre + `</h4>
                                         </div>
                                         <div class="eliminarPlatoCarrito">
-                                            <span class="cerrar" id="Cerrar` + plato + `" onclick="cerrarClick('liCarrito`+ p +`',` + p + `)"><i class="fa-regular fa-circle-xmark"></i></span>
+                                            <span class="cerrar" id="Cerrar` + plato + `" onclick="cerrarClick('liCarrito`+ p +`',` + p + `,` + cantidad + `)"><i class="fa-regular fa-circle-xmark"></i></span>
                                         </div>
                                         <div class="valorPlatoCarrito">
-                                            <h3>$ ` + dbProductos.productos[plato].precio +  `</h3>
+                                            <h3>$ ` + (dbProductos.productos[plato].precio * cantidad) +  `</h3>
                                         </div>
                                         <div class="cantidadPlatoCarrito">
-                                            Cantidad: 1
+                                            Cantidad: ` + cantidad + `
                                         </div>
                                     </div>
                                 </li>`
-    valorTotal += dbProductos.productos[plato].precio;
+    valorTotal += dbProductos.productos[plato].precio * cantidad;
     document.getElementById("precio").innerHTML = "$ " + valorTotal.toFixed(2);
 }
 
 
-function agregarYSalvarPedido(plato){
+function agregarYSalvarPedido(plato, id){
     let pedido = {plato: 0};
+    pedido.cantidad = document.getElementById("labCantidad" + id).innerHTML;
+    articulosTotales += parseInt(pedido.cantidad);
     pedido.plato = plato;
     carritoPedido.push(pedido);
     localStorage.removeItem("carrito");
     localStorage.setItem("carrito",JSON.stringify(carritoPedido));
-    agregarPedido(plato,carritoPedido.length-1);
-    document.getElementById("artCantidad").innerHTML = "Articulos en el carrito: " + carritoPedido.length;
+    agregarPedido(plato,carritoPedido.length-1,pedido.cantidad);
+    document.getElementById("artCantidad").innerHTML = "Articulos en el carrito: " + articulosTotales;
 }
 
 function cargoPedido (){
@@ -66,9 +69,10 @@ function cargoPedido (){
         carritoPedido = JSON.parse(localStorage.getItem("carrito"));
         if (carritoPedido != undefined) {
             for (p in carritoPedido) {
-                agregarPedido(carritoPedido[p].plato,p);
+                agregarPedido(carritoPedido[p].plato,p,carritoPedido[p].cantidad);
+                articulosTotales += parseInt(carritoPedido[p].cantidad);
             }
-            document.getElementById("artCantidad").innerHTML = "Articulos en el carrito: " + carritoPedido.length;
+            document.getElementById("artCantidad").innerHTML = "Articulos en el carrito: " + articulosTotales;
             document.getElementById("precio").innerHTML = "$ " + valorTotal.toFixed(2);
         } else {
             carritoPedido = [];

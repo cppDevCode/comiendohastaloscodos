@@ -31,11 +31,27 @@ let filtrado = false;
 let filtroAnterior = "";
 
 
+function btnMenosCantidad(id) { 
+    let cantidad = id.innerHTML;
+    cantidad -= 1;
+    if (cantidad > 0) {
+        id.innerHTML = cantidad;
+    }
+}
+
+function btnMasCantidad(id) { 
+    let cantidad = id.innerHTML;
+    cantidad = parseInt(cantidad) + 1;
+    if (cantidad > 0) {
+        id.innerHTML = cantidad;
+    }
+}
+
 function mostrarElementos (platos){
     let topePlatos = platos.length;
     let topeFor;
     let botones = parseInt(topePlatos/8);
-    if (getComputedStyle(document.body).getPropertyValue('--plataforma') === "celulares") {
+    if (getComputedStyle(document.body).getPropertyValue('--plataforma') === "celulares" || getComputedStyle(document.body).getPropertyValue('--plataforma') === "tablets") {
         platosPorHoja = 4;
         botones = parseInt(topePlatos/4);
     }
@@ -55,7 +71,7 @@ function mostrarElementos (platos){
         let numero = parseInt(i)+1;
         document.getElementById('contenedorProducto123').innerHTML +=  "<div class=\"producto producto"+ numero + "\"><div class=\"nombre\"><h2 class=\"nProducto\">" + platos[i].nombre + "</h2>" +
         "</div><div class=\"imagenProducto\"><img src=\"" + platos[i].imgRuta + "\" alt=\"" + platos[i].nombre + "\" class=\"imgPlato\">"+
-        "</div><div class=\"precioProducto\"><h4 class=\"pProducto\">$" + platos[i].precio + "</h4></div><div class=\"pedirProducto\"><button type=\"button\" class=\"btnPedir\" onclick=\"agregarYSalvarPedido(" + dbProductos.productos.indexOf(platos[i]) + ")\">"+
+        "</div><div class=\"precioProducto\"><h4 class=\"pProducto\">$" + platos[i].precio + "</h4></div><div class=\"cantidadProducto\"><button type=\"button\" class=\"btnCantidadProducto\" id=\"btnMenos\" onclick=\"btnMenosCantidad(" + "labCantidad" + String(i) + ")\">-</button><h4 id=\"labCantidad" + String(i) + "\">1</h4><button type=\"button\" id=\"btnMas\" class=\"btnCantidadProducto\" onclick=\"btnMasCantidad(" + "labCantidad" + String(i) + ")\">+</button></div><div class=\"pedirProducto\"><button type=\"button\" class=\"btnPedir\" onclick=\"agregarYSalvarPedido(" + dbProductos.productos.indexOf(platos[i]) + "," + i + ")\">"+
         "Pedir!</button></div></div>";
     }
 
@@ -79,7 +95,7 @@ function mostrarElementosPorRango(objetos,numPlato){
     document.getElementById('contenedorProducto123').innerHTML = "";
     let numero = 1;
     for (let i = inicioFor; i < topeFor;i++){
-        document.getElementById('contenedorProducto123').innerHTML +=  "<div class=\"producto producto"+ numero + "\"><div class=\"nombre\"><h2 class=\"nProducto\">" + objetos[i].nombre + "</h2>" +
+        document.getElementById('contenedorProducto123').innerHTML +=  "<div class=\"producto"+ numero + "\"><div class=\"nombre\"><h2 class=\"nProducto\">" + objetos[i].nombre + "</h2>" +
         "</div><div class=\"imagenProducto\"><img src=\"" + objetos[i].imgRuta + "\" alt=\"" + objetos[i].nombre + "\" class=\"imgPlato\">"+
         "</div><div class=\"precioProducto\"><h4 class=\"pProducto\">$" + objetos[i].precio + "</h4></div><div class=\"pedirProducto\"><button type=\"button\" class=\"btnPedir\" onclick=\"agregarYSalvarPedido(" + i + ")\">"+
         "Pedir!</button></div></div>";
@@ -133,3 +149,4 @@ function buscarEnter(event) {
         btnBuscarClick();
     }
 }
+
