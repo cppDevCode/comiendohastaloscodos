@@ -512,6 +512,7 @@ width: 2vw;
     justify-self: center;
   }
 
+/* CSS SOLO PARA CHROME */
 
   @supports (not (-moz-appearance: none)) {
     .input {
@@ -533,7 +534,7 @@ width: 2vw;
     }
   }
 
-
+/* FIN DE CSS SOLO PARA CHROME */
   
 
 

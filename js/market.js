@@ -51,10 +51,10 @@ function mostrarElementos (platos){
     let topePlatos = platos.length;
     let topeFor;
     let botones = parseInt(topePlatos/8);
-    if (getComputedStyle(document.body).getPropertyValue('--plataforma') === "celulares" || getComputedStyle(document.body).getPropertyValue('--plataforma') === "tablets") {
+    if (getComputedStyle(document.body).getPropertyValue('--plataforma') === "celulares" || getComputedStyle(document.body).getPropertyValue('--plataforma') === "tablet") {
         platosPorHoja = 4;
         botones = parseInt(topePlatos/4);
-    }
+    } 
     
     if (botones != 0){
         for (let i = 0; i< botones; i++) {
@@ -69,9 +69,9 @@ function mostrarElementos (platos){
     }
     for (let i = 0; i < topeFor;i++){
         let numero = parseInt(i)+1;
-        document.getElementById('contenedorProducto123').innerHTML +=  "<div class=\"producto producto"+ numero + "\"><div class=\"nombre\"><h2 class=\"nProducto\">" + platos[i].nombre + "</h2>" +
+        document.getElementById('contenedorProducto123').innerHTML +=  "<div class=\"producto producto" + numero + "\"><div class=\"nombre\"><h2 class=\"nProducto\">" + platos[i].nombre + "</h2>" +
         "</div><div class=\"imagenProducto\"><img src=\"" + platos[i].imgRuta + "\" alt=\"" + platos[i].nombre + "\" class=\"imgPlato\">"+
-        "</div><div class=\"precioProducto\"><h4 class=\"pProducto\">$" + platos[i].precio + "</h4></div><div class=\"cantidadProducto\"><button type=\"button\" class=\"btnCantidadProducto\" id=\"btnMenos\" onclick=\"btnMenosCantidad(" + "labCantidad" + String(i) + ")\">-</button><h4 id=\"labCantidad" + String(i) + "\">1</h4><button type=\"button\" id=\"btnMas\" class=\"btnCantidadProducto\" onclick=\"btnMasCantidad(" + "labCantidad" + String(i) + ")\">+</button></div><div class=\"pedirProducto\"><button type=\"button\" class=\"btnPedir\" onclick=\"agregarYSalvarPedido(" + dbProductos.productos.indexOf(platos[i]) + "," + i + ")\">"+
+        "</div><div class=\"precioProducto\"><h4 class=\"pProducto\">$" + platos[i].precio + "</h4></div><div class=\"cantidadProducto\"><button type=\"button\" class=\"btnCantidadProducto\" id=\"btnMenos\" onclick=\"btnMenosCantidad(" + "labCantidad" + String(i) + ")\">-</button><h4 id=\"labCantidad" + String(i) + "\" class=\"cantLabel\">1</h4><button type=\"button\" id=\"btnMas\" class=\"btnCantidadProducto\" onclick=\"btnMasCantidad(" + "labCantidad" + String(i) + ")\">+</button></div><div class=\"pedirProducto\"><button type=\"button\" class=\"btnPedir\" onclick=\"agregarYSalvarPedido(" + dbProductos.productos.indexOf(platos[i]) + "," + i + ")\">"+
         "Pedir!</button></div></div>";
     }
 
@@ -95,10 +95,11 @@ function mostrarElementosPorRango(objetos,numPlato){
     document.getElementById('contenedorProducto123').innerHTML = "";
     let numero = 1;
     for (let i = inicioFor; i < topeFor;i++){
-        document.getElementById('contenedorProducto123').innerHTML +=  "<div class=\"producto"+ numero + "\"><div class=\"nombre\"><h2 class=\"nProducto\">" + objetos[i].nombre + "</h2>" +
+        document.getElementById('contenedorProducto123').innerHTML += "<div class=\"producto producto" + numero + "\"><div class=\"nombre\"><h2 class=\"nProducto\">" + objetos[i].nombre + "</h2>" +
         "</div><div class=\"imagenProducto\"><img src=\"" + objetos[i].imgRuta + "\" alt=\"" + objetos[i].nombre + "\" class=\"imgPlato\">"+
-        "</div><div class=\"precioProducto\"><h4 class=\"pProducto\">$" + objetos[i].precio + "</h4></div><div class=\"pedirProducto\"><button type=\"button\" class=\"btnPedir\" onclick=\"agregarYSalvarPedido(" + i + ")\">"+
+        "</div><div class=\"precioProducto\"><h4 class=\"pProducto\">$" + objetos[i].precio + "</h4></div><div class=\"cantidadProducto\"><button type=\"button\" class=\"btnCantidadProducto\" id=\"btnMenos\" onclick=\"btnMenosCantidad(" + "labCantidad" + String(i) + ")\">-</button><h4 id=\"labCantidad" + String(i) + "\" class=\"cantLabel\">1</h4><button type=\"button\" id=\"btnMas\" class=\"btnCantidadProducto\" onclick=\"btnMasCantidad(" + "labCantidad" + String(i) + ")\">+</button></div><div class=\"pedirProducto\"><button type=\"button\" class=\"btnPedir\" onclick=\"agregarYSalvarPedido(" + dbProductos.productos.indexOf(objetos[i]) + "," + i + ")\">"+
         "Pedir!</button></div></div>";
+         
         numero++;
     }
 }

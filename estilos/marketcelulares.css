@@ -167,3 +167,40 @@
     height: 6vh;
     width: 10vw;
 }
+
+.cantidadProducto{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    justify-content: space-evenly;
+}
+
+.btnCantidadProducto {
+    border: 0;
+    height: 0.5vh;
+    width: 2vh;
+    margin-top: 3vh;
+    
+    background-color: rgba(0, 0, 0, 0);
+    font-size: 2em;
+}
+
+.btnCantidadProducto:hover {
+    cursor: pointer;
+    color: white;
+}
+
+#labCantidad {
+    font-size: 1.2em;
+    margin-top: 0.5vw;
+    text-align: center;
+}
+
+.cantLabel {
+    padding-top: 2vh;
+}
+
+.precioProducto {
+    margin-top: -3vh;
+    height: 2vh;
+}

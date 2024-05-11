@@ -1,6 +1,9 @@
 @import url(marketcelulares.css) (width<= 768px);
 @import url(markettablets.css) (width >= 769px);
 @media only screen and (min-width: 1000px) {
+    :root {
+        --plataforma: escritorio;
+    }
 
     .contenedor {
         display: grid;
@@ -110,6 +113,8 @@
         margin-bottom: 1vh;
     }
 
+    
+
 
     .nProducto {
         background-color: white;
@@ -135,6 +140,7 @@
     .btnPedir{
         height: 4vh;
         width: 12vw;
+        margin-top: -4vh;
         border-width: 0;
         border-top-left-radius: 0vh;
         border-bottom-left-radius: 1vh;
@@ -191,11 +197,11 @@
 
     .btnCantidadProducto {
         border: 0;
-        height: 4vh;
-        width: 4vh;
-        margin-top: -2vh;
-        padding: 1vw;
-        background-color: #7f7f7f;
+        height: 0.5vh;
+        width: 2vh;
+        margin-top: 1vh;
+        
+        background-color: rgba(0, 0, 0, 0);
         font-size: 2em;
     }
 
@@ -208,6 +214,10 @@
         font-size: 1.2em;
         margin-top: 0.5vw;
         text-align: center;
+    }
+
+    .cantLabel {
+        padding-top: 2vh;
     }
 
     .precioProducto {
