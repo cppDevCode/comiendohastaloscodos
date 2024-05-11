@@ -147,12 +147,16 @@
         border-bottom-right-radius: 1vh;
         background-color: black;
         color: white;
+        transition: all 0.3s ease;
     }
 
     .btnPedir:hover {
         cursor: pointer;
         background-color: white;
+        border-top-left-radius: 1vh;
+        border-top-right-radius: 1vh;
         color: black;
+        transform: scale3d(90%,90%, -50%);
     }
 
     .tituloLindo {
@@ -203,11 +207,13 @@
         
         background-color: rgba(0, 0, 0, 0);
         font-size: 2em;
+        transition: all 0.3s ease;
     }
 
     .btnCantidadProducto:hover {
         cursor: pointer;
         color: white;
+        transform: scale3d(90%,90%, -50%);
     }
 
     #labCantidad {
