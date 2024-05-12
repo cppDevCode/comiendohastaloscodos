@@ -109,6 +109,9 @@
     
   }
 
+.text-box {
+    color: #81f4c3;
+}
 
 .text-box :is(.main){
     margin-top: -40vh;

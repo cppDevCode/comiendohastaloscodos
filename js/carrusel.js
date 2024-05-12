@@ -1,15 +1,17 @@
 let numPlatoActual = 0;
 let ultimoPlato = dbProductos.productos.length-1;
+let botonAnterior = "botonCarrusel0";
 
 function cambiarPlato (nombrePlato){
     
     let platos = dbProductos.productos
     
 
+    
     document.getElementById("imgPlatos").src= platos[nombrePlato].imgRuta;
     document.getElementById("platoTitulo").innerHTML =  platos[nombrePlato].nombre;
     document.getElementById("platoTitulo").className += "SedanFuente";
-
+    document.getElementById("botonCarrusel" + numPlatoActual).style.borderColor = 'black';
     
     switch (nombrePlato){
         case 0:
@@ -42,7 +44,7 @@ function datoPlato(){
 
 }
 
-let botonAnterior = 0;
+
 
 function clickbtnCarrusel(id){
     document.getElementById(botonAnterior).style.borderColor = 'black';
@@ -50,7 +52,7 @@ function clickbtnCarrusel(id){
 }
 
 function siguientePlato (){
-    if ((numPlatoActual+1) < ultimoPlato){
+    if ((numPlatoActual+1) <= ultimoPlato){
         cambiarPlato(numPlatoActual + 1);
         botonAnterior = "botonCarrusel" + (numPlatoActual-1)
         plato = "botonCarrusel" + (numPlatoActual);
@@ -71,5 +73,6 @@ function agregarBotoneraCarrusel(){
     for (i= 0;i < dbProductos.productos.length;i++){
         document.getElementById("botoneraCarrusel").innerHTML += `<button onclick="cambiarPlato(`+ i +`)"  type="button" id="botonCarrusel` + i + `"></button>`
     }
+    document.getElementById("botonCarrusel0").style.borderColor = 'white';
     document.getElementById("imgPlatos").src= dbProductos.productos[0].imgRuta;
 }
