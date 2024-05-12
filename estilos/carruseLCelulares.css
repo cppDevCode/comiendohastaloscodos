@@ -21,24 +21,28 @@
 
 .imgAnteriorcarrusel {
     grid-area: botonIsq;
-    display: block;
-    padding: 10px ;
-    background-color: #4CAF50;
-    border-radius: 5px;
-    cursor: pointer;
-    
-}
-
-.imgPostcarrusel {
-    grid-area: botonDer;
-    
-    display: block;
+    display: relative;
     padding: 10px ;
     background-color: #4CAF50;
     border-radius: 5px;
     cursor: pointer;
     margin-top: auto;
     margin-bottom: auto;
+    z-index: 1;
+    transform:translate(10vw);
+}
+
+.imgPostcarrusel {
+    grid-area: botonDer;
+    display: relative;
+    padding: 10px ;
+    background-color: #4CAF50;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: auto;
+    margin-bottom: auto;
+    transform:translate(-10vw);
+    z-index: 1;
     
 }
 
@@ -57,16 +61,15 @@
     place-items: center;
 }
 .imgCarrusel .imgBox {
-    width: 70%;
-    height: 70%; /* Establecer un alto fijo */
+    width: 60vh;
+    height: 60vh; /* Establecer un alto fijo */
     overflow: hidden;
     margin-left: auto;
     margin-right: auto;
     border-radius: 30px;
-    position: relative;
-    
-    
-    
+    padding: 1vh;
+    z-index: 0;
+  
 }
 
 .imgCarrusel .imgBox img {

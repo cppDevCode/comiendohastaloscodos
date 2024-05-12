@@ -1,6 +1,9 @@
 @import url(carruseLCelulares.css) (width <= 768px );
 
 @media (min-width: 1000px){
+    :root{
+        --plataforma: escritorio;
+    }
     .carrusel {
         display: grid;
         grid-template-rows: auto;
