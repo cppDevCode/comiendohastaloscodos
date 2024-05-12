@@ -1,14 +1,13 @@
 let numPlatoActual = 0;
+let ultimoPlato = dbProductos.productos.length-1;
+
 function cambiarPlato (nombrePlato){
     
-    let platos = [ ["./img/platos/burguers-veganas-linwoods.jpg", "./img/platos/caldereta-de-seitan.jpg",
-    "./img/platos/Lasania-vegetal.jpg","./img/platos/pizza-Margherita.jpg","./img/platos/sopa-ramen-taifun.jpg"],
-     ["Hamburguesas veganas de quinoa y garbanzos","Caldereta de seitán","Lasaña vegana",
-     "Pizza Margherita", "Sopa reman taifun"]]
+    let platos = dbProductos.productos
     
 
-    document.getElementById("imgPlatos").src= platos [0][nombrePlato];
-    document.getElementById("platoTitulo").innerHTML =  platos [1][nombrePlato];
+    document.getElementById("imgPlatos").src= platos[nombrePlato].imgRuta;
+    document.getElementById("platoTitulo").innerHTML =  platos[nombrePlato].nombre;
     document.getElementById("platoTitulo").className += "SedanFuente";
 
     
@@ -16,35 +15,30 @@ function cambiarPlato (nombrePlato){
         case 0:
         document.getElementById('imgAnterior').style.opacity = 0;
         document.getElementById('imgPost').style.opacity = 0.3;
-        document.getElementById("imgPost").src= platos [0][nombrePlato +1 ];
+        document.getElementById("imgPost").src= platos[nombrePlato + 1].imgRuta;
         break;
        
-    case 4:
-        document.getElementById('imgAnterior').style.opacity = 0.3;
-        document.getElementById('imgPost').style.opacity = 0;
-        document.getElementById("imgAnterior").src= platos [0][nombrePlato -1 ];
-        break;
-    default:
-        document.getElementById('imgAnterior').style.opacity = 0.3;
-        document.getElementById('imgPost').style.opacity = 0.3;
-        document.getElementById("imgAnterior").src= platos [0][nombrePlato -1 ];
-        document.getElementById("imgPost").src= platos [0][nombrePlato +1 ];
-        break;
+        case ultimoPlato:
+            document.getElementById('imgAnterior').style.opacity = 0.3;
+            document.getElementById('imgPost').style.opacity = 0;
+            document.getElementById("imgAnterior").src= platos[nombrePlato - 1].imgRuta;
+            break;
+        
+        default:
+            document.getElementById('imgAnterior').style.opacity = 0.3;
+            document.getElementById('imgPost').style.opacity = 0.3;
+            document.getElementById("imgAnterior").src= platos[nombrePlato - 1].imgRuta;
+            document.getElementById("imgPost").src= platos[nombrePlato + 1 ].imgRuta;
+            break;
     }
 
     numPlatoActual = nombrePlato;
 }
 function datoPlato(){
-    switch(numPlatoActual)
-    {case 0:
-        document.getElementById('platoTitulo').innerHTML = "La sopa reman taifun"
-        document.getElementById('platoSub').innerHTML = "La sopa reman taifun es un plato tradicional de" 
-        +" la cocina vietnamita que se caracteriza por su sabor fresco y aromático. Esta compuesta por una base de"
-        +" caldo de pollo o de cerdo, enriquecido con hierbas aromáticas como cilantro, cebolleta y menta,"
-        +" así como con especias como la cúrcuma y el jengibre."
-
-
-    }
+    document.getElementById("imgPlatos").src= dbProductos.productos[numPlatoActual].imgRuta;
+    document.getElementById("platoTitulo").innerHTML =  dbProductos.productos[numPlatoActual].nombre;
+    document.getElementById("platoSub").innerHTML = dbProductos.productos[numPlatoActual].descripcion;
+    document.getElementById("platoTitulo").className += "SedanFuente";
 
 }
 
@@ -56,7 +50,7 @@ function clickbtnCarrusel(id){
 }
 
 function siguientePlato (){
-    if ((numPlatoActual+1) < 5){
+    if ((numPlatoActual+1) < ultimoPlato){
         cambiarPlato(numPlatoActual + 1);
         botonAnterior = "botonCarrusel" + (numPlatoActual-1)
         plato = "botonCarrusel" + (numPlatoActual);
@@ -73,3 +67,9 @@ function platoAnterior (){
     }
 }
 
+function agregarBotoneraCarrusel(){
+    for (i= 0;i < dbProductos.productos.length;i++){
+        document.getElementById("botoneraCarrusel").innerHTML += `<button onclick="cambiarPlato(`+ i +`)"  type="button" id="botonCarrusel` + i + `"></button>`
+    }
+    document.getElementById("imgPlatos").src= dbProductos.productos[0].imgRuta;
+}

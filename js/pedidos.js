@@ -4,6 +4,7 @@ let articulosTotales = 0;
 
 
 
+/* FUNCIONES DEL CARRITO */ 
 
 function cerrarClick(idElemento,plato, cantidad) {
     if (plato != undefined) {
@@ -64,6 +65,7 @@ function agregarYSalvarPedido(plato, id){
 }
 
 function cargoPedido (){
+    agregarBotoneraCarrusel();
     valorTotal = 0;
     if (Storage != undefined) {
         carritoPedido = JSON.parse(localStorage.getItem("carrito"));
@@ -80,3 +82,4 @@ function cargoPedido (){
     }
 }
 
+/* FIN FUNCIONES DEL CARRITO */ 
