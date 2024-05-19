@@ -30,7 +30,6 @@ let platosFiltrados;
 let filtrado = false;
 let filtroAnterior = "";
 
-
 function btnMenosCantidad(id) { 
     let cantidad = id.innerHTML;
     cantidad -= 1;
@@ -150,4 +149,3 @@ function buscarEnter(event) {
         btnBuscarClick();
     }
 }
-

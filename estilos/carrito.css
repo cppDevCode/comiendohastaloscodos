@@ -1,0 +1,131 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.seccion-carrito, .seccion-checkout {
+    width: 80%;
+    margin-bottom: 20px;
+    padding: 20px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.seccion-checkout {
+    display: flex;
+    justify-content: space-between;
+}
+
+.seccion-envio, .seccion-pago {
+    width: 48%;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+}
+
+input, select, textarea, button {
+    margin-top: 5px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+button {
+    margin-top: 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+.total {
+    margin-top: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+}
+
+.tarjetaProducto {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.imagenPlatoCarrito img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+.nombrePlatoCarrito {
+    flex: 1;
+    margin-left: 10px;
+}
+
+.valorPlatoCarrito {
+    margin-left: 20px;
+}
+
+.cantidadPlatoCarrito {
+    display: flex;
+    align-items: center;
+}
+
+.cantidadPlatoCarrito button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 0 5px;
+}
+
+.cantidadPlatoCarrito input {
+    width: 40px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+}

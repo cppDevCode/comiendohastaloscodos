@@ -33,7 +33,7 @@
         </nav>
         <div class="ingresar">
             <div class="carritoDiv">
-                <button type="button" class="botonMenu btnTopMenu" id="btnCarrito"><i class="fa-solid fa-cart-shopping"></i></button>
+                <button type="button" class="botonMenu btnTopMenu" id="btnCarrito"><i class="fa-solid fa-cart-shopping"></i></button><samp id="cuenta-carrito">0</samp>
                 <!-- VENTANA MODAL CARRITO-->
                 <div id="modalCarrito" class="modal">
                     <div class="modal-content modalCarritoS animar popup">
@@ -273,5 +273,11 @@
     <script src="./js/menu.js"></script>
     <script src="./js/pedidos.js"></script>
     <script src="./js/index.js"></script>
+    <script src="./js/carrusel.js"></script>
+    <script>
+        document.getElementById('btnFinalizarCompra').addEventListener('click', function() {
+            window.location.href = 'carrito.html';
+        });
+    </script>
 </body>
 </html>

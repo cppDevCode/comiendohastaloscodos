@@ -1,208 +1,207 @@
-@import url(carruseLCelulares.css) (width <= 768px );
 
-@media (min-width: 1000px){
-    :root{
-        --plataforma: escritorio;
-    }
-    .carrusel {
-        display: grid;
-        grid-template-rows: auto;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-areas:"botones botones botones"
-                            "titulo titulo  titulo"
-                            "imgAnterior img imgPost";  
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto auto auto auto;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        column-gap: 1vw;
-    
-    }
-
-    .imgCarrusel {
-        width: 100%;
-        aspect-ratio: 1/1.2;
-        position: relative;
-            
-    }
-
-    .imgCarrusel {
-        grid-area: img;
-        
-    }
-    .imgAnteriorcarrusel {
-        grid-area: imgAnterior;
-        align-self: start;
-    }
-
-    .imgPostcarrusel {
-        grid-area: imgPost;
-        align-self: start;
-    }
-
-    .botomCarrusel {
-        grid-area: botones;
-        padding-bottom: 10px;
-
-    }
-
-
-
-    #imgAnterior {
-        
-        width: 65vh;
-        opacity: 0;
-        
-    }
-    #imgAnterior:hover {
-        cursor: pointer;
-    }
-
-    #imgPost {
-        
-        width: 65vh;
-        opacity: 0.3;
-    }
-    #imgPost:hover {
-        cursor: pointer;
-    }
-
-    .carrusel img {
-        height: 50vh;
-        width: 70vh;
-        border-radius: 30px;
-    }
-
-    .carrusel {
-        display: grid;
-        place-items: center;
-    }
-    .imgCarrusel .imgBox {
-        width: 100%;
-        height: 50vh; /* Establecer un alto fijo */
-        overflow: hidden;
-        border-radius: 30px;
-        position: relative;
-        
-    }
-
-    .imgCarrusel .imgBox img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover; /* Recortar la imagen para ajustarse al contenedor */
-        filter: grayscale(0) brightness(1);
-        scale: 1.2;
-        transition: scale 2s ease-in-out, filter 1s ease-in-out;
-    }
-
-    .imgCarrusel:hover .imgBox img {
-        filter: grayscale(1) brightness(0.7);
-        scale: 1;
-    }
-
-    .imgCarrusel.text-box {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-        color: white;
-    
-        
-    }
-
-    .text-box {
-        color: #81f4c3;
-    }
-
-    .text-box :is(.main){
-        margin-top: -40vh;
-        height: 34px;
-        line-height: 34px;
-    overflow: hidden;
-    
-    }
-    .text-box :is(.sub){
-        
-        height: 400px;
-        line-height: 34px;
-        overflow: hidden;
-    
-    }
-    .sub {
-        margin-top: 5vh;
-    }
-
-
-    .text-box .sub {
-    font-size: 20px;
-    font-weight: 500;
-    }
-
-    .main span, .sub span {
-    display: block;
-    transition: transform 0.5s ease-in-out;
-    }
-    .main span {
-    transition-delay: 0.2s;
-    transform: translateY(100%);
-
-    }
-    .sub span {
-    transform: translateY(-100%);
-    transition-delay: 0.5s;
-    }
-
-    .imgCarrusel:hover .text-box :is(span){
-        transform: translateY(0%);
-    }
-
-    .text-box .main {
-    font-size: 26px;
-    font-weight: 600px;
-    text-transform: uppercase;
-    position: relative;
-    }
-    .text-box::after {
-        position: absolute;
-        content: "";
-        top: 20%;
-        left: 50%;
-        width: 100%;
-        height: 5px;
-        transform: translate(-50%, -50%) scaleX(0);
-        transform-origin: left;
-        transition: 0.5s ease;
-        background-color: rgb(250, 250, 250);
-        
-    }
-
-    .imgCarrusel:hover .text-box::after {
-        transform: translate(-50%, -50%) scaleX(1);
-    }
-
-    .botomCarrusel {
-        display: flex;
-        justify-content: center;
-    }
-    
-    .botomCarrusel button {
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        border: 1px solid #0d0d0d;
-        background-color: #656464;
-        margin: 0 5px;
-        cursor: pointer;
-        
-    }
-    
-    .botomCarrusel button:focus {
-        outline: 2px solid rgba(240, 240, 241, 0.984);
-    }
+.carrusel {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:"botones botones botones"
+                        "titulo titulo  titulo"
+                        "imgAnterior img imgPost";  
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    column-gap: 1vw;
+   
 }
+
+.imgCarrusel {
+    width: 100%;
+    aspect-ratio: 1/1.2;
+    position: relative;
+        
+}
+
+.imgCarrusel {
+    grid-area: img;
+      
+}
+.imgAnteriorcarrusel {
+    grid-area: imgAnterior;
+    align-self: start;
+}
+
+.imgPostcarrusel {
+    grid-area: imgPost;
+    align-self: start;
+}
+
+.botomCarrusel {
+    grid-area: botones;
+    padding-bottom: 10px;
+
+}
+
+
+
+#imgAnterior {
+    
+    width: 65vh;
+    opacity: 0;
+    
+}
+#imgAnterior:hover {
+    cursor: pointer;
+}
+
+#imgPost {
+    
+    width: 65vh;
+    opacity: 0.3;
+}
+#imgPost:hover {
+    cursor: pointer;
+}
+
+.carrusel img {
+    height: 50vh;
+    width: 70vh;
+    border-radius: 30px;
+}
+
+.carrusel {
+    display: grid;
+    place-items: center;
+}
+.imgCarrusel .imgBox {
+    width: 100%;
+    height: 50vh; /* Establecer un alto fijo */
+    overflow: hidden;
+    border-radius: 30px;
+    position: relative;
+    
+}
+
+.imgCarrusel .imgBox img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Recortar la imagen para ajustarse al contenedor */
+    filter: grayscale(0) brightness(1);
+    scale: 1.2;
+    transition: scale 2s ease-in-out, filter 1s ease-in-out;
+}
+
+.imgCarrusel:hover .imgBox img {
+    filter: grayscale(1) brightness(0.7);
+    scale: 1;
+}
+
+.imgCarrusel.text-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+   
+    
+  }
+
+.text-box {
+    color: #81f4c3;
+}
+
+.text-box :is(.main){
+    margin-top: -40vh;
+    height: 34px;
+    line-height: 34px;
+   overflow: hidden;
+   
+}
+.text-box :is(.sub){
+    
+    height: 400px;
+    line-height: 34px;
+    overflow: hidden;
+   
+}
+.sub {
+    margin-top: 5vh;
+}
+
+
+.text-box .sub {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.main span, .sub span {
+  display: block;
+  transition: transform 0.5s ease-in-out;
+}
+.main span {
+  transition-delay: 0.2s;
+  transform: translateY(100%);
+
+}
+.sub span {
+  transform: translateY(-100%);
+  transition-delay: 0.5s;
+}
+
+.imgCarrusel:hover .text-box :is(span){
+    transform: translateY(0%);
+}
+
+.text-box .main {
+  
+  font-size: 26px;
+  font-weight: 600px;
+  text-transform: uppercase;
+  position: relative;
+
+
+
+}
+.text-box::after {
+    position: absolute;
+    content: "";
+    top: 20%;
+    left: 50%;
+    width: 100%;
+    height: 5px;
+    transform: translate(-50%, -50%) scaleX(0);
+    transform-origin: left;
+    transition: 0.5s ease;
+    background-color: rgb(250, 250, 250);
+    
+}
+
+.imgCarrusel:hover .text-box::after {
+    transform: translate(-50%, -50%) scaleX(1);
+}
+
+.botomCarrusel {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .botomCarrusel button {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid #0d0d0d;
+    background-color: #656464;
+    margin: 0 5px;
+    cursor: pointer;
+    
+  }
+  
+  .botomCarrusel button:focus {
+    outline: 2px solid rgba(240, 240, 241, 0.984);
+}
+
 
 

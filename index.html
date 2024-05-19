@@ -19,8 +19,8 @@
     <script src="./js/carrusel.js"></script>
     <script src="./js/pedidos.js"></script>
 </head>
-<!--Carga pedido y carga botoneras-->
-<body onpageshow="cargoPedido()">
+
+<body onpageshow="agregarBotoneraCarrusel()">
     <header class="headerContenedor fondoHeader">
         <div class="logo">
             <img src="./img/logo2.png" alt="Logo Comiendo Hasta los codos" id="logoPPal">
@@ -34,7 +34,7 @@
         </nav>
         <div class="ingresar">
             <div class="carritoDiv">
-                <button type="button" class="botonMenu btnTopMenu" id="btnCarrito"><i class="fa-solid fa-cart-shopping"></i></button>
+                <button type="button" class="botonMenu btnTopMenu" id="btnCarrito"><i class="fa-solid fa-cart-shopping"></i></button><samp id="cuenta-carrito">0</samp>
                 <!-- VENTANA MODAL CARRITO-->
                 <div id="modalCarrito" class="modal">
                     <div class="modal-content modalCarritoS animar popup">
@@ -202,6 +202,14 @@
                 <img src="./img/resto3.jpg" class="imagenCuadro" id="imagenResto3" alt="">
             </div>
         </div>
+        <div class="textoPPal" id="menuResto">
+            <h1 class="updock-regular" id="tituloHistoria">Comiendo hasta los codos!</h1>
+        </div>
+        <div class="flexTipoComidas">
+            <img src="./img/CarnivoreLogo.png" class="comidaLogo" alt="Logo Carnivoros">
+            <img src="./img/veganLogo.png" class="comidaLogo" alt="Logo Veganos">
+            <img src="./img/SinTaccLogo.png" class="comidaLogo" alt="Logo Sin Tacc">
+        </div>
 <!--Comieza el carrysel-->
         <div class="carrusel">
             <div class="imgCarrusel">
@@ -219,7 +227,7 @@
             <div class="imgPostcarrusel">
                 <img src="./img/platos/caldereta-de-seitan.jpg" id="imgPost" alt="Plato Siguiente" onclick="siguientePlato()">
             </div>
-                <div class="botomCarrusel" id="botoneraCarrusel">
+            <div class="botomCarrusel" id="botoneraCarrusel">
             </div>
         </div>
         <div class="DondeEncontrarnos">
