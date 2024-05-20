@@ -64,11 +64,11 @@ function actualizarNumeroCarrito() {
 
 
 
-
 function agregarYSalvarPedido(plato, id) {
     let pedido = { plato: 0 };
-    pedido.cantidad = document.getElementById("labCantidad" + id).innerHTML;
-    articulosTotales += parseInt(pedido.cantidad);
+    let cantidad = parseInt(document.getElementById("labCantidad" + id).innerHTML);
+    pedido.cantidad = isNaN(cantidad) ? 1 : cantidad; // Si la conversión falla, establecemos la cantidad en 1
+    articulosTotales += pedido.cantidad;
     pedido.plato = plato;
     carritoPedido.push(pedido);
     localStorage.removeItem("carrito");
@@ -95,6 +95,7 @@ function cargoPedido() {
         }
     }
 }
+
 
 /*
 // Obtener los precios de los productos

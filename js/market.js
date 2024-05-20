@@ -31,7 +31,7 @@ let filtrado = false;
 let filtroAnterior = "";
 
 function btnMenosCantidad(id) { 
-    let cantidad = id.innerHTML;
+    let cantidad = parseInt(id.innerHTML);
     cantidad -= 1;
     if (cantidad > 0) {
         id.innerHTML = cantidad;
@@ -39,7 +39,7 @@ function btnMenosCantidad(id) {
 }
 
 function btnMasCantidad(id) { 
-    let cantidad = id.innerHTML;
+    let cantidad = parseInt(id.innerHTML);
     cantidad = parseInt(cantidad) + 1;
     if (cantidad > 0) {
         id.innerHTML = cantidad;

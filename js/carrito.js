@@ -1,14 +1,20 @@
 document.addEventListener('DOMContentLoaded', function() {
     let carritoPedido = JSON.parse(localStorage.getItem('carrito')) || [];
+    carritoPedido = carritoPedido.map(item => ({
+        ...item,
+        cantidad: Number(item.cantidad) || 1
+    }));
+
+    localStorage.setItem('carrito', JSON.stringify(carritoPedido));
 
     function renderizarproductos() {
         const listaProductos = document.getElementById('listaProductosAComprar');
         listaProductos.innerHTML = '';
         let valorTotal = 0;
-        let articulosTotales = 0;
 
         carritoPedido.forEach((item, index) => {
             const producto = dbProductos.productos[item.plato];
+            const cantidad = item.cantidad;
             const li = document.createElement('li');
             li.innerHTML = `
                 <div class="tarjetaProducto">
@@ -19,35 +25,36 @@ document.addEventListener('DOMContentLoaded', function() {
                         <h4>${producto.nombre}</h4>
                     </div>
                     <div class="valorPlatoCarrito">
-                        <h3>$${(producto.precio * item.cantidad).toFixed(2)}</h3>
+                        <h3>$${(producto.precio * cantidad).toFixed(2)}</h3>
                     </div>
                     <div class="cantidadPlatoCarrito">
                         <button onclick="updateQuantity(${index}, -1)">-</button>
-                        <input type="number" value="${item.cantidad}" min="1" readonly>
+                        <input type="number" value="${cantidad}" min="1" readonly>
                         <button onclick="updateQuantity(${index}, 1)">+</button>
                     </div>
                 </div>
             `;
             listaProductos.appendChild(li);
-            valorTotal += producto.precio * item.cantidad;
-            articulosTotales += item.cantidad;
+            valorTotal += producto.precio * parseInt(cantidad);
         });
 
         document.getElementById('precio').textContent = `$${valorTotal.toFixed(2)}`;
-        document.getElementById('artCantidad').textContent = `Artículos en el carrito: ${articulosTotales}`;
+        // No se muestra "Artículos en el carrito"
     }
 
     window.updateQuantity = function(index, amount) {
         let cantidadactual = carritoPedido[index].cantidad;
-        cantidadactual = parseInt(cantidadactual) + amount;
+        cantidadactual = Number(cantidadactual) + amount;
         if (cantidadactual < 1) {
             cantidadactual = 1;
         }
         carritoPedido[index].cantidad = cantidadactual;
+
         localStorage.setItem('carrito', JSON.stringify(carritoPedido));
+
         renderizarproductos();
     }
-
+    
     renderizarproductos();
 
     document.getElementById('formulario-envio').addEventListener('submit', function(event) {
@@ -69,3 +76,19 @@ document.addEventListener('DOMContentLoaded', function() {
         alert('Pago procesado correctamente');
     });
 });
+// Función para limpiar el carrito y actualizar el precio total
+function limpiarCarrito() {
+    localStorage.removeItem('carrito'); // Elimina el carrito del localStorage
+    
+    // Establece el precio total a 0
+    let valorTotal = 0;
+    document.getElementById('precio').textContent = '$' + valorTotal.toFixed(2);
+
+    // Borra el contenido del carrito en el HTML
+    document.getElementById('listaProductosAComprar').innerHTML = ''; 
+    
+    document.getElementById('artCantidad').textContent = 'Artículos en el carrito: 0';
+
+    // Renderiza nuevamente los productos (que ahora están vacíos)
+    renderizarproductos();
+}

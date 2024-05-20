@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrito de Compras</title>
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./estilos/carrito.css">
 </head>
 <body>
@@ -15,7 +16,6 @@
             <h2>Productos en tu carrito</h2>
             <ul id="listaProductosAComprar"></ul>
             <div class="total">
-                <p id="artCantidad">Artículos en el carrito: 0</p>
                 <p>Total: <span id="precio">$0.00</span></p>
             </div>
         </section>
@@ -50,6 +50,23 @@
                 </form>
             </div>
         </section>
+        <a href="market.html">Volver a la página de Delivery</a>
+        <button id="cancelarCompra">Cancelar compra</button>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                function limpiarCarrito() {
+                    localStorage.removeItem('carrito'); 
+                    document.getElementById('listaProductosAComprar').innerHTML = ''; 
+                    location.reload();
+                }
+                document.getElementById('cancelarCompra').addEventListener('click', function() {
+                    if (confirm('¿Estás seguro de que deseas cancelar la compra y borrar todos los productos del carrito?')) {
+                        limpiarCarrito();
+                        alert('Compra cancelada y carrito limpiado.');
+                    }
+                });
+            });
+        </script>
     </main>
     <script src="./js/market.js"></script>
     <script src="./js/carrito.js"></script>
