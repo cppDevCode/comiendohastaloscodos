@@ -225,7 +225,7 @@
             <!-- Inicio de Modal Contactos-->
             <div id="modalContactar" class="modal">
                 <div class="modal-content animar blur">
-                    <form action="/formulario"  method="post" class="formContenedor modalDerechaRedondeada  modalContacto">
+                    <form action="/formulario" id="form2" method="post" class="formContenedor modalDerechaRedondeada  modalContacto">
                         <div class="x xDerecha">
                             <span id="btnCerrar"><i class="fa-regular fa-circle-xmark"></i></span>
                         </div>
@@ -233,15 +233,18 @@
                             <legend class="titulo bebas-neue-regular">Contactenos</legend>
                             <div class="nombreFormulario">
                                 <label id="Form_nombre" for="nombreRegistro" class="campos kanit-medium">Nombre </label>
-                                <input id="nombreRegistro" type="text" placeholder="Ingrese su nombre" class="input3" required>
+                                <input id="nombreRegistro" type="text" placeholder="Ingrese su nombre" class="input3" >
+                                <p class="Alerta22" id="cortoNombre"></p>
                             </div>
                             <div class="nombreFormulario">
                                 <label for="Apellido" class="campos kanit-medium">Apellido</label>
                                 <input id="Apellido" type="text" placeholder="Ingrese Apellido" class="input3">
+                                <p class="Alerta22" id="cortoApellido"></p>
                             </div>
                             <div class="nombreFormulario">
                                 <label for="email" class="campos kanit-medium">Email</label>
-                                <input id="email" type="email" placeholder="Ingrese Email" class="input3" required>
+                                <input id="email" type="text" placeholder="Ingrese Email" class="input3" >
+                                <p class="Alerta22" id="emailMalo"></p>
                             </div>
                             <div class="nombreFormulario">
                                 <label for="option" class="campos kanit-medium">Tipo:</label >
@@ -252,12 +255,14 @@
                                 </select>
                             </div>
                             <div class="nombreFormulario">
-                                <textarea placeholder="Ingrese comentario" name="Comentario" id="comentario"  cols="30" rows="10" class="input3"></textarea >
+                                <textarea placeholder="Ingrese comentario" name="Comentario" id="comentario"  cols="30" rows="10" class="input3" onkeydown="contarTexto()"></textarea >
+                                <p id="areaTexto" ></p>
                                 <label for="archivo" class="archivo kanit-medium"></label>
                                 <input type="file" id="archivo">
                             </div>
                             <div class="nombreFormulario">
                                 <button type="submit" class="btnGen btnChico" id="btnEnviar">Enviar</button >
+                                <p id="peligro" class="peligro"></p>
                             </div>
                         </fieldset>
                     </form>
@@ -273,6 +278,7 @@
     <script src="./js/menu.js"></script>
     <script src="./js/pedidos.js"></script>
     <script src="./js/carrusel.js"></script>
+    <script src="./js/form2_validacion.js"></script>
     <script>
         document.getElementById('btnFinalizarCompra').addEventListener('click', function() {
             window.location.href = 'carrito.html';

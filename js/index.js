@@ -36,4 +36,3 @@ btnHudson.onclick = function(){
     btnAnterior.className = "btnFranquicia btnGen";
     btnAnterior = btnHudson;
 }
-
