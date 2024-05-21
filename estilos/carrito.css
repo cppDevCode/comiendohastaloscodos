@@ -129,3 +129,15 @@ li {
     border-radius: 5px;
     padding: 5px;
 }
+
+.btnLink {
+    border-style: none;
+    background-color: rgba(0, 0, 0, 0);
+    color: blue;
+}
+
+.btnLink:hover {
+    text-decoration: underline;
+    border-style: none;
+    background-color: rgba(0, 0, 0, 0);
+}
