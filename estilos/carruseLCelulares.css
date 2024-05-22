@@ -11,7 +11,7 @@
     grid-template-rows: 0.5fr ;
 }
 .imgCarrusel {
-    width: 40vw;
+    width: 100%;
     aspect-ratio: 1/1.2;
     position: relative;
     grid-area: img; 
@@ -21,28 +21,24 @@
 
 .imgAnteriorcarrusel {
     grid-area: botonIsq;
-    display: relative;
+    display: block;
     padding: 10px ;
     background-color: #4CAF50;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: auto;
-    margin-bottom: auto;
-    z-index: 1;
-    transform:translate(10vw);
+    
 }
 
 .imgPostcarrusel {
     grid-area: botonDer;
-    display: relative;
+    
+    display: block;
     padding: 10px ;
     background-color: #4CAF50;
     border-radius: 5px;
     cursor: pointer;
     margin-top: auto;
     margin-bottom: auto;
-    transform:translate(-10vw);
-    z-index: 1;
     
 }
 
@@ -61,21 +57,22 @@
     place-items: center;
 }
 .imgCarrusel .imgBox {
-    width: 40vh;
-    height: 40vh; /* Establecer un alto fijo */
+    width: 70%;
+    height: 70%; /* Establecer un alto fijo */
     overflow: hidden;
     margin-left: auto;
     margin-right: auto;
     border-radius: 30px;
-    padding: 1vh;
-    z-index: 0;
-  
+    position: relative;
+    
+    
+    
 }
 
 .imgCarrusel .imgBox img {
     display: block;
-    width: 80%;
-    height: 80%;
+    width: 100%;
+    height: 100%;
     object-fit: cover; /* Recortar la imagen para ajustarse al contenedor */
     filter: grayscale(0) brightness(1);
     scale: 1.2;
@@ -169,3 +166,4 @@ position: relative;
 .imgCarrusel:hover .text-box::after {
     transform: translate(-50%, -50%) scaleX(1);
 }
+

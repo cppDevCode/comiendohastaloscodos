@@ -1,9 +1,6 @@
 @import url(carruseLCelulares.css) (width <= 768px );
-@import url(carruselTablets.css) (width <= 999px );
+
 @media (min-width: 1000px){
-    :root{
-        --plataforma: escritorio;
-    }
     .carrusel {
         display: grid;
         grid-template-rows: auto;
@@ -204,3 +201,4 @@
         outline: 2px solid rgba(240, 240, 241, 0.984);
     }
 }
+
