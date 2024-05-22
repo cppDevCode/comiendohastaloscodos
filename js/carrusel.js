@@ -17,19 +17,19 @@ function cambiarPlato (nombrePlato){
     switch (nombrePlato){
         case 0:
         document.getElementById('imgAnterior').style.opacity = 0;
-        document.getElementById('imgPost').style.opacity = 0.3;
+        document.getElementById('imgPost').style.opacity = 0.4;
         document.getElementById("imgPost").src= platos[nombrePlato + 1].imgRuta;
         break;
        
         case ultimoPlato:
-            document.getElementById('imgAnterior').style.opacity = 0.3;
+            document.getElementById('imgAnterior').style.opacity = 0.4;
             document.getElementById('imgPost').style.opacity = 0;
             document.getElementById("imgAnterior").src= platos[nombrePlato - 1].imgRuta;
             break;
         
         default:
-            document.getElementById('imgAnterior').style.opacity = 0.3;
-            document.getElementById('imgPost').style.opacity = 0.3;
+            document.getElementById('imgAnterior').style.opacity = 0.4;
+            document.getElementById('imgPost').style.opacity = 0.4;
             document.getElementById("imgAnterior").src= platos[nombrePlato - 1].imgRuta;
             document.getElementById("imgPost").src= platos[nombrePlato + 1 ].imgRuta;
             break;
@@ -48,14 +48,16 @@ function datoPlato(){
 
 
 function clickbtnCarrusel(id){
-    document.getElementById(botonAnterior).style.borderColor = 'black';
-    document.getElementById(id).style.borderColor = 'white';
+    if ((getComputedStyle(document.body).getPropertyValue('--plataforma') != "celulares") & (getComputedStyle(document.body).getPropertyValue('--plataforma') != "tablet")){
+        document.getElementById(botonAnterior).style.borderColor = 'black';
+        document.getElementById(id).style.borderColor = 'white';
+    }
 }
 
 function siguientePlato (){
     if ((numPlatoActual+1) <= ultimoPlato){
         cambiarPlato(numPlatoActual + 1);
-        if ((getComputedStyle(document.body).getPropertyValue('--plataforma') != "celulares") || (getComputedStyle(document.body).getPropertyValue('--plataforma') != "tablet")){
+        if ((getComputedStyle(document.body).getPropertyValue('--plataforma') != "celulares") & (getComputedStyle(document.body).getPropertyValue('--plataforma') != "tablet")){
             botonAnterior = "botonCarrusel" + (numPlatoActual-1)
             plato = "botonCarrusel" + (numPlatoActual);
             clickbtnCarrusel(plato);
@@ -80,10 +82,9 @@ function platoAnterior (){
 function agregarBotoneraCarrusel(){
 
     if ((getComputedStyle(document.body).getPropertyValue('--plataforma') === "celulares")  || (getComputedStyle(document.body).getPropertyValue('--plataforma') === "tablet")){
-        console.log("entro")
        document.getElementsByClassName('imgAnteriorcarrusel')[0].innerHTML = `<button type="button" id="imgAnterior" onclick="platoAnterior()"><i class="fa-solid fa-circle-chevron-left"></i></button>`
-       document.getElementsByClassName("imgPostcarrusel")[0].innerHTML= `<button type="button" id="imgPost" onclick="siguientePlato()"><i class="fa-solid fa-circle-chevron-left"></i></button>`
-
+       document.getElementById('imgAnterior').style.opacity = 0;
+       document.getElementsByClassName("imgPostcarrusel")[0].innerHTML= `<button type="button" id="imgPost" onclick="siguientePlato()"><i class="fa-solid fa-circle-chevron-right"></i></button>`
 
     }
     else{

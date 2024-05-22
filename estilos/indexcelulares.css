@@ -694,7 +694,7 @@ margin-top: 30vh;
 /*width: 100vw;*/
 /*height:100vh;*/
 grid-template-columns: 0.5fr;
-grid-template-rows: 0.1fr 0.5fr 0.1fr 0.5fr 0.2fr;
+grid-template-rows: 0.1fr 0.2fr 0.1fr 0.5fr 0.2fr;
 grid-template-areas: "imagenP"
                      "carrousel"
                      "dondeEncontrarnos"
@@ -776,11 +776,6 @@ margin-left: 3vw;
 grid-area: carrousel;
 justify-self: center;
 
-}
-
-#carrouselImg {
-height: 20vh;
-width: 20vh;
 }
 
 .ubicacionFranquicias {

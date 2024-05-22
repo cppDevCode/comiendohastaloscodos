@@ -1,5 +1,4 @@
-@import url(carruseLCelulares.css) (width <= 768px );
-
+@import url(carruselTablets.css) (max-width: 999px );
 @media (min-width: 1000px){
     .carrusel {
         display: grid;

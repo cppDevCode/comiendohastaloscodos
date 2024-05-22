@@ -1,49 +1,43 @@
+@import url(carruseLCelulares.css) (max-width: 768px );
+@media (min-width: 769px){
 :root{
     --plataforma: tablet;
 }
 .carrusel {
-    display: grid;
-    grid-template-areas:
-    
-    "botonIsq img botonDer " ;  
-    
-    grid-template-columns:  0.5fr 1fr 0.5fr ;
-    grid-template-rows: 0.5fr ;
+    display: flex;
 }
 .imgCarrusel {
     width: 100%;
     aspect-ratio: 1/1.2;
     position: relative;
     grid-area: img; 
-    margin-top: 50%;    
+    
 }
 
 
 .imgAnteriorcarrusel {
     grid-area: botonIsq;
-    display: relative;
-    padding: 10px ;
-    background-color: #4CAF50;
+    display: block;
+    padding: 2px ;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: auto;
-    margin-bottom: auto;
-    z-index: 1;
-    transform:translate(10vw);
+    position: absolute;
+    margin-right: 50vw;
+    margin-top: -20vh;
 }
 
 .imgPostcarrusel {
     grid-area: botonDer;
-    display: relative;
-    padding: 10px ;
-    background-color: #4CAF50;
+    
+    display: block;
+    padding: 1px ;
+    /*background-color: #4CAF50;*/
     border-radius: 5px;
     cursor: pointer;
-    margin-top: auto;
     margin-bottom: auto;
-    transform:translate(-10vw);
-    z-index: 1;
-    
+    position: absolute;
+    margin-left: 75vw;
+    margin-top: -20vh;
 }
 
 .botomCarrusel {
@@ -61,21 +55,22 @@
     place-items: center;
 }
 .imgCarrusel .imgBox {
-    width: 60vh;
-    height: 60vh; /* Establecer un alto fijo */
+    width: 90vh;
+    height: 70vh; /* Establecer un alto fijo */
     overflow: hidden;
     margin-left: auto;
     margin-right: auto;
     border-radius: 30px;
-    padding: 1vh;
-    z-index: 0;
-  
+    position: relative;
+    top: 50vh;
+    
+    
 }
 
 .imgCarrusel .imgBox img {
     display: block;
     width: 100%;
-    height: 100%;
+    height: 70vh;
     object-fit: cover; /* Recortar la imagen para ajustarse al contenedor */
     filter: grayscale(0) brightness(1);
     scale: 1.2;
@@ -91,14 +86,14 @@
 }
 
 .text-box :is(.main){
-    margin-top: -30vh;
+    margin-top: -15vh;
+    margin-left: 10vw;
     height: 34px;
     line-height: 34px;
     overflow: hidden;
 
 }
 .text-box :is(.sub){
-    
     height: 400px;
     line-height: 34px;
     overflow: hidden;
@@ -108,13 +103,14 @@
     margin-top: 5vh;
 }
 
+
 .main span, .sub span {
 display: block;
-width: 70vw;
+width: 45vw;
 transition: transform 0.5s ease-in-out;
 text-align: center;
 margin-left: auto;
-margin-right: auto;
+margin-right: 20vw;
 }
 .main span {
 transition-delay: 0.2s;
@@ -131,21 +127,22 @@ transition-delay: 0.5s;
 }
 
 .text-box .main {
-font-size: 26px;
+font-size: 13px;
 font-weight: 600px;
 text-transform: uppercase;
 position: relative;
+
 }
 
 .text-box .sub {
-    font-size: 20px;
+    font-size: 10px;
     font-weight: 500;
 }
 
 /* animacion barra*/
 .imgCarrusel.text-box {
     position: absolute;
-    top: 50%;
+    top: 65vh;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -155,9 +152,9 @@ position: relative;
 .text-box::after {
     position: absolute;
     content: "";
-    top: 20%;
+    top: 65vh;
     left: 50%;
-    width: 70%;
+    width: 50%;
     height: 5px;
     transform: translate(-50%, -50%) scaleX(0);
     transform-origin: left;
@@ -168,4 +165,6 @@ position: relative;
 
 .imgCarrusel:hover .text-box::after {
     transform: translate(-50%, -50%) scaleX(1);
+}
+
 }
