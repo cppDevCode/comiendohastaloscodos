@@ -874,8 +874,22 @@ width: 51.5vw;
 }
 
 
-
 } 
+
+
+
+#cuenta-carrito{
+
+  background-color: rgb(160, 160, 160);
+  border-radius: 100%;
+  display: inline-block;
+  height: 20px;
+  line-height: 20px;
+  aspect-ratio: 1;
+  text-align: center;
+  /* margin-bottom: 15px; */
+}
+
 
 #alerta22{
   color: #c53b34;

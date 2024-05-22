@@ -80,16 +80,14 @@ function platoAnterior (){
 }
 
 function agregarBotoneraCarrusel(){
-
     if ((getComputedStyle(document.body).getPropertyValue('--plataforma') === "celulares")  || (getComputedStyle(document.body).getPropertyValue('--plataforma') === "tablet")){
        document.getElementsByClassName('imgAnteriorcarrusel')[0].innerHTML = `<button type="button" id="imgAnterior" onclick="platoAnterior()"><i class="fa-solid fa-circle-chevron-left"></i></button>`
        document.getElementById('imgAnterior').style.opacity = 0;
        document.getElementsByClassName("imgPostcarrusel")[0].innerHTML= `<button type="button" id="imgPost" onclick="siguientePlato()"><i class="fa-solid fa-circle-chevron-right"></i></button>`
 
-    }
-    else{
-    for (i= 0;i < dbProductos.productos.length;i++){
-        document.getElementById("botoneraCarrusel").innerHTML += `<button onclick="cambiarPlato(`+ i +`)"  type="button" id="botonCarrusel` + i + `"></button>`
+    } else{
+        for (i= 0;i < dbProductos.productos.length;i++){
+            document.getElementById("botoneraCarrusel").innerHTML += `<button onclick="cambiarPlato(`+ i +`)"  type="button" id="botonCarrusel` + i + `"></button>`
         }
         document.getElementById("botonCarrusel0").style.borderColor = 'white';
         document.getElementById("imgPlatos").src= dbProductos.productos[0].imgRuta;
