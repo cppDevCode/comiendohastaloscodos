@@ -1,25 +1,16 @@
+let urlServer = 'http://127.0.0.1:5000/platos?traertodos=1'
+let urlPrecios = 'http://127.0.0.1:5000/precios?traertodos=1'
+
+let platos
+
 let dbProductos = {
-    "productos": [
-    { "nombre": "Pollo con chanpignones", "descripcion": " Plato de pollo cocinado con champiñones frescos, sazonado y cocido a la perfección para un sabor delicioso y una textura suculenta.","imgRuta": "./img/platos/polloCChampignones.jpg", "precio": 999.56, "tipo":"carnivoro" },
-    { "nombre": "Pollo y Vegetales", "descripcion":"Plato de pollo acompañado de una variedad de vegetales frescos, cocinados al punto para resaltar sus sabores naturales y crear un plato nutritivo y satisfactorio.", "imgRuta": "./img/platos/polloyvegetales.jpeg", "precio": 150.56, "tipo":"carnivoro" },
-    { "nombre": "Bife Rustico", "descripcion":"Jugoso corte de carne asada, sazonado con hierbas y especias, con un toque de rusticidad que resalta su sabor auténtico y su textura tierna.","imgRuta": "./img/platos/bifeRustico.jpg", "precio": 1150.56, "tipo":"carnivoro" },
-    { "nombre": "Ensalada Rissiotti", "descripcion":"Mezcla fresca de rúcula, tomates cherry, queso parmesano y vinagreta balsámica, ofreciendo un sabor equilibrado y una experiencia refrescante.", "imgRuta": "./img/platos/ensaladaRissiotti.jpg", "precio": 950.56, "tipo":"vegano" },
-    { "nombre": "Dulcecito", "descripcion":"Mezcla fresca de rúcula, tomates cherry, queso parmesano y vinagreta balsámica, ofreciendo un sabor equilibrado y una experiencia refrescante.", "imgRuta": "./img/platos/dulcecito.jpg", "precio": 150.56, "tipo":"vegetariano" },
-    { "nombre": "Gringo Fest!", "descripcion":"Mezcla fresca de rúcula, tomates cherry, queso parmesano y vinagreta balsámica, ofreciendo un sabor equilibrado y una experiencia refrescante.","imgRuta": "./img/platos/gringoFest.jpg", "precio": 850.56, "tipo":"carnivoro" },
-    { "nombre": "Asian Fest!","descripcion":"Mezcla fresca de rúcula, tomates cherry, queso parmesano y vinagreta balsámica, ofreciendo un sabor equilibrado y una experiencia refrescante.", "imgRuta": "./img/platos/asianfest.jpg", "precio": 750.56, "tipo":"carnivoro" },
-    { "nombre": "Veggie Crunch!","descripcion":"Mezcla fresca de rúcula, tomates cherry, queso parmesano y vinagreta balsámica, ofreciendo un sabor equilibrado y una experiencia refrescante.", "imgRuta": "./img/platos/VeggieCrunch.jpg", "precio": 550.56, "tipo":"vegano" },
-    { "nombre": "Madrid Potato","descripcion":"Mezcla fresca de rúcula, tomates cherry, queso parmesano y vinagreta balsámica, ofreciendo un sabor equilibrado y una experiencia refrescante.","imgRuta": "./img/platos/madrid.webp", "precio": 1150.56, "tipo":"vegetariano" },
-    { "nombre": "Con Sabor a Poco!","descripcion":"Mezcla fresca de rúcula, tomates cherry, queso parmesano y vinagreta balsámica, ofreciendo un sabor equilibrado y una experiencia refrescante.", "imgRuta": "./img/platos/saborPoco.jpeg", "precio": 2150.56, "tipo":"carnivoro" },
-    { "nombre": "Le ponemos de todo!","descripcion":"Mezcla fresca de rúcula, tomates cherry, queso parmesano y vinagreta balsámica, ofreciendo un sabor equilibrado y una experiencia refrescante.", "imgRuta": "./img/platos/leponemodetodo.jpeg", "precio": 3850.56, "tipo":"carnivoro" },
-    { "nombre": "Italianita","descripcion":"Mezcla fresca de rúcula, tomates cherry, queso parmesano y vinagreta balsámica, ofreciendo un sabor equilibrado y una experiencia refrescante.", "imgRuta": "./img/platos/italianita.jpg", "precio": 4150.56, "tipo":"vegetariana" },
-    { "nombre": "Criollo","descripcion":"Mezcla fresca de rúcula, tomates cherry, queso parmesano y vinagreta balsámica, ofreciendo un sabor equilibrado y una experiencia refrescante.", "imgRuta": "./img/platos/criollo.webp", "precio": 9150.56, "tipo":"carnivoro" },
-    { "nombre": "Finolli","descripcion":"Mezcla fresca de rúcula, tomates cherry, queso parmesano y vinagreta balsámica, ofreciendo un sabor equilibrado y una experiencia refrescante.", "imgRuta": "./img/platos/finoli.jpeg", "precio": 11150.56, "tipo":"carnivoro" },
-    { "nombre": "Ay mi colesterol!","descripcion":"Mezcla fresca de rúcula, tomates cherry, queso parmesano y vinagreta balsámica, ofreciendo un sabor equilibrado y una experiencia refrescante.", "imgRuta": "./img/platos/burguer.jpeg", "precio": 450.56, "tipo":"carnivoro" },
-    { "nombre": "La Linda","descripcion":"Mezcla fresca de rúcula, tomates cherry, queso parmesano y vinagreta balsámica, ofreciendo un sabor equilibrado y una experiencia refrescante.", "imgRuta": "./img/platos/lalinda.jpeg", "precio": 250.56, "tipo":"carnivoro" }
-    ]
-    };
+    "productos": []
+};
+
+let prod = []
 
 
+console.log(dbProductos)
 
 
 
@@ -76,7 +67,29 @@ function mostrarElementos (platos){
 
 }
 
-function renderizar(){
+async function renderizar(){
+    let precios = []
+    await fetch(urlServer)
+    .then((res) => res.json())
+    .then((data) => 
+            { 
+                for (let a=0; a< data.length;a++){
+                    prod.push(data[a])
+                }
+            });
+    dbProductos.productos = prod
+    await fetch(urlPrecios)
+    .then((res) => res.json())
+    .then ((data) => 
+        {
+            for (let a=0; a< data.length;a++){
+                precios.push(data[a])
+            }
+        }
+    )
+    for (let a=0; a < dbProductos.productos.length;a++ ) {
+        dbProductos.productos[a].precio = precios[a].precio
+    }
     mostrarElementos(dbProductos.productos);
     cargoPedido();
     filtrado = false;
