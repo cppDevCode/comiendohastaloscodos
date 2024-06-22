@@ -10,7 +10,6 @@ let dbProductos = {
 let prod = []
 
 
-console.log(dbProductos)
 
 
 
