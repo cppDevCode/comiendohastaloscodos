@@ -1,7 +1,8 @@
-let urlServer = 'http://127.0.0.1:5000/platos?traertodos=1'
-let urlPrecios = 'http://127.0.0.1:5000/precios?traertodos=1'
+const urlServer = 'http://127.0.0.1:5000/platos?traertodos=1'
+const urlPrecios = 'http://127.0.0.1:5000/precios?traertodos=1'
 
 let platos
+
 
 let dbProductos = {
     "productos": []
@@ -87,7 +88,9 @@ async function renderizar(){
         }
     )
     for (let a=0; a < dbProductos.productos.length;a++ ) {
-        dbProductos.productos[a].precio = precios[a].precio
+        if (precios[a] != undefined) {
+            dbProductos.productos[a].precio = precios[a].precio
+        }
     }
     mostrarElementos(dbProductos.productos);
     cargoPedido();
