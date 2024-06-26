@@ -90,6 +90,9 @@ async function agregarBotoneraCarrusel(){
     let usuario = sessionStorage.getItem("usuario")
     if (usuario != null){
         document.getElementById('ingresar').innerText = "⛵ " + usuario
+        document.getElementById('CerrarSesion').style.opacity=1
+    } else {
+        document.getElementById('CerrarSesion').style.opacity=0
     }
     await fetch(urlServer1)
     .then((res) => res.json())

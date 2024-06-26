@@ -7,6 +7,7 @@ let btnReservar = document.getElementById('btnReservar');
 let btnDelivery = document.getElementById('btnDelivery');
 let txtUsuario = document.getElementById('usuario');
 let txtContrasena = document.getElementById('contrasena');
+let btnCerrarSesion = document.getElementById('CerrarSesion')
 
 const uriLogin = 'http://127.0.0.1:5000/loguear';
 const opciones = {
@@ -16,6 +17,11 @@ const opciones = {
             }
         }
 
+btnCerrarSesion.onclick = function() {
+  sessionStorage.removeItem("usuario");
+  document.getElementById("ingresar").innerHTML = '<i class="fa-solid fa-circle-user"></i> Ingresar';
+  document.getElementById('CerrarSesion').style.opacity=0
+}
 
 btnDelivery.onclick = function() {
     location.href = './market.html'
@@ -61,6 +67,7 @@ btnLogin.onclick = async function() {
       else {
         sessionStorage.setItem("usuario",dato.usuario)
         document.getElementById('ingresar').innerText = "⛵ " + dato.usuario//document.getElementById('usuario').value;
+        document.getElementById('CerrarSesion').style.opacity=1
         modal.style.display = "none";
       }
     

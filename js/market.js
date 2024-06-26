@@ -72,6 +72,9 @@ async function renderizar(){
     let usuario = sessionStorage.getItem("usuario")
     if (usuario != null){
         document.getElementById('ingresar').innerText = "⛵ " + usuario
+        document.getElementById('CerrarSesion').style.opacity=1
+    } else {
+        document.getElementById('CerrarSesion').style.opacity=0
     }
     await fetch(urlServer)
     .then((res) => res.json())
