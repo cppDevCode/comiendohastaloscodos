@@ -94,6 +94,7 @@ async function agregarBotoneraCarrusel(){
     } else {
         document.getElementById('CerrarSesion').style.opacity=0
     }
+    
     await fetch(urlServer1)
     .then((res) => res.json())
     .then(data =>
@@ -105,6 +106,7 @@ async function agregarBotoneraCarrusel(){
     )
 
     dbProductos1.productos=prod
+    cargoPedidoSinDb()
     ultimoPlato = dbProductos1.productos.length-1;
     if ((getComputedStyle(document.body).getPropertyValue('--plataforma') === "celulares")  || (getComputedStyle(document.body).getPropertyValue('--plataforma') === "tablet")){
        document.getElementsByClassName('imgAnteriorcarrusel')[0].innerHTML = `<button type="button" id="imgAnterior" onclick="platoAnterior()"><i class="fa-solid fa-circle-chevron-left"></i></button>`
@@ -118,4 +120,5 @@ async function agregarBotoneraCarrusel(){
         document.getElementById("botonCarrusel0").style.borderColor = 'white';
         document.getElementById("imgPlatos").src= dbProductos1.productos[0].imgRuta;
     }
+    
 }

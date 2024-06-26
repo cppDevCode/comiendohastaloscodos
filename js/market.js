@@ -100,7 +100,7 @@ async function renderizar(){
         }
     }
     mostrarElementos(dbProductos.productos);
-    cargoPedido();
+    cargoPedido(dbProductos);
     filtrado = false;
     }
 

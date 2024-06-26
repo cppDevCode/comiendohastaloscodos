@@ -1,6 +1,7 @@
 let carritoPedido = new Array();
 let valorTotal = 0;
 let articulosTotales = 0;
+let productoPedido;
 
 /* FUNCIONES DEL CARRITO */
 
@@ -25,27 +26,27 @@ function cerrarClick(idElemento, plato, cantidad) {
 
 }
 
-function agregarPedido(plato, p, cantidad) {
+function agregarPedido(plato, p, cantidad,pedido) {
     document.getElementById("listaProductosAComprar").innerHTML += `<li class="liCarrito" id="liCarrito` + p + `">
                                     <div class="tarjetaProducto">
                                         <div class="imagenPlatoCarrito">
-                                            <img class="imagenPlatoCarrito" src="` + dbProductos.productos[plato].imgRuta + `" alt="` + dbProductos.productos[plato].nombre + `">
+                                            <img class="imagenPlatoCarrito" src="` + pedido.productos[plato].imgRuta + `" alt="` + pedido.productos[plato].nombre + `">
                                         </div>
                                         <div class="nombrePlatoCarrito">
-                                            <h4>`+ dbProductos.productos[plato].nombre + `</h4>
+                                            <h4>`+ pedido.productos[plato].nombre + `</h4>
                                         </div>
                                         <div class="eliminarPlatoCarrito">
                                             <span class="cerrar" id="Cerrar` + plato + `" onclick="cerrarClick('liCarrito` + p + `',` + p + `,` + cantidad + `)"><i class="fa-regular fa-circle-xmark"></i></span>
                                         </div>
                                         <div class="valorPlatoCarrito">
-                                            <h3>$ ` + (dbProductos.productos[plato].precio * cantidad) + `</h3>
+                                            <h3>$ ` + (pedido.productos[plato].precio * cantidad) + `</h3>
                                         </div>
                                         <div class="cantidadPlatoCarrito">
                                             Cantidad: ` + cantidad + `
                                         </div>
                                     </div>
                                 </li>`
-    valorTotal += dbProductos.productos[plato].precio * cantidad;
+    valorTotal += pedido.productos[plato].precio * cantidad;
     document.getElementById("precio").innerHTML = "$ " + valorTotal.toFixed(2);
 }
 
@@ -73,12 +74,13 @@ function agregarYSalvarPedido(plato, id) {
     carritoPedido.push(pedido);
     localStorage.removeItem("carrito");
     localStorage.setItem("carrito", JSON.stringify(carritoPedido));
-    agregarPedido(plato, carritoPedido.length - 1, pedido.cantidad);
+    agregarPedido(plato, carritoPedido.length - 1, pedido.cantidad,productoPedido);
     document.getElementById("artCantidad").innerHTML = "Articulos en el carrito: " + articulosTotales;
     actualizarNumeroCarrito();
 }
 
-function cargoPedido() {
+function cargoPedido(productos) {
+    productoPedido = productos
     let usuario = sessionStorage.getItem("usuario")
     if (usuario != null){
         document.getElementById('ingresar').innerText = "⛵ " + usuario
@@ -91,7 +93,60 @@ function cargoPedido() {
         carritoPedido = JSON.parse(localStorage.getItem("carrito"));
         if (carritoPedido != undefined) {
             for (p in carritoPedido) {
-                agregarPedido(carritoPedido[p].plato, p, carritoPedido[p].cantidad);
+                agregarPedido(carritoPedido[p].plato, p, carritoPedido[p].cantidad,productos);
+                articulosTotales += parseInt(carritoPedido[p].cantidad);
+            }
+            document.getElementById("artCantidad").innerHTML = "Articulos en el carrito: " + articulosTotales;
+            document.getElementById("precio").innerHTML = "$ " + valorTotal.toFixed(2);
+            actualizarNumeroCarrito();
+        } else {
+            carritoPedido = [];
+        }
+    }
+}
+
+async function cargoPedidoSinDb() {
+    let usuario = sessionStorage.getItem("usuario")
+    if (usuario != null){
+        document.getElementById('ingresar').innerText = "⛵ " + usuario
+        document.getElementById('CerrarSesion').style.opacity=1
+    } else {
+        document.getElementById('CerrarSesion').style.opacity=0
+    }
+    valorTotal = 0;
+    let dbProductos2 = {
+        "productos": []
+    };
+    let prod2 = []
+    let precios = []
+    await fetch(urlServer)
+    .then((res) => res.json())
+    .then((data) => 
+            { 
+                for (let a=0; a< data.length;a++){
+                    prod2.push(data[a])
+                }
+            });
+    dbProductos2.productos = prod2
+    await fetch(urlPrecios)
+    .then((res) => res.json())
+    .then ((data) => 
+        {
+            for (let a=0; a< data.length;a++){
+                precios.push(data[a])
+            }
+        }
+    )
+    for (let a=0; a < dbProductos2.productos.length;a++ ) {
+        if (precios[a] != undefined) {
+            dbProductos2.productos[a].precio = precios[a].precio
+        }
+    }
+    if (Storage != undefined) {
+        carritoPedido = JSON.parse(localStorage.getItem("carrito"));
+        if (carritoPedido != undefined) {
+            for (p in carritoPedido) {
+                agregarPedido(carritoPedido[p].plato, p, carritoPedido[p].cantidad,dbProductos2);
                 articulosTotales += parseInt(carritoPedido[p].cantidad);
             }
             document.getElementById("artCantidad").innerHTML = "Articulos en el carrito: " + articulosTotales;
