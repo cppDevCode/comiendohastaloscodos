@@ -42,5 +42,5 @@ async function enviarDatos() {
   formulario1.addEventListener("submit", (event) => {
     event.preventDefault();
     enviarDatos();
-    span.onclick()
+    btnCerrarRegistrar.onclick()
   });
