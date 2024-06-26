@@ -59,6 +59,7 @@ btnLogin.onclick = async function() {
         alert('Usuario/Contraseña Incorrecta')
       } 
       else {
+        sessionStorage.setItem("usuario",dato.usuario)
         document.getElementById('ingresar').innerText = "⛵ " + dato.usuario//document.getElementById('usuario').value;
         modal.style.display = "none";
       }

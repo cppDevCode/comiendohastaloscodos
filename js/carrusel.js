@@ -87,6 +87,10 @@ function platoAnterior (){
 
 async function agregarBotoneraCarrusel(){
     let prod = []
+    let usuario = sessionStorage.getItem("usuario")
+    if (usuario != null){
+        document.getElementById('ingresar').innerText = "⛵ " + usuario
+    }
     await fetch(urlServer1)
     .then((res) => res.json())
     .then(data =>

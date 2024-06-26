@@ -79,6 +79,10 @@ function agregarYSalvarPedido(plato, id) {
 }
 
 function cargoPedido() {
+    let usuario = sessionStorage.getItem("usuario")
+    if (usuario != null){
+        document.getElementById('ingresar').innerText = "⛵ " + usuario
+    }
     valorTotal = 0;
     if (Storage != undefined) {
         carritoPedido = JSON.parse(localStorage.getItem("carrito"));

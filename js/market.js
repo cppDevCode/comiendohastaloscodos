@@ -69,6 +69,10 @@ function mostrarElementos (platos){
 
 async function renderizar(){
     let precios = []
+    let usuario = sessionStorage.getItem("usuario")
+    if (usuario != null){
+        document.getElementById('ingresar').innerText = "⛵ " + usuario
+    }
     await fetch(urlServer)
     .then((res) => res.json())
     .then((data) => 
