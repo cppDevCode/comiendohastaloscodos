@@ -18,10 +18,12 @@ const opciones = {
         }
 
 btnCerrarSesion.onclick = function() {
+  const btnIngresar = document.getElementById('ingresar');
   sessionStorage.removeItem("usuario");
   sessionStorage.removeItem("id");
   document.getElementById("ingresar").innerHTML = '<i class="fa-solid fa-circle-user"></i> Ingresar';
   document.getElementById('CerrarSesion').style.opacity=0
+  btnIngresar.disabled = false;
 }
 
 btnDelivery.onclick = function() {
@@ -49,6 +51,7 @@ btnLogin.onclick = async function() {
     json1.usuario = document.getElementById('usuario').value;
     json1.contrasena = document.getElementById('contrasena').value;
     cadenaJSON = JSON.stringify(json1);
+    const btnIngresar = document.getElementById('ingresar');
     try {
         const response = await fetch(uriLogin, {
           method: "POST",
@@ -69,6 +72,7 @@ btnLogin.onclick = async function() {
         sessionStorage.setItem("usuario",dato.usuario)
         sessionStorage.setItem("id",dato.id)
         document.getElementById('ingresar').innerText = "⛵ " + dato.usuario//document.getElementById('usuario').value;
+        btnIngresar.disabled=true;
         document.getElementById('CerrarSesion').style.opacity=1
         modal.style.display = "none";
       }

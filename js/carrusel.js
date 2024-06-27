@@ -88,11 +88,17 @@ function platoAnterior (){
 async function agregarBotoneraCarrusel(){
     let prod = []
     let usuario = sessionStorage.getItem("usuario")
+    const btnIngresar = document.getElementById('ingresar');
+
     if (usuario != null){
         document.getElementById('ingresar').innerText = "⛵ " + usuario
         document.getElementById('CerrarSesion').style.opacity=1
+        console.log("entro")
+        btnIngresar.disabled = true;
+
     } else {
         document.getElementById('CerrarSesion').style.opacity=0
+        btnIngresar.disabled = false;
     }
     
     await fetch(urlServer1)

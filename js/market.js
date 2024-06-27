@@ -68,13 +68,17 @@ function mostrarElementos (platos){
 }
 
 async function renderizar(){
-    let precios = []
-    let usuario = sessionStorage.getItem("usuario")
+    let precios = [];
+    let usuario = sessionStorage.getItem("usuario");
+    const btnIngresar = document.getElementById('ingresar');
+
     if (usuario != null){
         document.getElementById('ingresar').innerText = "⛵ " + usuario
         document.getElementById('CerrarSesion').style.opacity=1
+        btnIngresar.disabled = true;
     } else {
         document.getElementById('CerrarSesion').style.opacity=0
+        btnIngresar.disabled = false;
     }
     await fetch(urlServer)
     .then((res) => res.json())
