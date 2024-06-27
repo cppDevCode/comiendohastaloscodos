@@ -82,11 +82,19 @@ function agregarYSalvarPedido(plato, id) {
 function cargoPedido(productos) {
     productoPedido = productos
     let usuario = sessionStorage.getItem("usuario")
+    const btnIngresar = document.getElementById('ingresar');
+    const menuDesplegable = document.getElementById('menuDesplegable');
+    const btnMenuDesplegable = document.getElementById('btnMenuDesplegable');
+
     if (usuario != null){
-        document.getElementById('ingresar').innerText = "⛵ " + usuario
-        document.getElementById('CerrarSesion').style.opacity=1
+        menuDesplegable.hidden = false;
+        console.log(usuario);
+        btnMenuDesplegable.innerHTML = '⛵ ' + usuario
+        btnIngresar.hidden = true;
+
     } else {
-        document.getElementById('CerrarSesion').style.opacity=0
+        menuDesplegable.hidden = true;
+        btnIngresar.hidden = false;
     }
     valorTotal = 0;
     if (Storage != undefined) {
@@ -106,16 +114,19 @@ function cargoPedido(productos) {
 }
 
 async function cargoPedidoSinDb() {
-    const btnIngresar = document.getElementById('ingresar');
-
     let usuario = sessionStorage.getItem("usuario")
+    const btnIngresar = document.getElementById('ingresar');
+    const menuDesplegable = document.getElementById('menuDesplegable');
+    const btnMenuDesplegable = document.getElementById('btnMenuDesplegable');
+
     if (usuario != null){
-        document.getElementById('ingresar').innerText = "⛵ " + usuario
-        document.getElementById('CerrarSesion').style.opacity=1
-        btnIngresar.disabled = true
+        menuDesplegable.style.visibility = 'visible';
+        btnMenuDesplegable.innerText = "⛵ " + usuario
+        btnIngresar.hidden = true;
+
     } else {
-        document.getElementById('CerrarSesion').style.opacity=0
-        btnIngresar.disabled = false
+        menuDesplegable.style.visibility = 'hidden';
+        btnIngresar.hidden = false;
     }
     valorTotal = 0;
     let dbProductos2 = {

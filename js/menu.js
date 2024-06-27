@@ -19,11 +19,13 @@ const opciones = {
 
 btnCerrarSesion.onclick = function() {
   const btnIngresar = document.getElementById('ingresar');
+  const menuDesplegable = document.getElementById('menuDesplegable');
+  const btnMenuDesplegable = document.getElementById('btnMenuDesplegable');
+
   sessionStorage.removeItem("usuario");
   sessionStorage.removeItem("id");
-  document.getElementById("ingresar").innerHTML = '<i class="fa-solid fa-circle-user"></i> Ingresar';
-  document.getElementById('CerrarSesion').style.opacity=0
-  btnIngresar.disabled = false;
+  menuDesplegable.style.visibility = 'hidden';
+  btnIngresar.hidden = false;
 }
 
 btnDelivery.onclick = function() {
@@ -52,6 +54,9 @@ btnLogin.onclick = async function() {
     json1.contrasena = document.getElementById('contrasena').value;
     cadenaJSON = JSON.stringify(json1);
     const btnIngresar = document.getElementById('ingresar');
+    const menuDesplegable = document.getElementById('menuDesplegable');
+    const btnMenuDesplegable = document.getElementById('btnMenuDesplegable');
+
     try {
         const response = await fetch(uriLogin, {
           method: "POST",
@@ -71,9 +76,9 @@ btnLogin.onclick = async function() {
       else {
         sessionStorage.setItem("usuario",dato.usuario)
         sessionStorage.setItem("id",dato.id)
-        document.getElementById('ingresar').innerText = "⛵ " + dato.usuario//document.getElementById('usuario').value;
-        btnIngresar.disabled=true;
-        document.getElementById('CerrarSesion').style.opacity=1
+        menuDesplegable.style.visibility = 'visible';
+        btnMenuDesplegable.value = "⛵ " + usuario
+        btnIngresar.hidden = true;
         modal.style.display = "none";
       }
     

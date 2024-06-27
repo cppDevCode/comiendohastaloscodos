@@ -70,15 +70,18 @@ function mostrarElementos (platos){
 async function renderizar(){
     let precios = [];
     let usuario = sessionStorage.getItem("usuario");
+    const menuDesplegable = document.getElementById('menuDesplegable');
+    const btnMenuDesplegable = document.getElementById('btnMenuDesplegable');
     const btnIngresar = document.getElementById('ingresar');
 
     if (usuario != null){
-        document.getElementById('ingresar').innerText = "⛵ " + usuario
-        document.getElementById('CerrarSesion').style.opacity=1
-        btnIngresar.disabled = true;
+        menuDesplegable.style.visibility = 'visible';
+        btnMenuDesplegable.innerText = "⛵ " + usuario
+        btnIngresar.hidden = true;
+
     } else {
-        document.getElementById('CerrarSesion').style.opacity=0
-        btnIngresar.disabled = false;
+        menuDesplegable.style.visibility = 'hidden';
+        btnIngresar.hidden = false;
     }
     await fetch(urlServer)
     .then((res) => res.json())

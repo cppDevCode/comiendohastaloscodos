@@ -88,18 +88,20 @@ function platoAnterior (){
 async function agregarBotoneraCarrusel(){
     let prod = []
     let usuario = sessionStorage.getItem("usuario")
-    const btnIngresar = document.getElementById('ingresar');
+   /* const btnIngresar = document.getElementById('ingresar');
+    const menuDesplegable = document.getElementById('menuDesplegable');
+    const btnMenuDesplegable = document.getElementById('btnMenuDesplegable');
 
     if (usuario != null){
-        document.getElementById('ingresar').innerText = "⛵ " + usuario
-        document.getElementById('CerrarSesion').style.opacity=1
-        console.log("entro")
-        btnIngresar.disabled = true;
+        menuDesplegable.hidden = false;
+        console.log(usuario);
+        btnMenuDesplegable.innerHTML = '<p>⛵ ' + usuario+'</p>'
+        btnIngresar.hidden = true;
 
     } else {
-        document.getElementById('CerrarSesion').style.opacity=0
-        btnIngresar.disabled = false;
-    }
+        menuDesplegable.hidden = true;
+        btnIngresar.hidden = false;
+    }*/
     
     await fetch(urlServer1)
     .then((res) => res.json())
