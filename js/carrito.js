@@ -1,7 +1,49 @@
+let cliente;
+let id;
+let carritoPedido;
+let dbProductos3 = {
+    "productos": []
+};
+let btnPago = document.getElementById("pago")
+
+btnPago.onclick = async function (){
+        const cardNumber = document.getElementById('card-number').value;
+        const expiryDate = document.getElementById('expiry-date').value;
+        const cvv = document.getElementById('cvv').value;
+        for (a in carritoPedido) {
+            let venta = new Object;
+            venta.idCliente = id;
+            venta.factura = "C4-114";
+            venta.fecha = new Date().toJSON().slice(0,10);
+            venta.idPlato = carritoPedido[a].plato
+            venta.cantidad = carritoPedido[a].cantidad;
+            venta.valorUnitario = dbProductos3.productos[carritoPedido[a].plato].precio
+            try {
+                const response = await fetch("http://127.0.0.1:5000/ventas", {
+                  method: "POST",
+                  headers: {
+                      'Accept': 'application/json',
+                      'Content-Type': 'application/json'
+                    },
+                  body:  JSON.stringify(venta),
+                });
+                console.log(await response.json());
+              } catch (e) {
+                console.error(e);
+              }
+        }
+        
+        localStorage.removeItem("carrito")
+        alert('Pago procesado correctamente');
+        location.href = './index.html'
+}
+
 document.addEventListener('DOMContentLoaded', function() {
+    
+    let cantidad;
     const urlServer = 'http://127.0.0.1:5000/platos?traertodos=1'
     const urlPrecios = 'http://127.0.0.1:5000/precios?traertodos=1'
-    let carritoPedido = JSON.parse(localStorage.getItem('carrito')) || [];
+    carritoPedido = JSON.parse(localStorage.getItem('carrito')) || [];
     carritoPedido = carritoPedido.map(item => ({
         ...item,
         cantidad: Number(item.cantidad) || 1
@@ -13,9 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const listaProductos = document.getElementById('listaProductosAComprar');
         listaProductos.innerHTML = '';
         let valorTotal = 0;
-        let dbProductos = {
-            "productos": []
-        };
+        
         let prod2 = []
         let precios = []
         await fetch(urlServer)
@@ -26,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         prod2.push(data[a])
                     }
                 });
-        dbProductos.productos = prod2
+        dbProductos3.productos = prod2
         await fetch(urlPrecios)
         .then((res) => res.json())
         .then ((data) => 
@@ -36,14 +76,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
         )
-        for (let a=0; a < dbProductos.productos.length;a++ ) {
+        for (let a=0; a < dbProductos3.productos.length;a++ ) {
             if (precios[a] != undefined) {
-                dbProductos.productos[a].precio = precios[a].precio
+                dbProductos3.productos[a].precio = precios[a].precio
             }
         }
         carritoPedido.forEach((item, index) => {
-            const producto = dbProductos.productos[item.plato];
-            const cantidad = item.cantidad;
+            const producto = dbProductos3.productos[item.plato];
+            cantidad = item.cantidad;
             const li = document.createElement('li');
             li.innerHTML = `
                 <div class="tarjetaProducto">
@@ -96,14 +136,6 @@ document.addEventListener('DOMContentLoaded', function() {
         alert('Información de envío guardada');
     });
 
-    document.getElementById('formulario-pago').addEventListener('submit', function(event) {
-        event.preventDefault();
-        const cardNumber = document.getElementById('card-number').value;
-        const expiryDate = document.getElementById('expiry-date').value;
-        const cvv = document.getElementById('cvv').value;
-
-        alert('Pago procesado correctamente');
-    });
 });
 // Función para limpiar el carrito y actualizar el precio total
 function limpiarCarrito() {
@@ -120,4 +152,19 @@ function limpiarCarrito() {
 
     // Renderiza nuevamente los productos (que ahora están vacíos)
     renderizarproductos();
+}
+
+
+async function cargoDatos(){
+    id = sessionStorage.getItem("id");
+    
+    await fetch ("http://127.0.0.1:5000/cliente?idcliente=" + id)
+    .then ((res) => res.json())
+    .then (data => {
+            cliente = data;
+    })
+
+    document.getElementById("direccion").value = cliente["direccion"];
+    document.getElementById("telefono").value = cliente["telefono"];
+    document.getElementById("informacion-adicional").value = "Piso: " + cliente["piso"] + " Departamento: " + cliente["departamento"] 
 }

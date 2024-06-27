@@ -7,7 +7,7 @@
     <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./estilos/carrito.css">
 </head>
-<body>
+<body onpageshow="cargoDatos()">
     <header>
         <h1>Tu Carrito de Compras</h1>
     </header>
@@ -46,7 +46,7 @@
                     <input type="text" id="expiry-date" name="expiry-date" required>
                     <label for="cvv">CVV:</label>
                     <input type="text" id="cvv" name="cvv" required>
-                    <button type="submit">Procesar Pago</button>
+                    <button type="button" id="pago">Procesar Pago</button>
                 </form>
             </div>
         </section>
