@@ -19,6 +19,7 @@ const opciones = {
 
 btnCerrarSesion.onclick = function() {
   sessionStorage.removeItem("usuario");
+  sessionStorage.removeItem("id");
   document.getElementById("ingresar").innerHTML = '<i class="fa-solid fa-circle-user"></i> Ingresar';
   document.getElementById('CerrarSesion').style.opacity=0
 }
@@ -66,6 +67,7 @@ btnLogin.onclick = async function() {
       } 
       else {
         sessionStorage.setItem("usuario",dato.usuario)
+        sessionStorage.setItem("id",dato.id)
         document.getElementById('ingresar').innerText = "⛵ " + dato.usuario//document.getElementById('usuario').value;
         document.getElementById('CerrarSesion').style.opacity=1
         modal.style.display = "none";

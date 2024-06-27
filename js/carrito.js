@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
+    const urlServer = 'http://127.0.0.1:5000/platos?traertodos=1'
+    const urlPrecios = 'http://127.0.0.1:5000/precios?traertodos=1'
     let carritoPedido = JSON.parse(localStorage.getItem('carrito')) || [];
     carritoPedido = carritoPedido.map(item => ({
         ...item,
@@ -7,11 +9,38 @@ document.addEventListener('DOMContentLoaded', function() {
 
     localStorage.setItem('carrito', JSON.stringify(carritoPedido));
 
-    function renderizarproductos() {
+    async function renderizarproductos() {
         const listaProductos = document.getElementById('listaProductosAComprar');
         listaProductos.innerHTML = '';
         let valorTotal = 0;
-
+        let dbProductos = {
+            "productos": []
+        };
+        let prod2 = []
+        let precios = []
+        await fetch(urlServer)
+        .then((res) => res.json())
+        .then((data) => 
+                { 
+                    for (let a=0; a< data.length;a++){
+                        prod2.push(data[a])
+                    }
+                });
+        dbProductos.productos = prod2
+        await fetch(urlPrecios)
+        .then((res) => res.json())
+        .then ((data) => 
+            {
+                for (let a=0; a< data.length;a++){
+                    precios.push(data[a])
+                }
+            }
+        )
+        for (let a=0; a < dbProductos.productos.length;a++ ) {
+            if (precios[a] != undefined) {
+                dbProductos.productos[a].precio = precios[a].precio
+            }
+        }
         carritoPedido.forEach((item, index) => {
             const producto = dbProductos.productos[item.plato];
             const cantidad = item.cantidad;
