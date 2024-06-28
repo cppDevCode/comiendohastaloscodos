@@ -7,6 +7,7 @@ let btnReservar = document.getElementById('btnReservar');
 let btnDelivery = document.getElementById('btnDelivery');
 let txtUsuario = document.getElementById('usuario');
 let txtContrasena = document.getElementById('contrasena');
+let btnConfiguracion = document.getElementById('configuracionMenu');
 let btnCerrarSesion = document.getElementById('CerrarSesion')
 
 const uriLogin = 'http://127.0.0.1:5000/loguear';
@@ -16,6 +17,11 @@ const opciones = {
             accept: 'application/json'
             }
         }
+
+
+btnConfiguracion.onclick = function(){
+  location.href = './configuracion.html';
+}
 
 btnCerrarSesion.onclick = function() {
   const btnIngresar = document.getElementById('ingresar');

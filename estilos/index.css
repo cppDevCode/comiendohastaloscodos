@@ -661,7 +661,7 @@ width: 2vw;
   margin-bottom: 0.5vh;
 }
 
-#formularioRegistro legend {
+legend {
   background-color: #404040;
   color: white;
   border-top-left-radius: 5vw;
@@ -949,9 +949,31 @@ width: 51.5vw;
   display: block;
 }
 
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.menuDesplegable:hover .btnMenuDesplegable {
-  background-color: #3e8e41;
+/*configuracion usuario */
+
+.contenedorConfiguracion{
+  margin-top: 30vh;
+  margin-bottom: 5vh;
+}
+.fieldsetConfig {
+  border-radius: 1vh;
+  background-color: rgba(255, 255,255, 0.4);
+  height: 10vh;
 }
 
+.leyenda {
+  margin-top: 2vh;
+  width: 30vh;
+  background-color: black;
+}
 
+.btnGuardarConfig {
+  margin-top: 2vh;
+}
+
+.botonGuardar {
+  display: block;
+  width: 20%;
+  margin-left: auto;
+  margin-right: 0;
+}

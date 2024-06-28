@@ -17,9 +17,10 @@
     <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
     <script src="./js/market.js"></script>
     <script src="./js/pedidos.js"></script>
+    <script src="./js/editarconfiguracion.js"></script>
 </head>
 
-<body onpageshow="agregarBotoneraCarrusel()">
+<body onpageshow="configuracion()">
     <header class="headerContenedor fondoHeader">
         <div class="logo">
             <img src="./img/logo2.png" alt="Logo Comiendo Hasta los codos" id="logoPPal">
@@ -196,51 +197,57 @@
             <!-- FIN DE VENTANA MODAL-->
         </div>
     </header>
-    <main class="contenedor" >
-        <div class="contenedorImagenPPal">
-            <div class="flexPpal">
-                <div class="imagenResto" id="inicioHeader">
-                    <img  class="imagenCuadro" id="imagenResto1" src="./img/img.jpg" alt="Resto 1">
-                </div>
-                <div class="imagenResto">
-                    <img src="./img/resto2.jpg" id="imagenResto2" class="imagenCuadro" alt="">
-                </div>
+    <main class="contenedorConfiguracion" >
+        <div class="contenedorImagenPPal1">
+            <div class="flexPpal1">
+                <form id="formularioConfiguracion">
+                    <fieldset class="fieldsetConfig">
+                        <legend class="leyenda">👤 Datos Personales</legend>
+                        <label for="nombreName">Nombre:</label>
+                        <input type="text" id="nombre2" name="nombreName">
+                        <label for="apellidoName">Apellido:</label>
+                        <input type="text" id="apellido2" name="apellidoName">
+                        <label for="telefonoName">Telefono:</label>
+                        <input type="text" id="telefono2" name="telefonoName">
+                        <label for="emailName">E-Mail:</label>
+                        <input type="email" id="email2" name="emailName">
+                    </fieldset>
+                    <fieldset class="fieldsetConfig">
+                        <legend class="leyenda">📦 Dirección</legend>
+                        <label for="direccionName">Dirección:</label>
+                        <input type="text" id="direccion" name="direccionName">
+                        <label for="PisoName">Piso:</label>
+                        <input type="number" id="piso" name="PisoName">
+                        <label for="departamentoName">Departamento:</label>
+                        <input type="text" id="departamento" name="departamentoName">
+                        <label for="ciudadName">Ciudad:</label>
+                        <input type="text" id="ciudad" name="ciudadName">
+                        <label for="provinciaName">Provincia:</label>
+                        <input type="text" id="provincia2" name="provinciaName">
+                        <label for="paisName">Pais:</label>
+                        <input type="text" id="pais2" name="paisName">
+                    </fieldset>
+                    <fieldset class="fieldsetConfig">
+                        <legend class="leyenda">🥘 Dieta</legend>
+                        <div class="fila">
+                            <input type="checkbox" name="dieta" id="dieta4" value="1" >Carnivoro
+                            <input type="checkbox" name="dieta1" id="dieta5" value="1" >Vegetariano
+                            <input type="checkbox" name="dieta2" id="dieta6" value="1" >Celiaco
+                            <input type="checkbox" name="dieta3" id="dieta7" value="1" >Vegano
+                        </div>
+                    </fieldset>
+                    <fieldset class="fieldsetConfig">
+                        <legend class="leyenda">🔐 Contraseña</legend>
+                        <label for="contrasena">Contrasena:</label>
+                        <input type="password" id="contrasena2" name="contrasena">
+                        <label for="contrasena3">Repita la contrasena:</label>
+                        <input type="password" id="contrasena3" name="contrasena3" required>
+                    </fieldset>
+                    <div class="botonGuardar">
+                        <button type="submit" class="btnGen btnGuardarConfig" onclick="guardoCambios()">Guardar Cambios</button>
+                    </div>
+                </form>
             </div>
-            <div class="imagenResto">
-                <img src="./img/resto3.jpg" class="imagenCuadro" id="imagenResto3" alt="">
-            </div>
-        </div>
-<!--Comieza el carrysel-->
-        <div class="carrusel" id="menuResto">
-            <div class="imgCarrusel">
-                <div class="imgBox">
-                <img src="./img/platos/burguers-veganas-linwoods.jpg" id="imgPlatos" alt="Menu" onmouseover="datoPlato()">
-                </div>
-                <div class="text-box">
-                    <div class="main"><span id="platoTitulo"></span></div>
-                    <div class="sub"><span id="platoSub"></span></div>
-                </div>
-            </div>
-            <div class="imgAnteriorcarrusel">
-                <img src="./img/platos/asianfest.jpg" id="imgAnterior" alt="Plato Anterior" onclick="platoAnterior()">
-            </div>
-            <div class="imgPostcarrusel">
-                <img src="./img/platos/caldereta-de-seitan.jpg" id="imgPost" alt="Plato Siguiente" onclick="siguientePlato()">
-            </div>
-                <div class="botomCarrusel" id="botoneraCarrusel">
-            </div>
-        </div>
-        <div class="DondeEncontrarnos">
-            <h1 class="updock-regular tituloLindo">Donde Encontrarnos?</h1>
-        </div>
-        <div class="mapa" id="dondeEncontrarnos">
-            <iframe id="imapa" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d6789.451349404773!2d-62.257093317938754!3d-38.718334628764985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sar!4v1714084357581!5m2!1ses!2sar"></iframe>
-        </div>
-        <div class="ubicacionFranquicias">
-            <button type="button" class="btnFranquicia btnApretado" id="btnBahia">Bahía Blanca</button>
-            <button type="button" class="btnFranquicia btnGen" id="btnCaba">Caba</button>
-            <button type="button" class="btnFranquicia btnGen" id="btnHudson">Hudson</button>
-            <button type="button" class="btnFranquicia btnGen" id="btnMDQ">Mar del Plata</button>
         </div>
     </main>
     <footer class="footer">
