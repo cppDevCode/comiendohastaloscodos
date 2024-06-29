@@ -83,7 +83,7 @@ btnLogin.onclick = async function() {
         sessionStorage.setItem("usuario",dato.usuario)
         sessionStorage.setItem("id",dato.id)
         menuDesplegable.style.visibility = 'visible';
-        btnMenuDesplegable.value = "⛵ " + usuario
+        btnMenuDesplegable.innerText  = "⛵ " + dato.usuario
         btnIngresar.hidden = true;
         modal.style.display = "none";
       }
