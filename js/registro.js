@@ -33,14 +33,20 @@ async function enviarDatos() {
           },
         body: cadenaJSON,
       });
-      console.log(await response.json());
+      respuesta = await response.json()
+      if (respuesta.statusCode == 499){
+        alert(respuesta.statusCode + ": " + respuesta.error);
+      } else {
+        btnCerrarRegistrar.onclick()
+      }
     } catch (e) {
       console.error(e);
     }
+    
   }
   
   formulario1.addEventListener("submit", (event) => {
     event.preventDefault();
     enviarDatos();
-    btnCerrarRegistrar.onclick()
+   
   });
