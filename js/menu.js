@@ -10,8 +10,10 @@ let txtContrasena = document.getElementById('contrasena');
 let btnConfiguracion = document.getElementById('configuracionMenu');
 let btnCerrarSesion = document.getElementById('CerrarSesion');
 let btnGestionPlatos = document.getElementById('verReservas');
+let btnEditarPlatos = document.getElementById('editarPlatos')
 
 const uriLogin = 'http://127.0.0.1:5000/loguear';
+const uriEsAdmin = 'http://127.0.0.1:5000/cliente?esadmin='
 const opciones = {
         method: 'GET', 
         headers: {
@@ -19,7 +21,10 @@ const opciones = {
             }
         }
 
-        
+
+btnEditarPlatos.onclick = function() {
+  location.href = './platos.html'
+}
 
 btnConfiguracion.onclick = function(){
   location.href = './configuracion.html';
@@ -64,6 +69,7 @@ btnLogin.onclick = async function() {
     const btnIngresar = document.getElementById('ingresar');
     const menuDesplegable = document.getElementById('menuDesplegable');
     const btnMenuDesplegable = document.getElementById('btnMenuDesplegable');
+    
 
     try {
         const response = await fetch(uriLogin, {
@@ -85,6 +91,15 @@ btnLogin.onclick = async function() {
         sessionStorage.setItem("usuario",dato.usuario)
         sessionStorage.setItem("id",dato.id)
         menuDesplegable.style.visibility = 'visible';
+        let esAdmin;
+        await fetch(uriEsAdmin + dato.id)
+        .then ((res) => res.json())
+        .then ((data) => esAdmin = data["esAdmin"])
+        if (esAdmin == 0){
+          editarPlatos.style.visibility = 'hidden';
+        } else {
+          editarPlatos.style.visibility = 'visible';
+        }
         btnMenuDesplegable.innerText  = "⛵ " + dato.usuario
         btnIngresar.hidden = true;
         modal.style.display = "none";

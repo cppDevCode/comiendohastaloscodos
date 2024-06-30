@@ -79,16 +79,25 @@ function agregarYSalvarPedido(plato, id) {
     actualizarNumeroCarrito();
 }
 
-function cargoPedido(productos) {
+async function cargoPedido(productos) {
     productoPedido = productos
     let usuario = sessionStorage.getItem("usuario")
+    let dato = sessionStorage.getItem("id")
     const btnIngresar = document.getElementById('ingresar');
     const menuDesplegable = document.getElementById('menuDesplegable');
     const btnMenuDesplegable = document.getElementById('btnMenuDesplegable');
 
     if (usuario != null){
         menuDesplegable.hidden = false;
-        console.log(usuario);
+        let esAdmin;
+        await fetch(uriEsAdmin + dato)
+        .then ((res) => res.json())
+        .then ((data) => esAdmin = data["esAdmin"])
+        if (esAdmin == 0){
+          editarPlatos.style.visibility = 'hidden';
+        } else {
+          editarPlatos.style.visibility = 'visible';
+        }
         btnMenuDesplegable.innerHTML = '⛵ ' + usuario
         btnIngresar.hidden = true;
 
@@ -115,12 +124,22 @@ function cargoPedido(productos) {
 
 async function cargoPedidoSinDb() {
     let usuario = sessionStorage.getItem("usuario")
+    let dato = sessionStorage.getItem("id")
     const btnIngresar = document.getElementById('ingresar');
     const menuDesplegable = document.getElementById('menuDesplegable');
     const btnMenuDesplegable = document.getElementById('btnMenuDesplegable');
 
     if (usuario != null){
         menuDesplegable.style.visibility = 'visible';
+        let esAdmin;
+        await fetch(uriEsAdmin + dato)
+        .then ((res) => res.json())
+        .then ((data) => esAdmin = data["esAdmin"])
+        if (esAdmin == 0){
+          editarPlatos.style.visibility = 'hidden';
+        } else {
+          editarPlatos.style.visibility = 'visible';
+        }
         btnMenuDesplegable.innerText = "⛵ " + usuario
         btnIngresar.hidden = true;
 
@@ -173,53 +192,6 @@ async function cargoPedidoSinDb() {
     }
 }
 
-
-/*
-// Obtener los precios de los productos
-function obtenerPrecios() {
-    let platosEnCarrito = JSON.parse(localStorage.getItem("carrito"));
-    return platosEnCarrito.map(item => dbProductos.productos[item.plato].precio);
-}
-
-// Mostrar los precios en el contenedor HTML
-function mostrarPrecios(precios) {
-    let listaPrecios = document.getElementById("lista-precios");
-    if (listaPrecios) {
-        precios.forEach(precio => {
-            let precioElement = document.createElement("p");
-            precioElement.textContent = "Precio: " + precio;
-            listaPrecios.appendChild(precioElement);
-        });
-    } else {
-        console.error("No se encontró el contenedor lista-precios");
-    }
-}
-
-// Obtener los precios y mostrarlos
-let precios = obtenerPrecios();
-mostrarPrecios(precios);
-
-/*
-function obtenerPedidos() {
-    // Obtener los elementos del carrito de la memoria
-    let platosEnCarrito = JSON.parse(localStorage.getItem("carrito"));
-    
-    // Utilizar map para obtener los precios de los productos
-    let precios = platosEnCarrito.map(item => dbProductos.productos[item.plato].precio);
-
-    // Devolver el array con todos los precios
-    return precios;
-    
-}
-
-
-/*
-
-function obtenerPedidos() {
-   let platosEnCarrito = JSON.parse(localStorage.getItem("carrito"));
-   return dbProductos.productos [platosEnCarrito[1].plato].precio
-   
-}
 
 
 /* FIN FUNCIONES DEL CARRITO */ 

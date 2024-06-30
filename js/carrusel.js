@@ -88,20 +88,6 @@ function platoAnterior (){
 async function agregarBotoneraCarrusel(){
     let prod = []
     let usuario = sessionStorage.getItem("usuario")
-   /* const btnIngresar = document.getElementById('ingresar');
-    const menuDesplegable = document.getElementById('menuDesplegable');
-    const btnMenuDesplegable = document.getElementById('btnMenuDesplegable');
-
-    if (usuario != null){
-        menuDesplegable.hidden = false;
-        console.log(usuario);
-        btnMenuDesplegable.innerHTML = '<p>⛵ ' + usuario+'</p>'
-        btnIngresar.hidden = true;
-
-    } else {
-        menuDesplegable.hidden = true;
-        btnIngresar.hidden = false;
-    }*/
     
     await fetch(urlServer1)
     .then((res) => res.json())

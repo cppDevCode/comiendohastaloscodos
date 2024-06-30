@@ -70,12 +70,22 @@ function mostrarElementos (platos){
 async function renderizar(){
     let precios = [];
     let usuario = sessionStorage.getItem("usuario");
+    let dato = sessionStorage.getItem("id")
     const menuDesplegable = document.getElementById('menuDesplegable');
     const btnMenuDesplegable = document.getElementById('btnMenuDesplegable');
     const btnIngresar = document.getElementById('ingresar');
 
     if (usuario != null){
         menuDesplegable.style.visibility = 'visible';
+        let esAdmin;
+        await fetch(uriEsAdmin + dato)
+        .then ((res) => res.json())
+        .then ((data) => esAdmin = data["esAdmin"])
+        if (esAdmin == 0){
+          editarPlatos.style.visibility = 'hidden';
+        } else {
+          editarPlatos.style.visibility = 'visible';
+        }
         btnMenuDesplegable.innerText = "⛵ " + usuario
         btnIngresar.hidden = true;
 
