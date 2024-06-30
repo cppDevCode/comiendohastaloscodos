@@ -8,7 +8,8 @@ let btnDelivery = document.getElementById('btnDelivery');
 let txtUsuario = document.getElementById('usuario');
 let txtContrasena = document.getElementById('contrasena');
 let btnConfiguracion = document.getElementById('configuracionMenu');
-let btnCerrarSesion = document.getElementById('CerrarSesion')
+let btnCerrarSesion = document.getElementById('CerrarSesion');
+let btnGestionPlatos = document.getElementById('verReservas');
 
 const uriLogin = 'http://127.0.0.1:5000/loguear';
 const opciones = {
@@ -18,6 +19,7 @@ const opciones = {
             }
         }
 
+        
 
 btnConfiguracion.onclick = function(){
   location.href = './configuracion.html';

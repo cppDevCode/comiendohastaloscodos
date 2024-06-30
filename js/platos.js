@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const details = document.getElementById('details').value;
         const type = document.getElementById('type').value;
         const price = document.getElementById('price').value;
-        const image = document.getElementById('image').files[0];
+        const image = "./img/platos/" + document.getElementById('image').files.item(0).name;
 
         const formData = new FormData();
         formData.append('nombre', name);
@@ -20,15 +20,15 @@ document.addEventListener('DOMContentLoaded', () => {
         formData.append('imgRuta', image);
 
         const formDataPrecio = new FormData();
-        formDataPrecio.append('idCliente', id);
+        formDataPrecio.append('idPlato', id);
         formDataPrecio.append('precio', price);
-        formDataPrecio.append('vigencia', "29/6/2024");
+        formDataPrecio.append('vigencia', "2024-02-05T12:59:11.332");
 
 
         if (id) {
             formData.append('id', id);
             await updateDish(id, formData);
-            await updatePrice(id, precio)
+            await updatePrice(id, formDataPrecio)
         } else {
             await addDish(formData);
             await addPrice(formDataPrecio)
@@ -39,30 +39,75 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     async function addDish(dish) {
+        let plato = new Object();
+        plato.nombre = dish.get("nombre");
+        plato.descripcion = dish.get("descripcion");
+        plato.imgRuta = dish.get("imgRuta");
+        plato.tipo = dish.get("tipo");
+        plato = JSON.stringify(plato);
         const response = await fetch('http://localhost:5000/platos', {
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+              },
             method: 'POST',
-            body: dish
+            body: plato
         });
         return response.json();
     }
     async function addPrice(precios) {
+        let precio = new Object();
+        let ultimoID
+        await fetch('http://localhost:5000/precios?getultimoid=1')
+        .then ((res) => res.json())
+        .then ((data) => ultimoID = data["ultimoID"])
+        precio.idPlato = ultimoID;
+        precio.precio = precios.get("precio");
+        precio.vigencia = precios.get("vigencia");
+        precio = JSON.stringify(precio)
+    
         const response = await fetch('http://localhost:5000/precios', {
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+              },
             method: 'POST',
-            body: precios
+            body: precio
         });
         return response.json();
     }
+    
     async function updateDish(id, dish) {
+        
+        let plato = new Object();
+        plato.nombre = dish.get("nombre");
+        plato.descripcion = dish.get("descripcion")
+        plato.imgRuta = dish.get("imgRuta")
+        plato.tipo = dish.get("tipo")        
+        plato = JSON.stringify(plato)
         const response = await fetch(`http://localhost:5000/platos?editarid=${id}`, {
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+              },
             method: 'PUT',
-            body: dish
+            body: plato
         });
         return response.json();
     }
     async function updatePrice(id, precio) {
+        let precioP = new Object();
+        precioP.idPlato = parseInt(precio.get("idPlato"))
+        precioP.precio = precio.get("precio")
+        precioP.vigencia = precio.get("vigencia")
+        precioP = JSON.stringify(precioP)
         const response = await fetch(`http://localhost:5000/precios?editarid=${id}`, {
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+              },
             method: 'PUT',
-            body: precio
+            body: precioP
         });
         return response.json();
     }
@@ -71,12 +116,30 @@ document.addEventListener('DOMContentLoaded', () => {
         await fetch(`http://localhost:5000/platos?borrarid=${id}`, {
             method: 'DELETE'
         });
+        await fetch(`http://localhost:5000/precios?borrarid=${id}`, {
+            method: 'DELETE'
+        });
         loadDishes();
     }
 
     async function loadDishes() {
         const response = await fetch('http://localhost:5000/platos?traertodos=1');
         dishes = await response.json();
+        let precios = []
+        await fetch('http://localhost:5000/precios?traertodos=1')
+        .then((res) => res.json())
+        .then ((data) => 
+        {
+            for (let a=0; a< data.length;a++){
+                precios.push(data[a])
+            }
+        }
+        )
+        for (let b=0; b < dishes.length;b++) {
+            dishes[b].price = precios[b].precio;
+        }
+        
+        
         renderDishes();
     }
 
@@ -104,9 +167,9 @@ document.addEventListener('DOMContentLoaded', () => {
             editBtn.textContent = 'Editar';
             editBtn.addEventListener('click', () => {
                 document.getElementById('id-plato').value = dish.id;
-                document.getElementById('name').value = dish.name;
-                document.getElementById('details').value = dish.details;
-                document.getElementById('type').value = dish.type;
+                document.getElementById('name').value = dish.nombre;
+                document.getElementById('details').value = dish.descripcion;
+                document.getElementById('type').value = dish.tipo;
                 document.getElementById('price').value = dish.price;
             });
             
