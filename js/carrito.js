@@ -19,7 +19,7 @@ btnPago.onclick = async function (){
             venta.cantidad = carritoPedido[a].cantidad;
             venta.valorUnitario = dbProductos3.productos[carritoPedido[a].plato].precio
             try {
-                const response = await fetch("http://127.0.0.1:5000/ventas", {
+                const response = await fetch("http://pascalizado.pythonanywhere.com/ventas", {
                   method: "POST",
                   headers: {
                       'Accept': 'application/json',
@@ -41,8 +41,8 @@ btnPago.onclick = async function (){
 document.addEventListener('DOMContentLoaded', function() {
     
     let cantidad;
-    const urlServer = 'http://127.0.0.1:5000/platos?traertodos=1'
-    const urlPrecios = 'http://127.0.0.1:5000/precios?traertodos=1'
+    const urlServer = 'http://pascalizado.pythonanywhere.com/platos?traertodos=1'
+    const urlPrecios = 'http://pascalizado.pythonanywhere.com/precios?traertodos=1'
     carritoPedido = JSON.parse(localStorage.getItem('carrito')) || [];
     carritoPedido = carritoPedido.map(item => ({
         ...item,
@@ -158,7 +158,7 @@ function limpiarCarrito() {
 async function cargoDatos(){
     id = sessionStorage.getItem("id");
     
-    await fetch ("http://127.0.0.1:5000/cliente?idcliente=" + id)
+    await fetch ("http://pascalizado.pythonanywhere.com/cliente?idcliente=" + id)
     .then ((res) => res.json())
     .then (data => {
             cliente = data;

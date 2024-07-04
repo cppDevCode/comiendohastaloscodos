@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
         plato.imgRuta = dish.get("imgRuta");
         plato.tipo = dish.get("tipo");
         plato = JSON.stringify(plato);
-        const response = await fetch('http://localhost:5000/platos', {
+        const response = await fetch('http://pascalizado.pythonanywhere.com/platos', {
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
     async function addPrice(precios) {
         let precio = new Object();
         let ultimoID
-        await fetch('http://localhost:5000/precios?getultimoid=1')
+        await fetch('http://pascalizado.pythonanywhere.com/precios?getultimoid=1')
         .then ((res) => res.json())
         .then ((data) => ultimoID = data["ultimoID"])
         precio.idPlato = ultimoID;
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
         precio.vigencia = precios.get("vigencia");
         precio = JSON.stringify(precio)
     
-        const response = await fetch('http://localhost:5000/precios', {
+        const response = await fetch('http://pascalizado.pythonanywhere.com/precios', {
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
         plato.imgRuta = dish.get("imgRuta")
         plato.tipo = dish.get("tipo")        
         plato = JSON.stringify(plato)
-        const response = await fetch(`http://localhost:5000/platos?editarid=${id}`, {
+        const response = await fetch(`http://pascalizado.pythonanywhere.com/platos?editarid=${id}`, {
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
         precioP.precio = precio.get("precio")
         precioP.vigencia = precio.get("vigencia")
         precioP = JSON.stringify(precioP)
-        const response = await fetch(`http://localhost:5000/precios?editarid=${id}`, {
+        const response = await fetch(`http://pascalizado.pythonanywhere.com/precios?editarid=${id}`, {
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
@@ -113,20 +113,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     async function deleteDish(id) {
-        await fetch(`http://localhost:5000/platos?borrarid=${id}`, {
+        await fetch(`http://pascalizado.pythonanywhere.com/platos?borrarid=${id}`, {
             method: 'DELETE'
         });
-        await fetch(`http://localhost:5000/precios?borrarid=${id}`, {
+        await fetch(`http://pascalizado.pythonanywhere.com/precios?borrarid=${id}`, {
             method: 'DELETE'
         });
         loadDishes();
     }
 
     async function loadDishes() {
-        const response = await fetch('http://localhost:5000/platos?traertodos=1');
+        const response = await fetch('http://pascalizado.pythonanywhere.com/platos?traertodos=1');
         dishes = await response.json();
         let precios = []
-        await fetch('http://localhost:5000/precios?traertodos=1')
+        await fetch('http://pascalizado.pythonanywhere.com/precios?traertodos=1')
         .then((res) => res.json())
         .then ((data) => 
         {

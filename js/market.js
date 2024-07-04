@@ -1,5 +1,5 @@
-const urlServer = 'http://127.0.0.1:5000/platos?traertodos=1'
-const urlPrecios = 'http://127.0.0.1:5000/precios?traertodos=1'
+const urlServer = 'http://pascalizado.pythonanywhere.com/platos?traertodos=1'
+const urlPrecios = 'http://pascalizado.pythonanywhere.com/precios?traertodos=1'
 
 let platos
 
