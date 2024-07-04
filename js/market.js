@@ -1,5 +1,5 @@
-const urlServer = 'http://pascalizado.pythonanywhere.com/platos?traertodos=1'
-const urlPrecios = 'http://pascalizado.pythonanywhere.com/precios?traertodos=1'
+const urlServer = 'https://pascalizado.pythonanywhere.com/platos?traertodos=1'
+const urlPrecios = 'https://pascalizado.pythonanywhere.com/precios?traertodos=1'
 
 let platos
 
@@ -68,6 +68,7 @@ function mostrarElementos (platos){
 }
 
 async function renderizar(){
+    
     let precios = [];
     let usuario = sessionStorage.getItem("usuario");
     let dato = sessionStorage.getItem("id")

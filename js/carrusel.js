@@ -1,4 +1,4 @@
-const urlServer1 = 'http://pascalizado.pythonanywhere.com/platos?traertodos=1'
+const urlServer1 = 'https://pascalizado.pythonanywhere.com/platos?traertodos=1'
 
 let numPlatoActual = 0;
 let dbProductos1 = {

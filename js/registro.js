@@ -25,7 +25,7 @@ async function enviarDatos() {
     json.contrasena  = arreglo[15];
     let cadenaJSON = JSON.stringify(json)
     try {
-      const response = await fetch("http://pascalizado.pythonanywhere.com/cliente", {
+      const response = await fetch("https://pascalizado.pythonanywhere.com/cliente", {
         method: "POST",
         headers: {
             'Accept': 'application/json',

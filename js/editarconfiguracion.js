@@ -1,7 +1,7 @@
 async function configuracion() {
     let usuario = sessionStorage.getItem("usuario");
     let id = sessionStorage.getItem("id");
-    const urlAPI = "http://pascalizado.pythonanywhere.com/cliente?idcliente="
+    const urlAPI = "https://pascalizado.pythonanywhere.com/cliente?idcliente="
     let jsonCliente;
     const btnIngresar = document.getElementById('ingresar');
     const menuDesplegable = document.getElementById('menuDesplegable');
@@ -52,7 +52,7 @@ async function configuracion() {
 
 async function guardoCambios(){
     event.preventDefault();
-    const urlAPI = 'http://pascalizado.pythonanywhere.com/cliente?editarid=';
+    const urlAPI = 'https://pascalizado.pythonanywhere.com/cliente?editarid=';
     const formulario = document.getElementById('formularioConfiguracion');
     const id = sessionStorage.getItem('id');
     if (document.getElementById('contrasena2').value == document.getElementById('contrasena3').value){

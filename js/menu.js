@@ -12,8 +12,8 @@ let btnCerrarSesion = document.getElementById('CerrarSesion');
 let btnGestionPlatos = document.getElementById('verReservas');
 let btnEditarPlatos = document.getElementById('editarPlatos')
 
-const uriLogin = 'http://pascalizado.pythonanywhere.com/loguear';
-const uriEsAdmin = 'http://pascalizado.pythonanywhere.com/cliente?esadmin='
+const uriLogin = 'https://pascalizado.pythonanywhere.com/loguear';
+const uriEsAdmin = 'https://pascalizado.pythonanywhere.com/cliente?esadmin='
 const opciones = {
         method: 'GET', 
         headers: {
