@@ -41,6 +41,9 @@ function mostrarElementos (platos){
     let topePlatos = platos.length;
     let topeFor;
     let botones = parseInt(topePlatos/8);
+    if ((topePlatos/8) % 1 > 0) {
+        botones +=1
+    }
     if (getComputedStyle(document.body).getPropertyValue('--plataforma') === "celulares" || getComputedStyle(document.body).getPropertyValue('--plataforma') === "tablet") {
         platosPorHoja = 4;
         botones = parseInt(topePlatos/4);
